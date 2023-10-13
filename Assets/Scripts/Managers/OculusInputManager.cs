@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class OculusInputManager : MonoBehaviour
 {
     [SerializeField] Transform TrackingSpace;
+
+    // Debug Area ->
+    [SerializeField] TextMeshProUGUI RTouchText, LTouchText;
+    // Debug Area <-
 
     private Vector3 rPos, lPos;
     private void Update()
@@ -14,11 +19,10 @@ public class OculusInputManager : MonoBehaviour
         rPos = TrackingSpace.TransformPoint(localRPos);
         lPos = TrackingSpace.TransformPoint(localLPos);
 
-        Debug.Log("rPos: " + rPos + " / lPos: " + lPos);
-    }
-
-    private void OnGUI()
-    {
-        GUI.Box(new Rect(10,10,100,20), rPos.ToString());
+        // Debug Area ->
+        //Debug.Log("rPos: " + rPos + " / lPos: " + lPos);
+        RTouchText.text = "RTouch: " + rPos;
+        LTouchText.text = "LTouch: " + lPos; 
+        // Debug Area <-
     }
 }
