@@ -11,18 +11,73 @@ public class OculusInputManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI RTouchText, LTouchText;
     // Debug Area <-
 
-    private Vector3 rPos, lPos;
+    public Vector3 rPos { private set; get; }
+    public Vector3 lPos { private set; get; }
+    public Vector3 modRPos { private set; get; }
+    public Vector3 modLPos { private set; get; }
+    public int rLane { private set; get; }
+    public int lLane { private set; get; }
+
+    private struct Polar
+    {
+        public Polar(float r, float theta) {
+            this.r     = r;
+            this.theta = theta;
+        }
+
+        public float r { private set; get; }
+        public float theta { private set; get; }
+    }
+
     private void Update()
     {
+        // Original Position
         Vector3 localRPos = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch);
         Vector3 localLPos = OVRInput.GetLocalControllerPosition(OVRInput.Controller.LTouch);
         rPos = TrackingSpace.TransformPoint(localRPos);
         lPos = TrackingSpace.TransformPoint(localLPos);
 
+        // Modified Position
+        modRPos = rPos / OffsetManager.Instance.stageScaleOffset;
+        modRPos = new Vector3(modRPos.x, modRPos.y-OffsetManager.Instance.stageHeightOffset, modRPos.z);
+        modLPos = lPos / OffsetManager.Instance.stageScaleOffset;
+        modLPos = new Vector3(modLPos.x, modLPos.y-OffsetManager.Instance.stageHeightOffset, modLPos.z);
+
+        // Convert to Polar Coordinate
+        Polar rPolar = RectToPolar(modRPos);
+        Polar lPolar = RectToPolar(modLPos);
+
+        // Calc Lane
+        rLane = CalcLane(rPolar);
+        lLane = CalcLane(lPolar);
+
         // Debug Area ->
         //Debug.Log("rPos: " + rPos + " / lPos: " + lPos);
-        RTouchText.text = "RTouch: " + rPos;
-        LTouchText.text = "LTouch: " + lPos; 
+        RTouchText.text = "RTouch: r=" + rPolar.r + " /  Θ=" + rPolar.theta + " (" + rLane + ")";
+        LTouchText.text = "LTouch: r=" + lPolar.r + " /  Θ=" + lPolar.theta + " (" + lLane + ")"; 
         // Debug Area <-
+    }
+
+    private Polar RectToPolar(Vector3 rect)
+    {
+        float r   = Mathf.Sqrt(rect.x*rect.x + rect.y*rect.y);
+        float rad = Mathf.Atan2(rect.y, rect.x);
+        float deg = rad * Mathf.Rad2Deg;
+        if(deg < 0) {
+            deg = 360f + deg;
+        }
+
+        Polar polar = new Polar(r, deg);
+        return polar;
+    }
+
+    private int CalcLane(Polar polar, float thresh=0.6f)
+    {
+        if(thresh < polar.r) {
+            int lane = (int)(polar.theta / 11.25f);
+            return lane;
+        }
+
+        return -1;
     }
 }
