@@ -7,7 +7,7 @@ public class StageScaler : MonoBehaviour
 {
     [SerializeField] Transform masterScaler;
     [SerializeField] OculusInputManager oculusInputManager;
-    [SerializeField] float scaleFactor = 1.2f;
+    [SerializeField] float scaleFactor = 1.0f;
 
 
     private void Update()

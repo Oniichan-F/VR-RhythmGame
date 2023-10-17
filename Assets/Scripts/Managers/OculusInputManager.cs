@@ -6,6 +6,11 @@ using UnityEngine;
 public class OculusInputManager : MonoBehaviour
 {
     [SerializeField] Transform TrackingSpace;
+    
+    // パネルの基礎反応感度
+    [SerializeField] float baseThresh = 0.6f;
+    // 反対側パネルの反応感度緩和補正
+    [SerializeField] float oppositeCorrection = 0.5f;
 
     // Debug Area ->
     [SerializeField] TextMeshProUGUI RTouchText, LTouchText;
@@ -48,8 +53,8 @@ public class OculusInputManager : MonoBehaviour
         Polar lPolar = RectToPolar(modLPos);
 
         // Calc Lane
-        rLane = CalcLane(rPolar);
-        lLane = CalcLane(lPolar);
+        rLane = CalcLane(rPolar, lr:"R");
+        lLane = CalcLane(lPolar, lr:"L");
 
         // Debug Area ->
         //Debug.Log("rPos: " + rPos + " / lPos: " + lPos);
@@ -71,13 +76,46 @@ public class OculusInputManager : MonoBehaviour
         return polar;
     }
 
-    private int CalcLane(Polar polar, float thresh=0.6f)
+    private int CalcLane(Polar polar, string lr)
     {
-        if(thresh < polar.r) {
-            int lane = (int)(polar.theta / 11.25f);
-            return lane;
+        int lane = -1;
+
+        // R Touch
+        if(lr == "R") {
+            // right side
+            if((0f <= polar.theta && polar.theta <= 90f) || (270f <= polar.theta && polar.theta <= 360f)) {
+                if(baseThresh < polar.r) {
+                    lane = (int)(polar.theta / 11.25f);
+                    return lane;                    
+                }
+            }
+            // left side
+            else {
+                if(baseThresh*oppositeCorrection < polar.r) {
+                    lane = (int)(polar.theta / 11.25f);
+                    return lane;                    
+                }
+            }
         }
 
-        return -1;
+        // L Touch
+        if(lr == "L") {
+            // right side
+            if((0f <= polar.theta && polar.theta <= 90f) || (270f <= polar.theta && polar.theta <= 360f)) {
+                if(baseThresh*oppositeCorrection < polar.r) {
+                    lane = (int)(polar.theta / 11.25f);
+                    return lane;                    
+                }
+            }
+            // left side
+            else {
+                if(baseThresh < polar.r) {
+                    lane = (int)(polar.theta / 11.25f);
+                    return lane;                    
+                }
+            }           
+        }
+
+        return lane;
     }
 }
