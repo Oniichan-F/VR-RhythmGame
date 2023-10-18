@@ -8,8 +8,13 @@ public class OffsetManager : MonoBehaviour
     private static OffsetManager instance;
     public static OffsetManager Instance => instance;
 
+    // Stage Offset
     public float stageScaleOffset;
     public float stageHeightOffset;
+
+    // RhythmGame Offset
+    public float playerNoteSpeed;
+    public float playerChartOffset;
 
     private void Awake()
     {
@@ -21,6 +26,8 @@ public class OffsetManager : MonoBehaviour
 
         stageScaleOffset  = 1f;
         stageHeightOffset = 1f;
+
+        RhythmGameManager.Instance.SetOffsets();
 
         DontDestroyOnLoad(this);
     }
