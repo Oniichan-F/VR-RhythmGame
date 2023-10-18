@@ -32,8 +32,8 @@ public class StageScaler : MonoBehaviour
             Debug.Log("Set Height: " + h);
         }
 
-        Vector3 rPos = oculusInputManager.rPos;
-        Vector3 lPos = oculusInputManager.lPos;
+        Vector3 rPos = oculusInputManager.globalRPos;
+        Vector3 lPos = oculusInputManager.globalLPos;
         setScale(rPos, lPos);
         setHeight(rPos, lPos);
     }

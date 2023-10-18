@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+using general.coordinate;
+
+
 public class OculusInputManager : MonoBehaviour
 {
     [SerializeField] Transform TrackingSpace;
@@ -16,23 +19,15 @@ public class OculusInputManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI RTouchText, LTouchText;
     // Debug Area <-
 
-    public Vector3 rPos { private set; get; }
-    public Vector3 lPos { private set; get; }
-    public Vector3 modRPos { private set; get; }
-    public Vector3 modLPos { private set; get; }
+    public Vector3 globalRPos { private set; get; }
+    public Vector3 globalLPos { private set; get; }
+    public Vector3 personalRPos { private set; get; }
+    public Vector3 personalLPos { private set; get; }
+    public Polar polarRPos { private set; get; }
+    public Polar polarLPos { private set; get; }
     public int rLane { private set; get; }
     public int lLane { private set; get; }
 
-    private struct Polar
-    {
-        public Polar(float r, float theta) {
-            this.r     = r;
-            this.theta = theta;
-        }
-
-        public float r { private set; get; }
-        public float theta { private set; get; }
-    }
 
     private void Update()
     {
@@ -41,44 +36,31 @@ public class OculusInputManager : MonoBehaviour
             RhythmGameManager.Instance.isPaused ^= true;
         }
 
-        // Original Position
+        // Local Position -> Global Position
         Vector3 localRPos = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch);
         Vector3 localLPos = OVRInput.GetLocalControllerPosition(OVRInput.Controller.LTouch);
-        rPos = TrackingSpace.TransformPoint(localRPos);
-        lPos = TrackingSpace.TransformPoint(localLPos);
+        globalRPos = TrackingSpace.TransformPoint(localRPos);
+        globalLPos = TrackingSpace.TransformPoint(localLPos);
 
-        // Modified Position
-        modRPos = rPos / OffsetManager.Instance.stageScaleOffset;
-        modRPos = new Vector3(modRPos.x, modRPos.y-OffsetManager.Instance.stageHeightOffset, modRPos.z);
-        modLPos = lPos / OffsetManager.Instance.stageScaleOffset;
-        modLPos = new Vector3(modLPos.x, modLPos.y-OffsetManager.Instance.stageHeightOffset, modLPos.z);
+        // Global Position -> Personal Position
+        personalRPos = globalRPos / OffsetManager.Instance.stageScaleOffset;
+        personalRPos = new Vector3(personalRPos.x, personalRPos.y-OffsetManager.Instance.stageHeightOffset, personalRPos.z);
+        personalLPos = globalLPos / OffsetManager.Instance.stageScaleOffset;
+        personalLPos = new Vector3(personalLPos.x, personalLPos.y-OffsetManager.Instance.stageHeightOffset, personalLPos.z);
 
-        // Convert to Polar Coordinate
-        Polar rPolar = RectToPolar(modRPos);
-        Polar lPolar = RectToPolar(modLPos);
+        // Personal Position -> Polar Position
+        polarRPos = new Polar(personalRPos);
+        polarLPos = new Polar(personalLPos);
 
-        // Calc Lane
-        rLane = CalcLane(rPolar, lr:"R");
-        lLane = CalcLane(lPolar, lr:"L");
+        // Polar Positon -> Lane
+        rLane = CalcLane(polarRPos, lr:"R");
+        lLane = CalcLane(polarLPos, lr:"L");
 
         // Debug Area ->
-        //Debug.Log("rPos: " + rPos + " / lPos: " + lPos);
-        RTouchText.text = "RTouch: r=" + rPolar.r + " /  Θ=" + rPolar.theta + " (" + rLane + ")";
-        LTouchText.text = "LTouch: r=" + lPolar.r + " /  Θ=" + lPolar.theta + " (" + lLane + ")"; 
+        //Debug.Log("globalRPos: " + globalRPos + " / globalLPos: " + globalLPos);
+        //RTouchText.text = "RTouch: r=" + rPolar.r + " /  Θ=" + rPolar.theta + " (" + rLane + ")";
+        //LTouchText.text = "LTouch: r=" + lPolar.r + " /  Θ=" + lPolar.theta + " (" + lLane + ")"; 
         // Debug Area <-
-    }
-
-    private Polar RectToPolar(Vector3 rect)
-    {
-        float r   = Mathf.Sqrt(rect.x*rect.x + rect.y*rect.y);
-        float rad = Mathf.Atan2(rect.y, rect.x);
-        float deg = rad * Mathf.Rad2Deg;
-        if(deg < 0) {
-            deg = 360f + deg;
-        }
-
-        Polar polar = new Polar(r, deg);
-        return polar;
     }
 
     private int CalcLane(Polar polar, string lr)
