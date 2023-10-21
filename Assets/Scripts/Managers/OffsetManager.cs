@@ -27,8 +27,6 @@ public class OffsetManager : MonoBehaviour
         stageScaleOffset  = 1f;
         stageHeightOffset = 1f;
 
-        RhythmGameManager.Instance.SetOffsets();
-
         DontDestroyOnLoad(this);
     }
 }

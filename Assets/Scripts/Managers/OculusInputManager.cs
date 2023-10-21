@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-using general.coordinate;
+using General.Coordinate;
 
 
 public class OculusInputManager : MonoBehaviour
@@ -15,9 +15,6 @@ public class OculusInputManager : MonoBehaviour
     // 反対側パネルの反応感度緩和補正
     [SerializeField] float oppositeCorrection = 0.5f;
 
-    // Debug Area ->
-    [SerializeField] TextMeshProUGUI RTouchText, LTouchText;
-    // Debug Area <-
 
     public Vector3 globalRPos { private set; get; }
     public Vector3 globalLPos { private set; get; }
@@ -55,12 +52,6 @@ public class OculusInputManager : MonoBehaviour
         // Polar Positon -> Lane
         rLane = CalcLane(polarRPos, lr:"R");
         lLane = CalcLane(polarLPos, lr:"L");
-
-        // Debug Area ->
-        //Debug.Log("globalRPos: " + globalRPos + " / globalLPos: " + globalLPos);
-        //RTouchText.text = "RTouch: r=" + rPolar.r + " /  Θ=" + rPolar.theta + " (" + rLane + ")";
-        //LTouchText.text = "LTouch: r=" + lPolar.r + " /  Θ=" + lPolar.theta + " (" + lLane + ")"; 
-        // Debug Area <-
     }
 
     private int CalcLane(Polar polar, string lr)

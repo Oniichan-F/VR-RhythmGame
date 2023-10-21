@@ -170,8 +170,6 @@ MonoBehaviour:
   TrackingSpace: {fileID: 1601780858}
   baseThresh: 0.6
   oppositeCorrection: 0.5
-  RTouchText: {fileID: 2073272020}
-  LTouchText: {fileID: 1554158640}
 --- !u!4 &106403727 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4484591312116288, guid: 126d619cf4daa52469682f85c1378b4a,
@@ -522,12 +520,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   songID: 0
-  songDisplayName: aaaa
-  songSourceName: aaaa
-  songChartName: aaaa
-  BPM: 60
-  LPB: 4
-  maxBeatNum: 10
+  songDisplayName: 
+  songSourceName: 
+  songChartName: test00
+  BPM: -1
+  LPB: -1
+  maxBeatNum: 20
   baseChartOffset: 0
   isPaused: 0
 --- !u!1001 &261300800
@@ -1631,6 +1629,55 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9809c5e8418bb047bf2c8ba1d1a2cec, type: 3}
+--- !u!1 &842913079
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 842913080}
+  - component: {fileID: 842913081}
+  m_Layer: 0
+  m_Name: NoteGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &842913080
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842913079}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1809092994}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &842913081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842913079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40b07ff4bc3c318468db7fd6dcaedd15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalNotePrefab: {fileID: 3736849884814690292, guid: 740c836d8b1dcf947876695e6626ff7a,
+    type: 3}
+  tourchNotePrefab: {fileID: 3034092475883162125, guid: 7f13670e485bf1341bc91a81c746dc3e,
+    type: 3}
+  masterScaler: {fileID: 670505693}
 --- !u!4 &877742771 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 488160, guid: d9809c5e8418bb047bf2c8ba1d1a2cec,
@@ -3698,6 +3745,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2072160699}
+  - {fileID: 842913080}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1817859328

@@ -4,9 +4,9 @@ using UnityEditor.Rendering;
 using UnityEngine;
 
 
-namespace general
+namespace General
 {
-    namespace coordinate
+    namespace Coordinate
     {
         public struct Polar
         {

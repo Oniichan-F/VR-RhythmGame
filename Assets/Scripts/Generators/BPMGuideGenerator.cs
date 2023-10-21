@@ -29,15 +29,15 @@ public class BPMGuideGenerator : MonoBehaviour
     {
         float calcPosition(int i) {
             float interval = 60f / (BPM * LPB);
-            float beatsec  = interval + LPB;
-            float time = (beatsec * i / LPB) + chartOffset;
+            float beatsec  = interval * LPB;
+            float time = (beatsec * i / LPB) + chartOffset * 0.01f;
             float pos = time * noteSpeed;
             return pos;
         }
 
         GameObject BPMGuideParent = MasterScaler.transform.Find("BPMGuides").gameObject;
 
-        for(int i=1; i<maxBeatNum; i++) {
+        for(int i=4; i<maxBeatNum*4; i+=4) {
             float pos = calcPosition(i);
             GameObject BPMGuideObj = Instantiate(
                 BPMGuide,
