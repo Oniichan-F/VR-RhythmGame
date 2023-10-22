@@ -7,8 +7,8 @@ using UnityEngine;
 public class LongNote : Note
 {
     [SerializeField] private Mesh[] meshes;
-    [SerializeField] private List<Material> matR;
-    [SerializeField] private List<Material> matL;
+    [SerializeField] private List<Material> matsR;
+    [SerializeField] private List<Material> matsL;
 
     public bool isHead { private set; get; }
     public int[] startLanes { private set; get; }
@@ -25,7 +25,7 @@ public class LongNote : Note
     private void Start()
     {
         SetMesh();
-        SetLR();
+        SetMaterial();
         twistDeformer = mesh.transform.Find("Twist").GetComponent<TwistDeformer>();
         Twist();
     }
@@ -45,11 +45,10 @@ public class LongNote : Note
         this.length     = length;
         this.size       = startLanes.Length / 2;
 
-        this.rotDirection = options[0];
-        this.numRotation  = options[1];
+        this.rotDirection = options[1];
+        this.numRotation  = options[2];
 
-        if(options[2] == 0) { this.isHead = true; }
-        else { this.isHead = false; }
+        this.isHead = (options[0] == 0) ? true : false;
 
         transform.localScale = new Vector3(1f, 1f, length*speed*1.25f);
     }
@@ -59,13 +58,13 @@ public class LongNote : Note
         mesh.GetComponent<MeshFilter>().mesh = meshes[size-1];
     }
 
-    private void SetLR()
+    private void SetMaterial()
     {
         if(lr == "R") {
-            mesh.GetComponent<MeshRenderer>().SetMaterials(matR);
+            mesh.GetComponent<MeshRenderer>().SetMaterials(matsR);
         }
         else if(lr == "L") {
-            mesh.GetComponent<MeshRenderer>().SetMaterials(matL);
+            mesh.GetComponent<MeshRenderer>().SetMaterials(matsL);
         }
     }
 

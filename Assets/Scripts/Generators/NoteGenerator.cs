@@ -11,7 +11,8 @@ using System.Xml;
 public class NoteGenerator : MonoBehaviour
 {
     [SerializeField] GameObject normalNotePrefab;
-    [SerializeField] GameObject tourchNotePrefab;
+    [SerializeField] GameObject touchNotePrefab;
+    [SerializeField] GameObject flickNotePrefab;
     [SerializeField] GameObject longNotePrefab;
     [SerializeField] GameObject longChildNotePrefab;
     [SerializeField] GameObject masterScaler;
@@ -80,6 +81,7 @@ public class NoteGenerator : MonoBehaviour
                 normalNote.SetPosition(pos);
                 normalNote.SetRotation(rot);
             }
+
             // TouchNote
             else if(noteData.type == (int)NOTE.TYPE.TouchNote) {
                 int[] lanes   = noteData.lanes;
@@ -90,7 +92,7 @@ public class NoteGenerator : MonoBehaviour
                 float rot     = LANE.ANGLES[lanes[0]];
 
                 GameObject touchNoteObj = Instantiate(
-                    tourchNotePrefab,
+                    touchNotePrefab,
                     notesParent.transform
                 );
 
@@ -99,6 +101,28 @@ public class NoteGenerator : MonoBehaviour
                 touchNote.SetPosition(pos);
                 touchNote.SetRotation(rot);
             }
+
+            // FlickNote
+            else if(noteData.type == (int)NOTE.TYPE.FlickNote) {
+                int[] lanes   = noteData.lanes;
+                string lr     = noteData.lr;
+                bool isPaired = noteData.pair;
+                bool isHead   = (noteData.options[0] == 0) ? true : false;
+                float time    = calcTime(noteData);
+                float pos     = time * noteSpeed;
+                float rot     = LANE.ANGLES[lanes[0]];
+
+                GameObject flickNoteObj = Instantiate(
+                    flickNotePrefab,
+                    notesParent.transform
+                );
+
+                FlickNote flickNote = flickNoteObj.GetComponent<FlickNote>();
+                flickNote.Init(id:id, lanes:lanes, time:time, lr:lr, isPaired:isPaired, isHead:isHead);
+                flickNote.SetPosition(pos);
+                flickNote.SetRotation(rot);
+            }
+
             // LongNote
             else if(noteData.type == (int)NOTE.TYPE.LongNote) {
 

@@ -12,8 +12,13 @@ namespace General
             {
                 NormalNote = 1,
                 TouchNote = 2,
+                FlickNote = 3,
+                // options: [isHead(0->true / 1->false)]
+                
 
                 LongNote = 10,
+                // options: [isHead(0->true / 1->false), rotDir(1->CCW / -1->CW), rotNum]
+                
                 LongEnd = 11,
                 LongMid = 12,
             }

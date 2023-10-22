@@ -1675,7 +1675,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalNotePrefab: {fileID: 3736849884814690292, guid: 740c836d8b1dcf947876695e6626ff7a,
     type: 3}
-  tourchNotePrefab: {fileID: 3034092475883162125, guid: 7f13670e485bf1341bc91a81c746dc3e,
+  touchNotePrefab: {fileID: 3034092475883162125, guid: 7f13670e485bf1341bc91a81c746dc3e,
+    type: 3}
+  flickNotePrefab: {fileID: 4508113157458441986, guid: dca0f7589dda8014195c4977fcc25b0c,
     type: 3}
   longNotePrefab: {fileID: 5492275754676737434, guid: 6ca168ae4a6a3de49851602c0160f46a,
     type: 3}
