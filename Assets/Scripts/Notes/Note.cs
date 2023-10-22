@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Note : MonoBehaviour
 {
-    public int id { private set; get; }
-    public int[] lanes { private set; get; }
-    public int size { private set; get; }
-    public float time { private set; get; }
-    public float speed { private set; get; }
-    public string lr { private set; get; }
-    public bool isPaired { private set; get; }
+    public int id { protected set; get; }
+    public int[] lanes { protected set; get; }
+    public int size { protected set; get; }
+    public float time { protected set; get; }
+    public float speed { protected set; get; }
+    public string lr { protected set; get; }
+    public bool isPaired { protected set; get; }
 
     protected GameObject mesh;
 
@@ -19,12 +19,11 @@ public class Note : MonoBehaviour
     {
         this.id       = id;
         this.lanes    = lanes;
-        this.size     = lanes.Length / 2;
         this.time     = time;
         this.lr       = lr;
         this.isPaired = isPaired;
+        
         this.speed    = RhythmGameManager.Instance.noteSpeed;
-
         mesh = transform.Find("Mesh").gameObject;
     }
 

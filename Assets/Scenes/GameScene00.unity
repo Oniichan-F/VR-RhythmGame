@@ -1677,6 +1677,10 @@ MonoBehaviour:
     type: 3}
   tourchNotePrefab: {fileID: 3034092475883162125, guid: 7f13670e485bf1341bc91a81c746dc3e,
     type: 3}
+  longNotePrefab: {fileID: 5492275754676737434, guid: 6ca168ae4a6a3de49851602c0160f46a,
+    type: 3}
+  longChildNotePrefab: {fileID: 8676944842121292525, guid: a622cb81e3f751d4bb6eab0d25a8e669,
+    type: 3}
   masterScaler: {fileID: 670505693}
 --- !u!4 &877742771 stripped
 Transform:

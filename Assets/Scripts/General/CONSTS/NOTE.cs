@@ -12,6 +12,10 @@ namespace General
             {
                 NormalNote = 1,
                 TouchNote = 2,
+
+                LongNote = 10,
+                LongEnd = 11,
+                LongMid = 12,
             }
         }
     }

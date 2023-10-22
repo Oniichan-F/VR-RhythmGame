@@ -12,6 +12,8 @@ public class NoteGenerator : MonoBehaviour
 {
     [SerializeField] GameObject normalNotePrefab;
     [SerializeField] GameObject tourchNotePrefab;
+    [SerializeField] GameObject longNotePrefab;
+    [SerializeField] GameObject longChildNotePrefab;
     [SerializeField] GameObject masterScaler;
 
     private ChartData chartData;
@@ -96,6 +98,57 @@ public class NoteGenerator : MonoBehaviour
                 touchNote.Init(id:id, lanes:lanes, time:time, lr:lr, isPaired:isPaired);
                 touchNote.SetPosition(pos);
                 touchNote.SetRotation(rot);
+            }
+            // LongNote
+            else if(noteData.type == (int)NOTE.TYPE.LongNote) {
+
+                string lr        = noteData.lr;
+                int[] startLanes = noteData.lanes;
+                float startTime  = calcTime(noteData);
+                int[] options    = noteData.options;
+                float pos = startTime * noteSpeed;
+                float rot = LANE.ANGLES[startLanes[0]];
+
+                GameObject longNoteObj = Instantiate(
+                    longNotePrefab,
+                    notesParent.transform
+                );
+
+                LongNote longNote = longNoteObj.GetComponent<LongNote>();
+                longNote.SetPosition(pos);
+                longNote.SetRotation(rot);
+
+                foreach(NoteData child in noteData.children) {
+                    // End
+                    if(child.type == (int)NOTE.TYPE.LongEnd) {
+                        int[] endLanes = child.lanes;
+                        float endTime  = calcTime(child);
+                        float length = child.timing - noteData.timing;
+
+                        longNote.Init(
+                            id:id, lr:lr, startLanes:startLanes, endLanes:endLanes,
+                            startTime:startTime, endTime:endTime, length:length, options:options
+                        );
+                    }
+
+                    // Mid
+                    if(child.type == (int)NOTE.TYPE.LongMid) {
+                        int[] _lanes = child.lanes;
+                        float _time  = calcTime(child);
+                        float _pos   = _time * noteSpeed;
+                        float _rot   = LANE.ANGLES[_lanes[0]];
+
+                        GameObject longChildNoteObj = Instantiate(
+                            longChildNotePrefab,
+                            notesParent.transform
+                        );
+
+                        LongChildNote longChildNote = longChildNoteObj.GetComponent<LongChildNote>();
+                        longChildNote.Init(id:id, lanes:_lanes, time:_time, parent:longNote);
+                        longChildNote.SetPosition(_pos);
+                        longChildNote.SetRotation(_rot);
+                    }
+                }
             }
 
             id++;

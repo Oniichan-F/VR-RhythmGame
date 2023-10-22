@@ -22,6 +22,7 @@ namespace General
             public float timing;
             public string lr;
             public bool pair;
+            public int[] options;
             public NoteData[] children;
         }
     }
