@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using General.CONSTS;
 using UnityEngine;
 
 public class FlickNote : Note
@@ -22,6 +23,14 @@ public class FlickNote : Note
         }
 
         CheckDestory();
+        
+        if(!RhythmGameManager.Instance.isAutoMode) {
+
+        }
+        else {
+            AutoJudge();
+        }
+
         UpdatePosition();
         UpdateTime();        
     }
@@ -31,6 +40,9 @@ public class FlickNote : Note
         base.Init(id, lanes, time, lr, isPaired);
         this.size = lanes.Length / 2;
         this.isHead = isHead;
+
+        this.type   = (int)NOTE.TYPE.FlickNote;
+        this.seType = (int)SE.NOTE_SE.HitStrong;
     }
 
     protected override void SetMesh()

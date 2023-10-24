@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using General.CONSTS;
 using UnityEngine;
 
 public class LongChildNote : Note
@@ -22,20 +23,29 @@ public class LongChildNote : Note
         }
 
         CheckDestory();
+
+        if(!RhythmGameManager.Instance.isAutoMode) {
+
+        }
+        else {
+            AutoJudge();
+        }
+
         UpdatePosition();
         UpdateTime();
     }
 
     public void Init(int id, int[] lanes, float time, LongNote parent)
     {
-        this.id     = id;
-        this.lanes  = lanes;
-        this.time   = time;
+        base.Init(id, lanes, time, "", false);
         this.parent = parent;
 
         this.size = lanes.Length / 2;
         this.speed    = RhythmGameManager.Instance.noteSpeed;
         mesh = transform.Find("Mesh").gameObject;
+
+        this.type   = (int)NOTE.TYPE.LongMid;
+        this.seType = (int)SE.NOTE_SE.HitWeak;
     }
 
     protected override void SetMesh()
@@ -50,6 +60,16 @@ public class LongChildNote : Note
         }
         else {
             mesh.GetComponent<Renderer>().enabled = false;
+        }
+    }
+
+    protected override void AutoJudge()
+    {
+        if(parent.state == (int)LONGNOTE.STATE.Active) {
+            if(time < 0f) {
+                noteEffectManager.PlaySE(seType);
+                Destroy(this.gameObject);
+            }
         }
     }
 }

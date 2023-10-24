@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Note : MonoBehaviour
@@ -13,6 +14,9 @@ public class Note : MonoBehaviour
     public bool isPaired { protected set; get; }
 
     protected GameObject mesh;
+    protected NoteEffectManager noteEffectManager;
+    protected int type;
+    protected int seType;
 
 
     public virtual void Init(int id, int[] lanes, float time, string lr, bool isPaired)
@@ -25,6 +29,7 @@ public class Note : MonoBehaviour
         
         this.speed    = RhythmGameManager.Instance.noteSpeed;
         mesh = transform.Find("Mesh").gameObject;
+        noteEffectManager = GameObject.Find("NoteEffectManager").GetComponent<NoteEffectManager>();
     }
 
     protected virtual void SetMesh()
@@ -49,7 +54,10 @@ public class Note : MonoBehaviour
 
     protected virtual void AutoJudge()
     {
-        
+        if(time < 0f) {
+            noteEffectManager.PlaySE(seType);
+            Destroy(this.gameObject);
+        }
     }
 
     protected virtual void CheckDestory()

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using General.CONSTS;
 using UnityEngine;
 
 public class NormalNote : Note
@@ -20,6 +21,14 @@ public class NormalNote : Note
         }
 
         CheckDestory();
+
+        if(!RhythmGameManager.Instance.isAutoMode) {
+
+        }
+        else {
+            AutoJudge();
+        }
+
         UpdatePosition();
         UpdateTime();
     }
@@ -28,6 +37,9 @@ public class NormalNote : Note
     {
         base.Init(id, lanes, time, lr, isPaired);
         this.size = lanes.Length / 2;
+
+        this.type   = (int)NOTE.TYPE.NormalNote;
+        this.seType = (int)SE.NOTE_SE.HitStandard;
     }
 
     protected override void SetMesh()

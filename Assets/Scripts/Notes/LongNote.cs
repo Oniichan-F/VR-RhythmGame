@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Deform;
+using General.CONSTS;
 using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -17,6 +18,8 @@ public class LongNote : Note
     public float startTime { private set; get; }
     public float endTime { private set; get; }
     public float length { private set; get; }
+
+    public int state;
 
     private TwistDeformer twistDeformer;
     private int rotDirection; // 1=CCW, -1=CW
@@ -38,6 +41,14 @@ public class LongNote : Note
         }
 
         CheckDestory();
+
+        if(!RhythmGameManager.Instance.isAutoMode) {
+
+        }
+        else {
+            AutoJudge();
+        }
+
         UpdatePosition();
         UpdateTime();
     }
@@ -56,8 +67,12 @@ public class LongNote : Note
         this.numRotation  = options[2];
 
         this.isHead = (options[0] == 0) ? true : false;
+        this.state = (int)LONGNOTE.STATE.inActive;
 
         transform.localScale = new Vector3(1f, 1f, length*speed*1.25f);
+
+        this.type   = (int)NOTE.TYPE.LongNote;
+        this.seType = (int)SE.NOTE_SE.HitStandard; // TEST
     }
 
     protected override void SetMesh()
@@ -106,6 +121,18 @@ public class LongNote : Note
     {
         if(endTime < -1f) {
             Destroy(this.gameObject);
+        }
+    }
+
+    protected override void AutoJudge()
+    {
+        if(state == (int)LONGNOTE.STATE.inActive) {
+            if(isHead) {
+                if(startTime < 0f) {
+                    noteEffectManager.PlaySE(seType);
+                    state = (int)LONGNOTE.STATE.Active;
+                }
+            }
         }
     }
 }

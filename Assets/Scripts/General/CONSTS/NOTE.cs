@@ -23,5 +23,15 @@ namespace General
                 LongMid = 12,
             }
         }
+
+        public static class LONGNOTE
+        {
+            public enum STATE : int
+            {
+                inActive = 0,
+                Active = 1,
+                Lost = 2,
+            }
+        }
     }
 }
