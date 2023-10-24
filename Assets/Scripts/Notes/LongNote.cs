@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Deform;
+using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
@@ -32,7 +33,13 @@ public class LongNote : Note
 
     private void Update()
     {
+        if(RhythmGameManager.Instance.isPaused) {
+            return;
+        }
 
+        CheckDestory();
+        UpdatePosition();
+        UpdateTime();
     }
 
     public void Init(int id, string lr, int[] startLanes, int[] endLanes, float startTime, float endTime, float length, int[] options)
@@ -87,5 +94,18 @@ public class LongNote : Note
         }
 
         twistDeformer.EndAngle = (-rot * 11.25f - (numRotation * 360f)) * rotDirection;
+    }
+
+    protected override void UpdateTime()
+    {
+        startTime -= Time.deltaTime;
+        endTime -= Time.deltaTime;
+    }
+
+    protected override void CheckDestory()
+    {
+        if(endTime < -1f) {
+            Destroy(this.gameObject);
+        }
     }
 }

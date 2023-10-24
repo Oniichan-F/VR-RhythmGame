@@ -15,7 +15,13 @@ public class NormalNote : Note
 
     private void Update()
     {
-        
+        if(RhythmGameManager.Instance.isPaused) {
+            return;
+        }
+
+        CheckDestory();
+        UpdatePosition();
+        UpdateTime();
     }
 
     public override void Init(int id, int[] lanes, float time, string lr, bool isPaired)

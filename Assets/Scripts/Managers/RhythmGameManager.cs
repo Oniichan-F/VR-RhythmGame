@@ -21,6 +21,7 @@ public class RhythmGameManager : MonoBehaviour
     public float chartOffset { private set; get; }
 
     // Game State
+    public bool isAutoMode;
     public bool isPaused;
 
 
@@ -30,7 +31,8 @@ public class RhythmGameManager : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        isPaused = true;
+        isAutoMode = false;
+        isPaused   = true;
 
         instance = this;
 

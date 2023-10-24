@@ -47,6 +47,18 @@ public class Note : MonoBehaviour
 
     }
 
+    protected virtual void AutoJudge()
+    {
+        
+    }
+
+    protected virtual void CheckDestory()
+    {
+        if(time < -1f) {
+            Destroy(this.gameObject);
+        }
+    }
+
     public void SetPosition(float pos)
     {
         transform.position = new Vector3(transform.position.x, transform.position.y, pos);

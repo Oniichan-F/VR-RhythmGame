@@ -17,7 +17,13 @@ public class LongChildNote : Note
 
     private void Update()
     {
+        if(RhythmGameManager.Instance.isPaused) {
+            return;
+        }
 
+        CheckDestory();
+        UpdatePosition();
+        UpdateTime();
     }
 
     public void Init(int id, int[] lanes, float time, LongNote parent)

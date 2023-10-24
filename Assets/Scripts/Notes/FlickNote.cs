@@ -17,7 +17,13 @@ public class FlickNote : Note
 
     private void Update()
     {
-        
+        if(RhythmGameManager.Instance.isPaused) {
+            return;
+        }
+
+        CheckDestory();
+        UpdatePosition();
+        UpdateTime();        
     }
 
     public void Init(int id, int[] lanes, float time, string lr, bool isPaired, bool isHead)
