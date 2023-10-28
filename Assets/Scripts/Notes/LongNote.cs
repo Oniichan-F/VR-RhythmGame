@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Deform;
 using General.CONSTS;
 using Unity.VisualScripting;
@@ -11,6 +12,8 @@ public class LongNote : Note
     [SerializeField] private Mesh[] meshes;
     [SerializeField] private List<Material> matsR;
     [SerializeField] private List<Material> matsL;
+    [SerializeField] private List<Material> matsLostR;
+    [SerializeField] private List<Material> matsLostL;
 
     public bool isHead { private set; get; }
     public int[] startLanes { private set; get; }
@@ -43,7 +46,9 @@ public class LongNote : Note
         CheckDestory();
 
         if(!RhythmGameManager.Instance.isAutoMode) {
-
+            if(startTime < JUDGE.THRESH) {
+                Judge();
+            }
         }
         else {
             AutoJudge();
@@ -119,8 +124,83 @@ public class LongNote : Note
 
     protected override void CheckDestory()
     {
-        if(endTime < -1f) {
+        if(startTime < -JUDGE.THRESH) {
+            if(state == (int)LONGNOTE.STATE.inActive) {
+                state = (int)LONGNOTE.STATE.Lost;
+                SetLostMaterials();
+            }   
+        }
+
+        if(endTime < -0.1f) {
             Destroy(this.gameObject);
+        }
+    }
+
+    protected override void Judge()
+    {
+        if(state == (int)LONGNOTE.STATE.inActive) {
+            if(isHead) {
+                if(Mathf.Abs(startTime) < JUDGE.JUST) {
+                    if(OVRInput.GetDown(OVRInput.Button.One) && startLanes.Contains(oculusInputManager.rLane)) {
+                        Debug.Log(id + ": Just(R) " + time);
+                        noteEffectManager.PlaySE(seType);
+                        state = (int)LONGNOTE.STATE.Active;
+                    }
+                    else if(OVRInput.GetDown(OVRInput.Button.Three) && startLanes.Contains(oculusInputManager.lLane)) {
+                        Debug.Log(id + ": Just(L) " + time);
+                        noteEffectManager.PlaySE(seType);
+                        state = (int)LONGNOTE.STATE.Active;
+                    }
+                }
+                else if(Mathf.Abs(startTime) < JUDGE.GREAT) {
+                    if(OVRInput.GetDown(OVRInput.Button.One) && startLanes.Contains(oculusInputManager.rLane)) {
+                        Debug.Log(id + ": Great(R) " + time);
+                        noteEffectManager.PlaySE(seType);
+                        state = (int)LONGNOTE.STATE.Active;
+                    }
+                    else if(OVRInput.GetDown(OVRInput.Button.Three) && startLanes.Contains(oculusInputManager.lLane)) {
+                        Debug.Log(id + ": Great(L) " + time);
+                        noteEffectManager.PlaySE(seType);
+                        state = (int)LONGNOTE.STATE.Active;
+                    }
+                }
+                else if(Mathf.Abs(startTime) < JUDGE.GOOD) {
+                    if(OVRInput.GetDown(OVRInput.Button.One) && startLanes.Contains(oculusInputManager.rLane)) {
+                        Debug.Log(id + ": Good(R) " + time);
+                        noteEffectManager.PlaySE(seType);
+                        state = (int)LONGNOTE.STATE.Active;
+                    }
+                    else if(OVRInput.GetDown(OVRInput.Button.Three) && startLanes.Contains(oculusInputManager.lLane)) {
+                        Debug.Log(id + ": Good(L) " + time);
+                        noteEffectManager.PlaySE(seType);
+                        state = (int)LONGNOTE.STATE.Active;
+                    }
+                }
+                else {
+                    if(OVRInput.GetDown(OVRInput.Button.One) && startLanes.Contains(oculusInputManager.rLane)) {
+                        Debug.Log(id + ": Miss(R) " + time);
+                        state = (int)LONGNOTE.STATE.Lost;
+                        SetLostMaterials();
+                    }
+                    else if(OVRInput.GetDown(OVRInput.Button.Three) && startLanes.Contains(oculusInputManager.lLane)) {
+                        Debug.Log(id + ": Miss(L) " + time);
+                        state = (int)LONGNOTE.STATE.Lost;
+                        SetLostMaterials();
+                    }
+                }
+            }
+            else {
+                if(startTime < 0f) {
+                    if(OVRInput.Get(OVRInput.Button.One) && startLanes.Contains(oculusInputManager.rLane)) {
+                        Debug.Log(id + ": Hold");
+                        state = (int)LONGNOTE.STATE.Active;
+                    }
+                    else if(OVRInput.Get(OVRInput.Button.Three) && startLanes.Contains(oculusInputManager.lLane)) {
+                        Debug.Log(id + ": Hold");
+                        state = (int)LONGNOTE.STATE.Active;
+                    }
+                }
+            }
         }
     }
 
@@ -133,6 +213,16 @@ public class LongNote : Note
                     state = (int)LONGNOTE.STATE.Active;
                 }
             }
+        }
+    }
+
+    public void SetLostMaterials()
+    {
+        if(lr == "R") {
+            mesh.GetComponent<MeshRenderer>().SetMaterials(matsLostR);
+        }
+        else if(lr == "L") {
+            mesh.GetComponent<MeshRenderer>().SetMaterials(matsLostL);
         }
     }
 }

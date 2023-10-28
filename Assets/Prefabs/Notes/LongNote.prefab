@@ -122,6 +122,12 @@ MonoBehaviour:
   matsL:
   - {fileID: 2100000, guid: 8b70fe980026a54418b5652fd1955804, type: 2}
   - {fileID: 2100000, guid: 51b1ff61ebe7cd14e887ff5a679de37a, type: 2}
+  matsLostR:
+  - {fileID: 2100000, guid: 9802ccec9747a9c46a3686ec2b5d5563, type: 2}
+  - {fileID: 2100000, guid: ce04d43cb8b535746a321b8aa8a1256e, type: 2}
+  matsLostL:
+  - {fileID: 2100000, guid: a942dddf16698ea40b92947b14add44e, type: 2}
+  - {fileID: 2100000, guid: 51b1ff61ebe7cd14e887ff5a679de37a, type: 2}
   state: 0
 --- !u!1001 &293254776071172631
 PrefabInstance:
