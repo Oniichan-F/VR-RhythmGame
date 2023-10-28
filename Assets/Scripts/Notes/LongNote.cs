@@ -69,7 +69,7 @@ public class LongNote : Note
         this.isHead = (options[0] == 0) ? true : false;
         this.state = (int)LONGNOTE.STATE.inActive;
 
-        transform.localScale = new Vector3(1f, 1f, length*speed*1.25f);
+        transform.localScale = new Vector3(1f, 1f, length*speed*1.25f*(60f/RhythmGameManager.Instance.BPM));
 
         this.type   = (int)NOTE.TYPE.LongNote;
         this.seType = (int)SE.NOTE_SE.HitStandard; // TEST

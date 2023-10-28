@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -15,6 +16,7 @@ public class Note : MonoBehaviour
 
     protected GameObject mesh;
     protected NoteEffectManager noteEffectManager;
+    protected OculusInputManager oculusInputManager;
     protected int type;
     protected int seType;
 
@@ -30,6 +32,7 @@ public class Note : MonoBehaviour
         this.speed    = RhythmGameManager.Instance.noteSpeed;
         mesh = transform.Find("Mesh").gameObject;
         noteEffectManager = GameObject.Find("NoteEffectManager").GetComponent<NoteEffectManager>();
+        oculusInputManager = GameObject.Find("InputManager").GetComponent<OculusInputManager>();
     }
 
     protected virtual void SetMesh()
@@ -49,7 +52,7 @@ public class Note : MonoBehaviour
 
     protected virtual void Judge()
     {
-
+        
     }
 
     protected virtual void AutoJudge()

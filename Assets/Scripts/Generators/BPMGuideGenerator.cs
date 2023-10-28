@@ -37,7 +37,7 @@ public class BPMGuideGenerator : MonoBehaviour
 
         GameObject BPMGuideParent = MasterScaler.transform.Find("BPMGuides").gameObject;
 
-        for(int i=4; i<maxBeatNum*4; i+=4) {
+        for(int i=16; i<maxBeatNum*16; i+=16) {
             float pos = calcPosition(i);
             GameObject BPMGuideObj = Instantiate(
                 BPMGuide,

@@ -20,7 +20,7 @@ public class StageScaler : MonoBehaviour
     private void SetScaler() {
         void setScale(Vector3 rPos, Vector3 lPos) {
             float r = Mathf.Abs(rPos.x) + Mathf.Abs(lPos.x) * 100f * scaleFactor;
-            masterScaler.localScale = new Vector3(r, r, r);
+            masterScaler.localScale = new Vector3(r, r, masterScaler.localScale.z);
             OffsetManager.Instance.stageScaleOffset = r / 100f;
             Debug.Log("Set Scale: " + r);
         }

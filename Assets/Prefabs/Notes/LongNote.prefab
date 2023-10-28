@@ -117,11 +117,12 @@ MonoBehaviour:
   - {fileID: 1279939569414319393, guid: e2712ab7b2bd0554ab16d08b5b52a47f, type: 3}
   - {fileID: -4816840569672323937, guid: 0c75c972ee6555446b20eb9c96ae8362, type: 3}
   matsR:
-  - {fileID: 2100000, guid: 70c0375faa5f50348b33f24e5bf57f51, type: 2}
-  - {fileID: 2100000, guid: d743e5f7a413b4b49b5933b1ac9c90d2, type: 2}
+  - {fileID: 2100000, guid: b707bb6b56f6cf74fa282fd901cd710d, type: 2}
+  - {fileID: 2100000, guid: ce04d43cb8b535746a321b8aa8a1256e, type: 2}
   matsL:
-  - {fileID: 2100000, guid: 70c0375faa5f50348b33f24e5bf57f51, type: 2}
-  - {fileID: 2100000, guid: 879001f3ccbe84147ae9effc0faed9f0, type: 2}
+  - {fileID: 2100000, guid: 8b70fe980026a54418b5652fd1955804, type: 2}
+  - {fileID: 2100000, guid: 51b1ff61ebe7cd14e887ff5a679de37a, type: 2}
+  state: 0
 --- !u!1001 &293254776071172631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -195,6 +196,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 89c8e1d17af38d74986f4129f7064583,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 27b6afe48f8308d4887508c38789b0ba, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 89c8e1d17af38d74986f4129f7064583,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 562f861fd6ec5234cae8895895ef7206, type: 2}
     - target: {fileID: -5754084199372789682, guid: 89c8e1d17af38d74986f4129f7064583,
         type: 3}
       propertyPath: m_Mesh

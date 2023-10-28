@@ -28,11 +28,6 @@ public class OculusInputManager : MonoBehaviour
 
     private void Update()
     {
-        // Check Pause
-        if(OVRInput.GetDown(OVRInput.Button.Two)) {
-            RhythmGameManager.Instance.isPaused ^= true;
-        }
-
         // Local Position -> Global Position
         Vector3 localRPos = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch);
         Vector3 localLPos = OVRInput.GetLocalControllerPosition(OVRInput.Controller.LTouch);
