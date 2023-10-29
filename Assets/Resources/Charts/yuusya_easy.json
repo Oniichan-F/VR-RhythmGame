@@ -1,316 +1,39 @@
 {
 	"BPM": 208,
 	"LPB": 4,
-	"offset": 80,
+	"offset": 100,
 	"noteData": [
 		{
 			"type": 1,
-			"lanes": [24,25,26,27,28,29,30,31],
-			"timing": 32,
+			"lanes": [12,13,14,15,16,17,18,19],
+			"timing": 40,
 			"lr": "",
 			"pair": false,
 			"options": [],
 			"children": []
 		},
-        {
-			"type": 1,
-			"lanes": [8,9,10,11,12,13,14,15],
-			"timing": 48,
-			"lr": "",
-			"pair": false,
-			"options": [],
-			"children": []
-		},
-        {
-			"type": 1,
-			"lanes": [0,1,2,3,4,5,6,7],
-			"timing": 64,
-			"lr": "",
-			"pair": false,
-			"options": [],
-			"children": []
-		},
-        {
-			"type": 1,
-			"lanes": [16,17,18,19,20,21,22,23],
-			"timing": 80,
-			"lr": "",
-			"pair": false,
-			"options": [],
-			"children": []
-		},
-        {
+		{
 			"type": 1,
 			"lanes": [28,29,30,31,0,1,2,3],
-			"timing": 96,
+			"timing": 56,
 			"lr": "",
 			"pair": false,
 			"options": [],
 			"children": []
 		},
-        {
+		{
 			"type": 1,
 			"lanes": [12,13,14,15,16,17,18,19],
-			"timing": 112,
+			"timing": 72,
 			"lr": "",
 			"pair": false,
 			"options": [],
 			"children": []
 		},
-        {
+		{
 			"type": 1,
-			"lanes": [4,5,6,7,8,9,10,11],
-			"timing": 128,
-			"lr": "",
-			"pair": false,
-			"options": [],
-			"children": []
-		},
-        {
-			"type": 1,
-			"lanes": [20,21,22,23,24,25,26,27],
-			"timing": 144,
-			"lr": "",
-			"pair": false,
-			"options": [],
-			"children": []
-		},
-
-        {
-			"type": 10,
-			"lanes": [8,9,10,11,12,13,14,15],
-			"timing": 152,
-			"lr": "R",
-			"pair": false,
-			"options": [0,-1,0],
-			"children": [
-                {
-                    "type": 12,
-                    "lanes": [0,1,2,3,4,5,6,7],
-                    "timing": 164,
-                    "lr": "",
-                    "pair": false,
-                    "options": [],
-                    "children": []
-                },
-                {
-                    "type": 12,
-                    "lanes": [24,25,26,27,28,29,30,31],
-                    "timing": 176,
-                    "lr": "",
-                    "pair": false,
-                    "options": [],
-                    "children": []
-                },
-                {
-                    "type": 11,
-                    "lanes": [24,25,26,27,28,29,30,31],
-                    "timing": 176,
-                    "lr": "",
-                    "pair": false,
-                    "options": [],
-                    "children": []
-                }
-            ]
-		},
-        {
-			"type": 1,
-			"lanes": [8,9,10,11,12,13,14,15],
-			"timing": 176,
-			"lr": "",
-			"pair": false,
-			"options": [],
-			"children": []
-		},
-        {
-			"type": 10,
-			"lanes": [0,1,2,3,4,5,6,7],
-			"timing": 184,
-			"lr": "L",
-			"pair": false,
-			"options": [0,1,0],
-			"children": [
-                {
-                    "type": 12,
-                    "lanes": [8,9,10,11,12,13,14,15],
-                    "timing": 196,
-                    "lr": "",
-                    "pair": false,
-                    "options": [],
-                    "children": []
-                },
-                {
-                    "type": 12,
-                    "lanes": [16,17,18,19,20,21,22,23],
-                    "timing": 208,
-                    "lr": "",
-                    "pair": false,
-                    "options": [],
-                    "children": []
-                },
-                {
-                    "type": 11,
-                    "lanes": [16,17,18,19,20,21,22,23],
-                    "timing": 208,
-                    "lr": "",
-                    "pair": false,
-                    "options": [],
-                    "children": []
-                }
-            ]
-		},
-        {
-			"type": 1,
-			"lanes": [0,1,2,3,4,5,6,7],
-			"timing": 208,
-			"lr": "",
-			"pair": false,
-			"options": [],
-			"children": []
-		},
-        {
-			"type": 10,
 			"lanes": [28,29,30,31,0,1,2,3],
-			"timing": 216,
-			"lr": "R",
-			"pair": false,
-			"options": [0,-1,1],
-			"children": [
-                {
-                    "type": 12,
-                    "lanes": [19,20,21,22,23,24,25,26],
-                    "timing": 224,
-                    "lr": "",
-                    "pair": false,
-                    "options": [],
-                    "children": []
-                },
-                {
-                    "type": 12,
-                    "lanes": [7,8,9,10,11,12,13,14],
-                    "timing": 232,
-                    "lr": "",
-                    "pair": false,
-                    "options": [],
-                    "children": []
-                },
-                {
-                    "type": 12,
-                    "lanes": [28,29,30,31,0,1,2,3],
-                    "timing": 240,
-                    "lr": "",
-                    "pair": false,
-                    "options": [],
-                    "children": []
-                },
-                {
-                    "type": 11,
-                    "lanes": [28,29,30,31,0,1,2,3],
-                    "timing": 240,
-                    "lr": "",
-                    "pair": false,
-                    "options": [],
-                    "children": []
-                }
-            ]
-		},
-        {
-			"type": 10,
-			"lanes": [4,5,6,7,8,9,10,11],
-			"timing": 248,
-			"lr": "L",
-			"pair": false,
-			"options": [0,1,1],
-			"children": [
-                {
-                    "type": 11,
-                    "lanes": [4,5,6,7,8,9,10,11],
-                    "timing": 272,
-                    "lr": "",
-                    "pair": false,
-                    "options": [],
-                    "children": []
-                },
-                {
-                    "type": 12,
-                    "lanes": [4,5,6,7,8,9,10,11],
-                    "timing": 272,
-                    "lr": "",
-                    "pair": false,
-                    "options": [],
-                    "children": []
-                }
-
-            ]
-		},
-
-        {
-			"type": 2,
-			"lanes": [25,26,27,28,29,30],
-			"timing": 280,
-			"lr": "",
-			"pair": false,
-			"options": [],
-			"children": []
-		},
-        {
-			"type": 2,
-			"lanes": [24,25,26,27,28,29],
-			"timing": 281,
-			"lr": "",
-			"pair": false,
-			"options": [],
-			"children": []
-		},
-        {
-			"type": 2,
-			"lanes": [23,24,25,26,27,28],
-			"timing": 282,
-			"lr": "",
-			"pair": false,
-			"options": [],
-			"children": []
-		},
-        {
-			"type": 2,
-			"lanes": [22,23,24,25,26,27],
-			"timing": 283,
-			"lr": "",
-			"pair": false,
-			"options": [],
-			"children": []
-		},
-        {
-			"type": 2,
-			"lanes": [21,21,22,23,24,25,26],
-			"timing": 284,
-			"lr": "",
-			"pair": false,
-			"options": [],
-			"children": []
-		},
-        {
-			"type": 2,
-			"lanes": [20,21,22,23,24,25],
-			"timing": 285,
-			"lr": "",
-			"pair": false,
-			"options": [],
-			"children": []
-		},
-        {
-			"type": 2,
-			"lanes": [19,20,21,22,23,24],
-			"timing": 286,
-			"lr": "",
-			"pair": false,
-			"options": [],
-			"children": []
-		},
-        {
-			"type": 2,
-			"lanes": [18,19,20,21,22,23],
-			"timing": 287,
+			"timing": 88,
 			"lr": "",
 			"pair": false,
 			"options": [],

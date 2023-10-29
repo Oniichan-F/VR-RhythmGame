@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TrackingSpace: {fileID: 1601780858}
-  baseThresh: 0.6
+  baseThresh: 0.5
   oppositeCorrection: 0.5
 --- !u!4 &106403727 stripped
 Transform:

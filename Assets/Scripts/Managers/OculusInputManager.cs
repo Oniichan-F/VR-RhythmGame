@@ -46,7 +46,7 @@ public class OculusInputManager : MonoBehaviour
 
         // Polar Positon -> Lane
         rLane = CalcLane(polarRPos, lr:"R");
-        lLane = CalcLane(polarLPos, lr:"L");
+        lLane = CalcLane(polarLPos, lr:"L");   
     }
 
     private int CalcLane(Polar polar, string lr)
