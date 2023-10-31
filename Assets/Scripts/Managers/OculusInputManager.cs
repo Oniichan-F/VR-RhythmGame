@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 using General.Coordinate;
+using General.CONSTS;
 
 
 public class OculusInputManager : MonoBehaviour
 {
     [SerializeField] Transform TrackingSpace;
-    
+
+
     // パネルの基礎反応感度
     [SerializeField] float baseThresh = 0.6f;
     // 反対側パネルの反応感度緩和補正
@@ -24,13 +25,30 @@ public class OculusInputManager : MonoBehaviour
     public Polar polarLPos { private set; get; }
     public int rLane { private set; get; }
     public int lLane { private set; get; }
+    public int rImpact { private set; get; } // 0=default, 1=external, -1=internal
+    public int lImpact { private set; get; } // 0=default, 1=external, -1=internal
 
+
+    private OVRInput.Controller rController;
+    private OVRInput.Controller lController;
+
+    private float rPrevRadius;
+    private float lPrevRadius;
+
+
+    private void Start()
+    {
+        rController = OVRInput.Controller.RTouch;
+        lController = OVRInput.Controller.LTouch;
+        rPrevRadius = 0f;
+        lPrevRadius = 0f;
+    }
 
     private void Update()
     {
         // Local Position -> Global Position
-        Vector3 localRPos = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch);
-        Vector3 localLPos = OVRInput.GetLocalControllerPosition(OVRInput.Controller.LTouch);
+        Vector3 localRPos = OVRInput.GetLocalControllerPosition(rController);
+        Vector3 localLPos = OVRInput.GetLocalControllerPosition(lController);
         globalRPos = TrackingSpace.TransformPoint(localRPos);
         globalLPos = TrackingSpace.TransformPoint(localLPos);
 
@@ -46,7 +64,13 @@ public class OculusInputManager : MonoBehaviour
 
         // Polar Positon -> Lane
         rLane = CalcLane(polarRPos, lr:"R");
-        lLane = CalcLane(polarLPos, lr:"L");   
+        lLane = CalcLane(polarLPos, lr:"L");
+
+        // Impact
+        rImpact = GetImpact(polarRPos.r, rPrevRadius);
+        lImpact = GetImpact(polarLPos.r, lPrevRadius);
+        rPrevRadius = polarRPos.r;
+        lPrevRadius = polarLPos.r;
     }
 
     private int CalcLane(Polar polar, string lr)
@@ -90,5 +114,21 @@ public class OculusInputManager : MonoBehaviour
         }
 
         return lane;
+    }
+
+    private int GetImpact(float current, float prev)
+    {
+        int impact = (int)INPUT.IMPACT.None;
+
+        // External
+        if((current - prev) > 0.02f) {
+            impact = (int)INPUT.IMPACT.External;
+        }
+        // Internal
+        else if((prev - current) > 0.02f) {
+            impact = (int)INPUT.IMPACT.Internal;
+        }
+
+        return impact;
     }
 }

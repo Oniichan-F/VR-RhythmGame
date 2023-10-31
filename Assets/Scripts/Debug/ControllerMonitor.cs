@@ -20,9 +20,11 @@ public class ControllerMonitor : MonoBehaviour
     {
         rText.text = "RTouch: r=" + oculusInputManager.polarRPos.r + 
                           " / Θ=" + oculusInputManager.polarRPos.theta + 
-                          " / lane=" + oculusInputManager.rLane;
+                          " / lane=" + oculusInputManager.rLane +
+                          " / imp=" + oculusInputManager.rImpact;
         lText.text = "LTouch: r=" + oculusInputManager.polarLPos.r + 
                           " / Θ=" + oculusInputManager.polarLPos.theta + 
-                          " / lane=" + oculusInputManager.lLane;
+                          " / lane=" + oculusInputManager.lLane +
+                          " / imp=" + oculusInputManager.lImpact;
     }
 }
