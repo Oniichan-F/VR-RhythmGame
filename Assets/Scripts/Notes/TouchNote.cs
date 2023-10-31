@@ -62,19 +62,25 @@ public class TouchNote : Note
 
     protected override void Judge()
     {
-        if(OVRInput.Get(OVRInput.Button.One) && lanes.Contains(oculusInputManager.rLane)) {
-            Debug.Log(id + ": Just(R) " + time);
+        if(lr == "R" && lanes.Contains(oculusInputManager.rLane)) {
+            Debug.Log(id + ": Just " + time);
             noteEffectManager.PlaySE(type);
-            Destroy(this.gameObject);
+            Destroy(this.gameObject);                
         }
-        else if(OVRInput.Get(OVRInput.Button.Three) && lanes.Contains(oculusInputManager.lLane)) {
-            Debug.Log(id + ": Just(L) " + time);
+        else if(lr == "L" && lanes.Contains(oculusInputManager.lLane)) {
+            Debug.Log(id + ": Just " + time);
             noteEffectManager.PlaySE(type);
-            Destroy(this.gameObject);
+            Destroy(this.gameObject);                
+        }
+        else if((lr == "" && lanes.Contains(oculusInputManager.rLane)) ||
+                (lr == "" && lanes.Contains(oculusInputManager.lLane))) {
+            Debug.Log(id + ": Just " + time);
+            noteEffectManager.PlaySE(type);
+            Destroy(this.gameObject);                  
         }
         else {
-            Debug.Log(id + ": Miss");
-            Destroy(this.gameObject);
+            Debug.Log(id + ": Lost " + time);
+            Destroy(this.gameObject);              
         }
     }
 }
