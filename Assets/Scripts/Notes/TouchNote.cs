@@ -7,11 +7,15 @@ using UnityEngine;
 public class TouchNote : Note
 {
     [SerializeField] private Mesh[] meshes;
+    [SerializeField] private List<Material> matsPair;
 
+    public int size { private set; get; }
+    public bool isPaired { private set; get; }
 
     private void Start()
     {
         SetMesh();
+        SetMaterial();
     }
 
     private void Update()
@@ -35,13 +39,13 @@ public class TouchNote : Note
         UpdateTime();
     }
 
-    public override void Init(int id, int[] lanes, float time, string lr, bool isPaired)
+    public void Init(int id, int[] lanes, float time, string lr, int[] options)
     {
-        base.Init(id, lanes, time, lr, isPaired);
-        this.size = lanes.Length / 2;
+        base.Init(id, lanes, time, lr);
 
-        this.type   = (int)NOTE.TYPE.TouchNote;
-        this.seType = (int)SE.NOTE_SE.HitWeak;
+        this.type = (int)NOTE.TYPE.TouchNote;
+        this.size = lanes.Length / 2;
+        this.isPaired = options[0] == 0 ? true : false;
     }
 
     protected override void SetMesh()
@@ -49,16 +53,23 @@ public class TouchNote : Note
         mesh.GetComponent<MeshFilter>().mesh = meshes[size-1];
     }
 
+    private void SetMaterial()
+    {
+        if(isPaired) {
+            mesh.GetComponent<MeshRenderer>().SetMaterials(matsPair);
+        }
+    }
+
     protected override void Judge()
     {
         if(OVRInput.Get(OVRInput.Button.One) && lanes.Contains(oculusInputManager.rLane)) {
             Debug.Log(id + ": Just(R) " + time);
-            noteEffectManager.PlaySE(seType);
+            noteEffectManager.PlaySE(type);
             Destroy(this.gameObject);
         }
         else if(OVRInput.Get(OVRInput.Button.Three) && lanes.Contains(oculusInputManager.lLane)) {
             Debug.Log(id + ": Just(L) " + time);
-            noteEffectManager.PlaySE(seType);
+            noteEffectManager.PlaySE(type);
             Destroy(this.gameObject);
         }
         else {

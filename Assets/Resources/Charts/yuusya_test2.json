@@ -5,146 +5,132 @@
 	"noteData": [
 		{
 			"type": 2,
-			"lanes": [0,1],
+			"lanes": [0,1,2,3],
 			"timing": 32,
 			"lr": "",
-			"pair": false,
-			"options": [],
+			"options": [1],
 			"children": []
 		},
 		{
 			"type": 2,
-			"lanes": [0,1,2,3],
+			"lanes": [1,2,3,4],
+			"timing": 33,
+			"lr": "",
+			"options": [1],
+			"children": []
+		},
+		{
+			"type": 2,
+			"lanes": [2,3,4,5],
+			"timing": 34,
+			"lr": "",
+			"options": [1],
+			"children": []
+		},
+		{
+			"type": 2,
+			"lanes": [3,4,5,6],
+			"timing": 35,
+			"lr": "",
+			"options": [1],
+			"children": []
+		},
+
+		{
+			"type": 2,
+			"lanes": [16,17,18,19],
 			"timing": 48,
 			"lr": "",
-			"pair": false,
-			"options": [],
+			"options": [1],
 			"children": []
 		},
 		{
 			"type": 2,
-			"lanes": [0,1,2,3,4,5],
+			"lanes": [17,18,19,20],
+			"timing": 49,
+			"lr": "",
+			"options": [1],
+			"children": []
+		},
+		{
+			"type": 2,
+			"lanes": [18,19,20,21],
+			"timing": 50,
+			"lr": "",
+			"options": [1],
+			"children": []
+		},
+		{
+			"type": 2,
+			"lanes": [19,20,21,22],
+			"timing": 51,
+			"lr": "",
+			"options": [1],
+			"children": []
+		},
+
+		{
+			"type": 2,
+			"lanes": [28,29,30,31,0,1,2,3],
 			"timing": 64,
 			"lr": "",
-			"pair": false,
-			"options": [],
+			"options": [0],
 			"children": []
 		},
 		{
 			"type": 2,
-			"lanes": [0,1,2,3,4,5,6,7],
-			"timing": 80,
+			"lanes": [28,29,30,31,0,1,2,3],
+			"timing": 65,
 			"lr": "",
-			"pair": false,
-			"options": [],
+			"options": [0],
 			"children": []
 		},
 		{
 			"type": 2,
-			"lanes": [0,1,2,3,4,5,6,7,8,9],
-			"timing": 96,
+			"lanes": [28,29,30,31,0,1,2,3],
+			"timing": 66,
 			"lr": "",
-			"pair": false,
-			"options": [],
+			"options": [0],
 			"children": []
 		},
 		{
 			"type": 2,
-			"lanes": [0,1,2,3,4,5,6,7,8,9,10,11],
-			"timing": 112,
+			"lanes": [28,29,30,31,0,1,2,3],
+			"timing": 67,
 			"lr": "",
-			"pair": false,
-			"options": [],
+			"options": [0],
 			"children": []
 		},
 		{
 			"type": 2,
-			"lanes": [0,1,2,3,4,5,6,7,8,9,10,11,12,13],
-			"timing": 128,
+			"lanes": [12,13,14,15,16,17,18,19],
+			"timing": 64,
 			"lr": "",
-			"pair": false,
-			"options": [],
+			"options": [0],
 			"children": []
 		},
 		{
 			"type": 2,
-			"lanes": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
-			"timing": 144,
+			"lanes": [12,13,14,15,16,17,18,19],
+			"timing": 65,
 			"lr": "",
-			"pair": false,
-			"options": [],
+			"options": [0],
 			"children": []
 		},
 		{
 			"type": 2,
-			"lanes": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17],
-			"timing": 160,
+			"lanes": [12,13,14,15,16,17,18,19],
+			"timing": 66,
 			"lr": "",
-			"pair": false,
-			"options": [],
+			"options": [0],
 			"children": []
 		},
 		{
 			"type": 2,
-			"lanes": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19],
-			"timing": 176,
+			"lanes": [12,13,14,15,16,17,18,19],
+			"timing": 67,
 			"lr": "",
-			"pair": false,
-			"options": [],
-			"children": []
-		},
-		{
-			"type": 2,
-			"lanes": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21],
-			"timing": 192,
-			"lr": "",
-			"pair": false,
-			"options": [],
-			"children": []
-		},
-		{
-			"type": 2,
-			"lanes": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],
-			"timing": 208,
-			"lr": "",
-			"pair": false,
-			"options": [],
-			"children": []
-		},
-		{
-			"type": 2,
-			"lanes": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],
-			"timing": 224,
-			"lr": "",
-			"pair": false,
-			"options": [],
-			"children": []
-		},
-		{
-			"type": 2,
-			"lanes": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27],
-			"timing": 240,
-			"lr": "",
-			"pair": false,
-			"options": [],
-			"children": []
-		},
-		{
-			"type": 2,
-			"lanes": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29],
-			"timing": 256,
-			"lr": "",
-			"pair": false,
-			"options": [],
-			"children": []
-		},
-		{
-			"type": 2,
-			"lanes": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
-			"timing": 272,
-			"lr": "",
-			"pair": false,
-			"options": [],
+			"options": [0],
 			"children": []
 		}
 	]

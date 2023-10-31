@@ -22,17 +22,20 @@ public class NoteEffectManager : MonoBehaviour
     public void PlaySE(int id)
     {
         switch(id) {
-            case 0:
+            case 1: // Normal
                 audioSource.PlayOneShot(hitStandard);
                 break;
-            case 1:
+            case 2: // Touch
                 audioSource.PlayOneShot(hitWeak);
                 break;
-            case 2:
+            case 3: // Flick
                 audioSource.PlayOneShot(hitStrong);
                 break;
-            case 3:
-                audioSource.PlayOneShot(hitLong);
+            case 10: // Long
+                audioSource.PlayOneShot(hitStandard);
+                break;
+            case 12: // LongChild
+                audioSource.PlayOneShot(hitWeak);
                 break;
             default:
                 break;                              

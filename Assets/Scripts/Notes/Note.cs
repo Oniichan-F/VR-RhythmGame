@@ -7,29 +7,30 @@ using UnityEngine;
 public class Note : MonoBehaviour
 {
     public int id { protected set; get; }
+    public int type { protected set; get;}
     public int[] lanes { protected set; get; }
-    public int size { protected set; get; }
     public float time { protected set; get; }
-    public float speed { protected set; get; }
     public string lr { protected set; get; }
-    public bool isPaired { protected set; get; }
+
+    public float speed { protected set; get; }
+    
 
     protected GameObject mesh;
     protected NoteEffectManager noteEffectManager;
     protected OculusInputManager oculusInputManager;
-    protected int type;
-    protected int seType;
 
 
-    public virtual void Init(int id, int[] lanes, float time, string lr, bool isPaired)
+
+    public virtual void Init(int id, int[] lanes, float time, string lr)
     {
-        this.id       = id;
-        this.lanes    = lanes;
-        this.time     = time;
-        this.lr       = lr;
-        this.isPaired = isPaired;
+        this.id    = id;
+        this.type  = -1;
+        this.lanes = lanes;
+        this.time  = time;
+        this.lr    = lr;
         
         this.speed    = RhythmGameManager.Instance.noteSpeed;
+
         mesh = transform.Find("Mesh").gameObject;
         noteEffectManager = GameObject.Find("NoteEffectManager").GetComponent<NoteEffectManager>();
         oculusInputManager = GameObject.Find("InputManager").GetComponent<OculusInputManager>();
@@ -58,7 +59,7 @@ public class Note : MonoBehaviour
     protected virtual void AutoJudge()
     {
         if(time < 0f) {
-            noteEffectManager.PlaySE(seType);
+            noteEffectManager.PlaySE(type);
             Destroy(this.gameObject);
         }
     }

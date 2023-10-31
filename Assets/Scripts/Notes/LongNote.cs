@@ -15,11 +15,11 @@ public class LongNote : Note
     [SerializeField] private List<Material> matsLostR;
     [SerializeField] private List<Material> matsLostL;
 
-    public bool isHead { private set; get; }
     public int[] startLanes { private set; get; }
     public int[] endLanes { private set; get; }
     public float startTime { private set; get; }
     public float endTime { private set; get; }
+    public int size { private set; get; }
     public float length { private set; get; }
 
     public int state;
@@ -60,7 +60,9 @@ public class LongNote : Note
 
     public void Init(int id, string lr, int[] startLanes, int[] endLanes, float startTime, float endTime, float length, int[] options)
     {
-        base.Init(id, null, 0f, lr, false);
+        base.Init(id, null, 0f, lr);
+        
+        this.type   = (int)NOTE.TYPE.LongNote;
         this.startLanes = startLanes;
         this.endLanes   = endLanes;
         this.startTime  = startTime;
@@ -68,16 +70,12 @@ public class LongNote : Note
         this.length     = length;
         this.size       = startLanes.Length / 2;
 
-        this.rotDirection = options[1];
-        this.numRotation  = options[2];
+        this.rotDirection = options[0];
+        this.numRotation  = options[1];
 
-        this.isHead = (options[0] == 0) ? true : false;
         this.state = (int)LONGNOTE.STATE.inActive;
 
         transform.localScale = new Vector3(1f, 1f, length*speed*1.25f*(60f/RhythmGameManager.Instance.BPM));
-
-        this.type   = (int)NOTE.TYPE.LongNote;
-        this.seType = (int)SE.NOTE_SE.HitStandard; // TEST
     }
 
     protected override void SetMesh()
@@ -139,79 +137,25 @@ public class LongNote : Note
     protected override void Judge()
     {
         if(state == (int)LONGNOTE.STATE.inActive) {
-            if(isHead) {
-                if(Mathf.Abs(startTime) < JUDGE.JUST) {
-                    if(OVRInput.GetDown(OVRInput.Button.One) && startLanes.Contains(oculusInputManager.rLane)) {
-                        Debug.Log(id + ": Just(R) " + time);
-                        noteEffectManager.PlaySE(seType);
-                        state = (int)LONGNOTE.STATE.Active;
-                    }
-                    else if(OVRInput.GetDown(OVRInput.Button.Three) && startLanes.Contains(oculusInputManager.lLane)) {
-                        Debug.Log(id + ": Just(L) " + time);
-                        noteEffectManager.PlaySE(seType);
-                        state = (int)LONGNOTE.STATE.Active;
-                    }
+            if(startTime < 0f) {
+                if(OVRInput.Get(OVRInput.Button.One) && startLanes.Contains(oculusInputManager.rLane)) {
+                    Debug.Log(id + ": Hold");
+                    state = (int)LONGNOTE.STATE.Active;
                 }
-                else if(Mathf.Abs(startTime) < JUDGE.GREAT) {
-                    if(OVRInput.GetDown(OVRInput.Button.One) && startLanes.Contains(oculusInputManager.rLane)) {
-                        Debug.Log(id + ": Great(R) " + time);
-                        noteEffectManager.PlaySE(seType);
-                        state = (int)LONGNOTE.STATE.Active;
-                    }
-                    else if(OVRInput.GetDown(OVRInput.Button.Three) && startLanes.Contains(oculusInputManager.lLane)) {
-                        Debug.Log(id + ": Great(L) " + time);
-                        noteEffectManager.PlaySE(seType);
-                        state = (int)LONGNOTE.STATE.Active;
-                    }
+                else if(OVRInput.Get(OVRInput.Button.Three) && startLanes.Contains(oculusInputManager.lLane)) {
+                    Debug.Log(id + ": Hold");
+                    state = (int)LONGNOTE.STATE.Active;
                 }
-                else if(Mathf.Abs(startTime) < JUDGE.GOOD) {
-                    if(OVRInput.GetDown(OVRInput.Button.One) && startLanes.Contains(oculusInputManager.rLane)) {
-                        Debug.Log(id + ": Good(R) " + time);
-                        noteEffectManager.PlaySE(seType);
-                        state = (int)LONGNOTE.STATE.Active;
-                    }
-                    else if(OVRInput.GetDown(OVRInput.Button.Three) && startLanes.Contains(oculusInputManager.lLane)) {
-                        Debug.Log(id + ": Good(L) " + time);
-                        noteEffectManager.PlaySE(seType);
-                        state = (int)LONGNOTE.STATE.Active;
-                    }
-                }
-                else {
-                    if(OVRInput.GetDown(OVRInput.Button.One) && startLanes.Contains(oculusInputManager.rLane)) {
-                        Debug.Log(id + ": Miss(R) " + time);
-                        state = (int)LONGNOTE.STATE.Lost;
-                        SetLostMaterials();
-                    }
-                    else if(OVRInput.GetDown(OVRInput.Button.Three) && startLanes.Contains(oculusInputManager.lLane)) {
-                        Debug.Log(id + ": Miss(L) " + time);
-                        state = (int)LONGNOTE.STATE.Lost;
-                        SetLostMaterials();
-                    }
-                }
-            }
-            else {
-                if(startTime < 0f) {
-                    if(OVRInput.Get(OVRInput.Button.One) && startLanes.Contains(oculusInputManager.rLane)) {
-                        Debug.Log(id + ": Hold");
-                        state = (int)LONGNOTE.STATE.Active;
-                    }
-                    else if(OVRInput.Get(OVRInput.Button.Three) && startLanes.Contains(oculusInputManager.lLane)) {
-                        Debug.Log(id + ": Hold");
-                        state = (int)LONGNOTE.STATE.Active;
-                    }
-                }
-            }
+            }   
         }
     }
 
     protected override void AutoJudge()
     {
         if(state == (int)LONGNOTE.STATE.inActive) {
-            if(isHead) {
-                if(startTime < 0f) {
-                    noteEffectManager.PlaySE(seType);
-                    state = (int)LONGNOTE.STATE.Active;
-                }
+            if(startTime < 0f) {
+                noteEffectManager.PlaySE(type);
+                state = (int)LONGNOTE.STATE.Active;
             }
         }
     }

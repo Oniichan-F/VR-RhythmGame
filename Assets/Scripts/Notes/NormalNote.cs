@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using General.CONSTS;
 using UnityEngine;
@@ -8,6 +9,9 @@ public class NormalNote : Note
 {
     [SerializeField] private Mesh[] meshes;
     [SerializeField] private Material matPair;
+
+    public int size { private set; get; }
+    public bool isPaired { private set; get; }
 
     private void Start()
     {
@@ -36,13 +40,13 @@ public class NormalNote : Note
         UpdateTime();
     }
 
-    public override void Init(int id, int[] lanes, float time, string lr, bool isPaired)
+    public void Init(int id, int[] lanes, float time, string lr, int[] options)
     {
-        base.Init(id, lanes, time, lr, isPaired);
+        base.Init(id, lanes, time, lr);
+        
+        this.type = (int)NOTE.TYPE.NormalNote;
         this.size = lanes.Length / 2;
-
-        this.type   = (int)NOTE.TYPE.NormalNote;
-        this.seType = (int)SE.NOTE_SE.HitStandard;
+        this.isPaired = options[0] == 0 ? true : false;
     }
 
     protected override void SetMesh()
@@ -62,36 +66,36 @@ public class NormalNote : Note
         if(Mathf.Abs(time) < JUDGE.JUST) {
             if(OVRInput.GetDown(OVRInput.Button.One) && lanes.Contains(oculusInputManager.rLane)) {
                 Debug.Log(id + ": Just(R) " + time);
-                noteEffectManager.PlaySE(seType);
+                noteEffectManager.PlaySE(type);
                 Destroy(this.gameObject);
             }
             else if(OVRInput.GetDown(OVRInput.Button.Three) && lanes.Contains(oculusInputManager.lLane)) {
                 Debug.Log(id + ": Just(L) " + time);
-                noteEffectManager.PlaySE(seType);
+                noteEffectManager.PlaySE(type);
                 Destroy(this.gameObject);
             }
         }
         else if(Mathf.Abs(time) < JUDGE.GREAT) {
             if(OVRInput.GetDown(OVRInput.Button.One) && lanes.Contains(oculusInputManager.rLane)) {
                 Debug.Log(id + ": Great(R) " + time);
-                noteEffectManager.PlaySE(seType);
+                noteEffectManager.PlaySE(type);
                 Destroy(this.gameObject);
             }
             else if(OVRInput.GetDown(OVRInput.Button.Three) && lanes.Contains(oculusInputManager.lLane)) {
                 Debug.Log(id + ": Great(L) " + time);
-                noteEffectManager.PlaySE(seType);
+                noteEffectManager.PlaySE(type);
                 Destroy(this.gameObject);
             }
         }
         else if(Mathf.Abs(time) < JUDGE.GOOD) {
             if(OVRInput.GetDown(OVRInput.Button.One) && lanes.Contains(oculusInputManager.rLane)) {
                 Debug.Log(id + ": Good(R) " + time);
-                noteEffectManager.PlaySE(seType);
+                noteEffectManager.PlaySE(type);
                 Destroy(this.gameObject);
             }
             else if(OVRInput.GetDown(OVRInput.Button.Three) && lanes.Contains(oculusInputManager.lLane)) {
                 Debug.Log(id + ": Good(L) " + time);
-                noteEffectManager.PlaySE(seType);
+                noteEffectManager.PlaySE(type);
                 Destroy(this.gameObject);
             }
         }

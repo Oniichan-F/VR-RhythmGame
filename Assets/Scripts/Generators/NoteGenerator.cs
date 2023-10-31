@@ -66,8 +66,8 @@ public class NoteGenerator : MonoBehaviour
             if(noteData.type == (int)NOTE.TYPE.NormalNote) {
                 int[] lanes   = noteData.lanes;
                 string lr     = noteData.lr;
-                bool isPaired = noteData.pair;
                 float time    = calcTime(noteData);
+                int[] options = noteData.options;
                 float pos     = time * noteSpeed;
                 float rot     = LANE.ANGLES[lanes[0]];
 
@@ -77,7 +77,7 @@ public class NoteGenerator : MonoBehaviour
                 );
 
                 NormalNote normalNote = normalNoteObj.GetComponent<NormalNote>();
-                normalNote.Init(id:id, lanes:lanes, time:time, lr:lr, isPaired:isPaired);
+                normalNote.Init(id:id, lanes:lanes, time:time, lr:lr, options:options);
                 normalNote.SetPosition(pos);
                 normalNote.SetRotation(rot);
             }
@@ -86,8 +86,8 @@ public class NoteGenerator : MonoBehaviour
             else if(noteData.type == (int)NOTE.TYPE.TouchNote) {
                 int[] lanes   = noteData.lanes;
                 string lr     = noteData.lr;
-                bool isPaired = noteData.pair;
                 float time    = calcTime(noteData);
+                int[] options = noteData.options;
                 float pos     = time * noteSpeed;
                 float rot     = LANE.ANGLES[lanes[0]];
 
@@ -97,7 +97,7 @@ public class NoteGenerator : MonoBehaviour
                 );
 
                 TouchNote touchNote = touchNoteObj.GetComponent<TouchNote>();
-                touchNote.Init(id:id, lanes:lanes, time:time, lr:lr, isPaired:isPaired);
+                touchNote.Init(id:id, lanes:lanes, time:time, lr:lr, options:options);
                 touchNote.SetPosition(pos);
                 touchNote.SetRotation(rot);
             }
@@ -106,9 +106,8 @@ public class NoteGenerator : MonoBehaviour
             else if(noteData.type == (int)NOTE.TYPE.FlickNote) {
                 int[] lanes   = noteData.lanes;
                 string lr     = noteData.lr;
-                bool isPaired = noteData.pair;
-                bool isHead   = (noteData.options[0] == 0) ? true : false;
                 float time    = calcTime(noteData);
+                int[] options = noteData.options;
                 float pos     = time * noteSpeed;
                 float rot     = LANE.ANGLES[lanes[0]];
 
@@ -118,7 +117,7 @@ public class NoteGenerator : MonoBehaviour
                 );
 
                 FlickNote flickNote = flickNoteObj.GetComponent<FlickNote>();
-                flickNote.Init(id:id, lanes:lanes, time:time, lr:lr, isPaired:isPaired, isHead:isHead);
+                flickNote.Init(id:id, lanes:lanes, time:time, lr:lr, options:options);
                 flickNote.SetPosition(pos);
                 flickNote.SetRotation(rot);
             }
@@ -156,7 +155,7 @@ public class NoteGenerator : MonoBehaviour
                     }
 
                     // Mid
-                    if(child.type == (int)NOTE.TYPE.LongMid) {
+                    if(child.type == (int)NOTE.TYPE.LongChild) {
                         int[] _lanes = child.lanes;
                         float _time  = calcTime(child);
                         float _pos   = _time * noteSpeed;
@@ -168,7 +167,7 @@ public class NoteGenerator : MonoBehaviour
                         );
 
                         LongChildNote longChildNote = longChildNoteObj.GetComponent<LongChildNote>();
-                        longChildNote.Init(id:id, lanes:_lanes, time:_time, parent:longNote);
+                        longChildNote.Init(id:id, lanes:_lanes, time:_time, lr:lr, parent:longNote);
                         longChildNote.SetPosition(_pos);
                         longChildNote.SetRotation(_rot);
                     }

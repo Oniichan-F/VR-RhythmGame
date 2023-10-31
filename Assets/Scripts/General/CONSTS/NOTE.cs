@@ -20,7 +20,7 @@ namespace General
                 // options: [isHead(0->true / 1->false), rotDir(1->CCW / -1->CW), rotNum]
                 
                 LongEnd = 11,
-                LongMid = 12,
+                LongChild = 12,
             }
         }
 

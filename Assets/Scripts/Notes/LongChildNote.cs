@@ -7,10 +7,12 @@ using UnityEngine;
 
 public class LongChildNote : Note
 {
+    [SerializeField] private bool isVisible;
     [SerializeField] private Mesh[] meshes;
-
+    
     private LongNote parent;
-    public bool isVisible;
+    public int size { private set; get; }
+
 
     private void Start()
     {
@@ -39,17 +41,13 @@ public class LongChildNote : Note
         UpdateTime();
     }
 
-    public void Init(int id, int[] lanes, float time, LongNote parent)
+    public void Init(int id, int[] lanes, float time, string lr, LongNote parent)
     {
-        base.Init(id, lanes, time, "", false);
-        this.parent = parent;
-
+        base.Init(id, lanes, time, lr);
+        
+        this.type = (int)NOTE.TYPE.LongChild;
         this.size = lanes.Length / 2;
-        this.speed    = RhythmGameManager.Instance.noteSpeed;
-        mesh = transform.Find("Mesh").gameObject;
-
-        this.type   = (int)NOTE.TYPE.LongMid;
-        this.seType = (int)SE.NOTE_SE.HitWeak;
+        this.parent = parent;
     }
 
     protected override void SetMesh()
@@ -79,12 +77,12 @@ public class LongChildNote : Note
     {
          if(OVRInput.Get(OVRInput.Button.One) && lanes.Contains(oculusInputManager.rLane)) {
             Debug.Log(id + ": Hold " + time);
-            noteEffectManager.PlaySE(seType);
+            noteEffectManager.PlaySE(type);
             Destroy(this.gameObject);
         }
         else if(OVRInput.Get(OVRInput.Button.Three) && lanes.Contains(oculusInputManager.lLane)) {
             Debug.Log(id + ": Hold " + time);
-            noteEffectManager.PlaySE(seType);
+            noteEffectManager.PlaySE(type);
             Destroy(this.gameObject);
         }
         else {
@@ -99,7 +97,7 @@ public class LongChildNote : Note
     {
         if(parent.state == (int)LONGNOTE.STATE.Active) {
             if(time < 0f) {
-                noteEffectManager.PlaySE(seType);
+                noteEffectManager.PlaySE(type);
                 Destroy(this.gameObject);
             }
         }

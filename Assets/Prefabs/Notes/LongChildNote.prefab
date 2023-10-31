@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9604d06803e662249abae9aff38583af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isVisible: 1
   meshes:
   - {fileID: 7500313153007180427, guid: c04548a71678f6246a52daddf1c91073, type: 3}
   - {fileID: 3984878417152393770, guid: 4ab4ecad43e3335449ce00b1d75156dc, type: 3}
@@ -62,7 +63,6 @@ MonoBehaviour:
   - {fileID: 2222571329229241169, guid: 6fbeafa55b9e389408e57195148417a5, type: 3}
   - {fileID: -3053400274493424303, guid: ef148f6bf62d69545a4eff87904d880c, type: 3}
   - {fileID: 4988853550605143895, guid: 15de1a72d318c344f86a932aae97b4ae, type: 3}
-  isVisible: 0
 --- !u!1001 &2693147466659912822
 PrefabInstance:
   m_ObjectHideFlags: 0
