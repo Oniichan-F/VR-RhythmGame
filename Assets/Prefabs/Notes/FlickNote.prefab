@@ -66,7 +66,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 9f73d0d6204594b46bebe3ce4f0e96f5, type: 2}
   - {fileID: 2100000, guid: aab3bbe508ed1764bb1104b58ceb477a, type: 2}
   - {fileID: 2100000, guid: d433cd6b6d08fdc40976794e86a1263a, type: 2}
-  isHead: 0
 --- !u!1001 &7988820567153505582
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -83,7 +82,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 15166f1cd680f2347bc0f8b53923657c,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 15166f1cd680f2347bc0f8b53923657c,
         type: 3}

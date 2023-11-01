@@ -96,15 +96,20 @@ public class LongNote : Note
     private void Twist()
     {
         int rot = 0;
-        if(rotDirection == 1) {
-            rot = Mathf.Abs(endLanes[0] - startLanes[0]);
-        }
-        else if(rotDirection == -1) {
+        if(rotDirection == -1) {
             if(startLanes[0] < endLanes[0]) {
-                rot = Mathf.Abs((32 - endLanes[0]) + startLanes[0]);
+                rot = startLanes[0] + (32 - endLanes[0]);
             }
-            else if(startLanes[0] > endLanes[0]) {
-                rot = Mathf.Abs((32 - startLanes[0]) + endLanes[0]);
+            else if(endLanes[0] < startLanes[0]) {
+                rot = startLanes[0] - endLanes[0];
+            }
+        }
+        else if(rotDirection == 1) {
+            if(startLanes[0] < endLanes[0]) {
+                rot = endLanes[0] - startLanes[0];
+            }
+            else if(endLanes[0] < startLanes[0]) {
+                rot = (32 - startLanes[0]) + endLanes[0];
             }
         }
         else {

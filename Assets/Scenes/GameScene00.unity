@@ -522,7 +522,7 @@ MonoBehaviour:
   songID: 0
   songDisplayName: "\u52C7\u8005\u3066\u3059\u3068"
   songSourceName: yuusya
-  songChartName: yuusya_test5
+  songChartName: yuusya_easy
   BPM: -1
   LPB: -1
   maxBeatNum: 64
@@ -3960,7 +3960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageScaleOffset: 0
   stageHeightOffset: 0
-  playerNoteSpeed: 20
+  playerNoteSpeed: 10
   playerChartOffset: 0
 --- !u!1001 &1799506095
 PrefabInstance:
