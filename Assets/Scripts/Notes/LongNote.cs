@@ -46,7 +46,7 @@ public class LongNote : Note
         CheckDestory();
 
         if(!RhythmGameManager.Instance.isAutoMode) {
-            if(startTime < JUDGE.THRESH) {
+            if(startTime < 0f) {
                 Judge();
             }
         }
@@ -137,16 +137,22 @@ public class LongNote : Note
     protected override void Judge()
     {
         if(state == (int)LONGNOTE.STATE.inActive) {
-            if(startTime < 0f) {
-                if(OVRInput.Get(OVRInput.Button.One) && startLanes.Contains(oculusInputManager.rLane)) {
-                    Debug.Log(id + ": Hold");
-                    state = (int)LONGNOTE.STATE.Active;
-                }
-                else if(OVRInput.Get(OVRInput.Button.Three) && startLanes.Contains(oculusInputManager.lLane)) {
-                    Debug.Log(id + ": Hold");
-                    state = (int)LONGNOTE.STATE.Active;
-                }
-            }   
+            if(lr == "R" && startLanes.Contains(oculusInputManager.rLane)) {
+                Debug.Log(id + ": Hold Enter");
+                noteEffectManager.PlaySE(type);
+                state = (int)LONGNOTE.STATE.Active;               
+            }
+            else if(lr == "L" && startLanes.Contains(oculusInputManager.lLane)) {
+                Debug.Log(id + ": Hold Enter");
+                noteEffectManager.PlaySE(type);
+                state = (int)LONGNOTE.STATE.Active;          
+            }
+            else if((lr == "" && startLanes.Contains(oculusInputManager.rLane)) ||
+                    (lr == "" && startLanes.Contains(oculusInputManager.lLane))) {
+                Debug.Log(id + ": Hold Enter");
+                noteEffectManager.PlaySE(type);
+                state = (int)LONGNOTE.STATE.Active;                
+            }
         }
     }
 

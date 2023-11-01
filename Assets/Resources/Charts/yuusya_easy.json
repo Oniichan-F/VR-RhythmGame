@@ -1,42 +1,267 @@
 {
 	"BPM": 208,
 	"LPB": 4,
-	"offset": 100,
+	"offset": 20,
 	"noteData": [
 		{
 			"type": 1,
-			"lanes": [12,13,14,15,16,17,18,19],
+			"lanes": [28,29,30,31,0,1,2,3],
 			"timing": 40,
 			"lr": "",
-			"pair": false,
-			"options": [],
-			"children": []
-		},
-		{
-			"type": 1,
-			"lanes": [28,29,30,31,0,1,2,3],
-			"timing": 56,
-			"lr": "",
-			"pair": false,
-			"options": [],
+			"options": [1],
 			"children": []
 		},
 		{
 			"type": 1,
 			"lanes": [12,13,14,15,16,17,18,19],
-			"timing": 72,
+			"timing": 56,
 			"lr": "",
-			"pair": false,
-			"options": [],
+			"options": [1],
 			"children": []
 		},
 		{
 			"type": 1,
 			"lanes": [28,29,30,31,0,1,2,3],
+			"timing": 72,
+			"lr": "",
+			"options": [1],
+			"children": []
+		},
+		{
+			"type": 1,
+			"lanes": [12,13,14,15,16,17,18,19],
 			"timing": 88,
 			"lr": "",
-			"pair": false,
-			"options": [],
+			"options": [1],
+			"children": []
+		},
+		{
+			"type": 1,
+			"lanes": [28,29,30,31,0,1,2,3],
+			"timing": 104,
+			"lr": "",
+			"options": [1],
+			"children": []
+		},
+		{
+			"type": 1,
+			"lanes": [12,13,14,15,16,17,18,19],
+			"timing": 120,
+			"lr": "",
+			"options": [1],
+			"children": []
+		},
+		{
+			"type": 1,
+			"lanes": [28,29,30,31,0,1,2,3],
+			"timing": 136,
+			"lr": "",
+			"options": [1],
+			"children": []
+		},
+		{
+			"type": 1,
+			"lanes": [12,13,14,15,16,17,18,19],
+			"timing": 152,
+			"lr": "",
+			"options": [1],
+			"children": []
+		},
+
+
+
+		{
+			"type": 1,
+			"lanes": [8,9,10,11,12,13,14,15],
+			"timing": 168,
+			"lr": "",
+			"options": [1],
+			"children": []
+		},
+		{
+			"type": 1,
+			"lanes": [24,25,26,27,28,29,30,31],
+			"timing": 184,
+			"lr": "",
+			"options": [1],
+			"children": []
+		},
+		{
+			"type": 1,
+			"lanes": [16,17,18,19,20,21,22,23],
+			"timing": 200,
+			"lr": "",
+			"options": [1],
+			"children": []
+		},
+		{
+			"type": 1,
+			"lanes": [0,1,2,3,4,5,6,7],
+			"timing": 216,
+			"lr": "",
+			"options": [1],
+			"children": []
+		},
+		{
+			"type": 1,
+			"lanes": [8,9,10,11,12,13,14,15],
+			"timing": 232,
+			"lr": "",
+			"options": [1],
+			"children": []
+		},
+		{
+			"type": 1,
+			"lanes": [24,25,26,27,28,29,30,31],
+			"timing": 248,
+			"lr": "",
+			"options": [1],
+			"children": []
+		},
+		{
+			"type": 1,
+			"lanes": [16,17,18,19,20,21,22,23],
+			"timing": 264,
+			"lr": "",
+			"options": [1],
+			"children": []
+		},
+		{
+			"type": 1,
+			"lanes": [0,1,2,3,4,5,6,7],
+			"timing": 280,
+			"lr": "",
+			"options": [1],
+			"children": []
+		},
+
+
+
+		{
+			"type": 1,
+			"lanes": [0,1,2,3,4,5,6,7],
+			"timing": 312,
+			"lr": "",
+			"options": [0],
+			"children": []
+		},
+		{
+			"type": 1,
+			"lanes": [16,17,18,19,20,21,22,23],
+			"timing": 312,
+			"lr": "",
+			"options": [0],
+			"children": []
+		},
+
+		{
+			"type": 1,
+			"lanes": [24,25,26,27,28,29,30,31],
+			"timing": 328,
+			"lr": "",
+			"options": [0],
+			"children": []
+		},
+		{
+			"type": 1,
+			"lanes": [8,9,10,11,12,13,14,15],
+			"timing": 328,
+			"lr": "",
+			"options": [0],
+			"children": []
+		},
+
+		{
+			"type": 1,
+			"lanes": [30,31,0,1,2,3,4,5],
+			"timing": 344,
+			"lr": "",
+			"options": [0],
+			"children": []
+		},
+		{
+			"type": 1,
+			"lanes": [10,11,12,13,14,15,16,17],
+			"timing": 344,
+			"lr": "",
+			"options": [0],
+			"children": []
+		},
+
+		{
+			"type": 1,
+			"lanes": [26,27,28,29,30,31,0,1],
+			"timing": 360,
+			"lr": "",
+			"options": [0],
+			"children": []
+		},
+		{
+			"type": 1,
+			"lanes": [14,15,16,17,18,19,20,21],
+			"timing": 360,
+			"lr": "",
+			"options": [0],
+			"children": []
+		},
+
+		{
+			"type": 1,
+			"lanes": [0,1,2,3,4,5,6,7],
+			"timing": 376,
+			"lr": "",
+			"options": [0],
+			"children": []
+		},
+		{
+			"type": 1,
+			"lanes": [16,17,18,19,20,21,22,23],
+			"timing": 376,
+			"lr": "",
+			"options": [0],
+			"children": []
+		},
+
+		{
+			"type": 1,
+			"lanes": [24,25,26,27,28,29,30,31],
+			"timing": 392,
+			"lr": "",
+			"options": [0],
+			"children": []
+		},
+		{
+			"type": 1,
+			"lanes": [8,9,10,11,12,13,14,15],
+			"timing": 392,
+			"lr": "",
+			"options": [0],
+			"children": []
+		},
+
+		{
+			"type": 1,
+			"lanes": [30,31,0,1,2,3,4,5],
+			"timing": 408,
+			"lr": "",
+			"options": [0],
+			"children": []
+		},
+		{
+			"type": 1,
+			"lanes": [10,11,12,13,14,15,16,17],
+			"timing": 408,
+			"lr": "",
+			"options": [0],
+			"children": []
+		},
+
+		{
+			"type": 1,
+			"lanes": [26,27,28,29,30,31,0,1],
+			"timing": 424,
+			"lr": "",
+			"options": [1],
 			"children": []
 		}
     ]

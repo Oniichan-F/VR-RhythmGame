@@ -27,6 +27,7 @@ public class LongChildNote : Note
         }
 
         CheckDestory();
+        CheckState();
 
         if(!RhythmGameManager.Instance.isAutoMode) {
             if(time < 0f) {
@@ -55,9 +56,8 @@ public class LongChildNote : Note
         mesh.GetComponent<MeshFilter>().mesh = meshes[size-1];
     }
 
-    protected override void CheckDestory()
+    private void CheckState()
     {
-        base.CheckDestory();
         if(parent.state == (int)LONGNOTE.STATE.Lost) {
             Destroy(this.gameObject);
         }
@@ -75,22 +75,17 @@ public class LongChildNote : Note
 
     protected override void Judge()
     {
-         if(OVRInput.Get(OVRInput.Button.One) && lanes.Contains(oculusInputManager.rLane)) {
-            Debug.Log(id + ": Hold " + time);
-            noteEffectManager.PlaySE(type);
-            Destroy(this.gameObject);
-        }
-        else if(OVRInput.Get(OVRInput.Button.Three) && lanes.Contains(oculusInputManager.lLane)) {
-            Debug.Log(id + ": Hold " + time);
+        if(lanes.Contains(oculusInputManager.rLane) || lanes.Contains(oculusInputManager.lLane)) {
+            Debug.Log(id + ": Hold ");
             noteEffectManager.PlaySE(type);
             Destroy(this.gameObject);
         }
         else {
-            Debug.Log(id + ": Miss");
+            Debug.Log(id + ": Miss ");
             parent.state = (int)LONGNOTE.STATE.Lost;
             parent.SetLostMaterials();
             Destroy(this.gameObject);
-        }     
+        }
     }
 
     protected override void AutoJudge()
