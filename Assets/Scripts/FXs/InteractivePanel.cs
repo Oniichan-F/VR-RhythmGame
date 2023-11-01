@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using General.CONSTS;
 
 public class InteractivePanel : MonoBehaviour
 {
     [SerializeField] OculusInputManager oculusInputManager;
 
     [SerializeField] private int id;
-    [SerializeField] private float flashStrength = 1f;
-    [SerializeField] private float flashSpeed = 3f;
+    [SerializeField] private float flashStrength = 0.5f;
+    [SerializeField] private float flashSpeed = 5f;
 
     private Renderer rend;
     private float alpha;
@@ -21,12 +22,12 @@ public class InteractivePanel : MonoBehaviour
 
     private void Update()
     {
-        if(OVRInput.Get(OVRInput.Button.One)) {
+        if(oculusInputManager.rImpact == (int)INPUT.IMPACT.External) {
             if(oculusInputManager.rLane == id) {
                 Flash();
             }
         }
-        if(OVRInput.Get(OVRInput.Button.Three)) {
+        if(oculusInputManager.lImpact == (int)INPUT.IMPACT.External) {
             if(oculusInputManager.lLane == id) {
                 Flash();
             }

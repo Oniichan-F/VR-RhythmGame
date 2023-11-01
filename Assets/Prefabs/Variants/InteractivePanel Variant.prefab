@@ -112,5 +112,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   oculusInputManager: {fileID: 0}
   id: 0
-  flashStrength: 1
-  flashSpeed: 3
+  flashStrength: 0.5
+  flashSpeed: 5

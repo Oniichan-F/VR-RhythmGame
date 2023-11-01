@@ -3960,7 +3960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageScaleOffset: 0
   stageHeightOffset: 0
-  playerNoteSpeed: 10
+  playerNoteSpeed: 20
   playerChartOffset: 0
 --- !u!1001 &1799506095
 PrefabInstance:
