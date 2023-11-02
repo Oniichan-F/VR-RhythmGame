@@ -34,7 +34,6 @@ public class NoteGenerator : MonoBehaviour
     {
         string jsonFileName = Resources.Load<TextAsset>("Charts/" + RhythmGameManager.Instance.songChartName).ToString();
         chartData = JsonUtility.FromJson<ChartData>(jsonFileName);
-        Debug.Log(chartData.BPM);
         RhythmGameManager.Instance.BPM = chartData.BPM;
         RhythmGameManager.Instance.LPB = chartData.LPB;
         RhythmGameManager.Instance.baseChartOffset = chartData.offset;

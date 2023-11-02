@@ -12,9 +12,9 @@ public class RhythmGameManager : MonoBehaviour
     public string songDisplayName;
     public string songSourceName;
     public string songChartName;
+    public string songBPMGuideName;
     public float BPM;
     public int LPB;
-    public int maxBeatNum;
     public float baseChartOffset;
 
     public float noteSpeed { private set; get; }

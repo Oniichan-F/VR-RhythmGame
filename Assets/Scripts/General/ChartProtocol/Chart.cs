@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Meta.WitAi.Utilities;
 using UnityEngine;
 
 namespace General
@@ -24,6 +25,21 @@ namespace General
             public bool pair;
             public int[] options;
             public NoteData[] children;
+        }
+
+        [Serializable] public class BPMGuideFileData
+        {
+            public float BPM;
+            public int LPB;
+            public float offset;
+            public BPMGuideData[] BPMGuideData;
+        }
+
+        [Serializable] public class BPMGuideData
+        {
+            public float timing;
+            public int shape;
+            public int color;
         }
     }
 }

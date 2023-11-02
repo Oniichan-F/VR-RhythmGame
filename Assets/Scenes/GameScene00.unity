@@ -523,9 +523,9 @@ MonoBehaviour:
   songDisplayName: "\u52C7\u8005\u3066\u3059\u3068"
   songSourceName: yuusya
   songChartName: yuusya_easy
+  songBPMGuideName: yuusya_easy_BPMGuide
   BPM: -1
   LPB: -1
-  maxBeatNum: 64
   baseChartOffset: 0
   isAutoMode: 1
   isPaused: 0
@@ -3960,7 +3960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageScaleOffset: 0
   stageHeightOffset: 0
-  playerNoteSpeed: 20
+  playerNoteSpeed: 10
   playerChartOffset: 0
 --- !u!1001 &1799506095
 PrefabInstance:
@@ -5036,7 +5036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cbf780f55a8beb489963d0deb97c2f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BPMGuide: {fileID: 8940210352831165369, guid: 129f13566b47f5c43a5feea56fe1585d,
+  BPMGuidePrefab: {fileID: 8940210352831165369, guid: 129f13566b47f5c43a5feea56fe1585d,
     type: 3}
   MasterScaler: {fileID: 670505693}
 --- !u!1 &2073272018

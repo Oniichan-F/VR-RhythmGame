@@ -1,0 +1,176 @@
+{
+    "BPM": 208,
+    "LPB": 4,
+    "offset": 20,
+    "BPMGuideData": [
+        {
+            "timing": 0,
+            "shape": 0,
+            "color": 0
+        },
+        {
+            "timing": 16,
+            "shape": 0,
+            "color": 0
+        },
+        {
+            "timing": 32,
+            "shape": 0,
+            "color": 0
+        },
+        {
+            "timing": 48,
+            "shape": 0,
+            "color": 0
+        },
+        {
+            "timing": 64,
+            "shape": 0,
+            "color": 0
+        },
+        {
+            "timing": 80,
+            "shape": 0,
+            "color": 0
+        },
+        {
+            "timing": 96,
+            "shape": 0,
+            "color": 0
+        },
+        {
+            "timing": 112,
+            "shape": 0,
+            "color": 0
+        },
+        {
+            "timing": 128,
+            "shape": 0,
+            "color": 0
+        },
+        {
+            "timing": 144,
+            "shape": 0,
+            "color": 0
+        },
+        {
+            "timing": 160,
+            "shape": 0,
+            "color": 0
+        },
+        {
+            "timing": 176,
+            "shape": 0,
+            "color": 0
+        },
+        {
+            "timing": 192,
+            "shape": 0,
+            "color": 0
+        },
+        {
+            "timing": 208,
+            "shape": 0,
+            "color": 0
+        },
+        {
+            "timing": 224,
+            "shape": 0,
+            "color": 0
+        },
+        {
+            "timing": 240,
+            "shape": 0,
+            "color": 0
+        },
+        {
+            "timing": 256,
+            "shape": 0,
+            "color": 0
+        },
+        {
+            "timing": 272,
+            "shape": 0,
+            "color": 0
+        },
+        {
+            "timing": 288,
+            "shape": 0,
+            "color": 0
+        },
+        {
+            "timing": 289,
+            "shape": 0,
+            "color": 0
+        },        {
+            "timing": 290,
+            "shape": 0,
+            "color": 0
+        },
+        {
+            "timing": 291,
+            "shape": 0,
+            "color": 0
+        },
+        {
+            "timing": 292,
+            "shape": 0,
+            "color": 0
+        },
+        {
+            "timing": 293,
+            "shape": 0,
+            "color": 0
+        },
+        {
+            "timing": 294,
+            "shape": 0,
+            "color": 0
+        },
+        {
+            "timing": 295,
+            "shape": 0,
+            "color": 0
+        },
+        {
+            "timing": 304,
+            "shape": 0,
+            "color": 0
+        },
+        {
+            "timing": 320,
+            "shape": 0,
+            "color": 0
+        },
+        {
+            "timing": 336,
+            "shape": 0,
+            "color": 0
+        },
+        {
+            "timing": 352,
+            "shape": 0,
+            "color": 0
+        },
+        {
+            "timing": 368,
+            "shape": 0,
+            "color": 0
+        },
+        {
+            "timing": 384,
+            "shape": 0,
+            "color": 0
+        },
+        {
+            "timing": 400,
+            "shape": 0,
+            "color": 0
+        },
+        {
+            "timing": 416,
+            "shape": 0,
+            "color": 0
+        }
+    ]
+}

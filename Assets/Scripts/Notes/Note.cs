@@ -29,7 +29,7 @@ public class Note : MonoBehaviour
         this.time  = time;
         this.lr    = lr;
         
-        this.speed    = RhythmGameManager.Instance.noteSpeed;
+        this.speed = RhythmGameManager.Instance.noteSpeed;
 
         mesh = transform.Find("Mesh").gameObject;
         noteEffectManager = GameObject.Find("NoteEffectManager").GetComponent<NoteEffectManager>();
