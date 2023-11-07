@@ -22,15 +22,12 @@ public class InteractivePanel : MonoBehaviour
 
     private void Update()
     {
-        if(oculusInputManager.rImpact == (int)INPUT.IMPACT.External) {
-            if(oculusInputManager.rLane == id) {
-                Flash();
-            }
+        if(oculusInputManager.rLane == id) {
+            Flash();
         }
-        if(oculusInputManager.lImpact == (int)INPUT.IMPACT.External) {
-            if(oculusInputManager.lLane == id) {
-                Flash();
-            }
+
+        if(oculusInputManager.lLane == id) {
+            Flash();
         }
 
         if(rend.material.color.a > 0f) {

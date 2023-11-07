@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshes:
+  - {fileID: -7086892257924717404, guid: 7e09eadf46e1d6e438dea6042c367ff9, type: 3}
   - {fileID: -1042133115941106075, guid: 89c8e1d17af38d74986f4129f7064583, type: 3}
   - {fileID: 4655889293725883449, guid: e14711eaf92b2bb4398885f5966b30f0, type: 3}
   - {fileID: 5815140889407922212, guid: 8d110f5a5159ab848a91b8a1e211f860, type: 3}
@@ -115,19 +116,14 @@ MonoBehaviour:
   - {fileID: -2833075341315810062, guid: 3b839e96e401cf34db228f524d78e970, type: 3}
   - {fileID: -5441992042053663588, guid: 216def684e9050044a859a47456e2d5f, type: 3}
   - {fileID: 1279939569414319393, guid: e2712ab7b2bd0554ab16d08b5b52a47f, type: 3}
-  - {fileID: -4816840569672323937, guid: 0c75c972ee6555446b20eb9c96ae8362, type: 3}
   matsR:
-  - {fileID: 2100000, guid: b707bb6b56f6cf74fa282fd901cd710d, type: 2}
-  - {fileID: 2100000, guid: ce04d43cb8b535746a321b8aa8a1256e, type: 2}
+  - {fileID: 2100000, guid: 16c5a935ecef9424cbe8e5fa0d65953e, type: 2}
   matsL:
-  - {fileID: 2100000, guid: 8b70fe980026a54418b5652fd1955804, type: 2}
-  - {fileID: 2100000, guid: 51b1ff61ebe7cd14e887ff5a679de37a, type: 2}
+  - {fileID: 2100000, guid: 18152f1e6469ec84f9c8878a228564fe, type: 2}
   matsLostR:
-  - {fileID: 2100000, guid: 9802ccec9747a9c46a3686ec2b5d5563, type: 2}
-  - {fileID: 2100000, guid: ce04d43cb8b535746a321b8aa8a1256e, type: 2}
+  - {fileID: 2100000, guid: 6e8178a141f872d43a0a3ffdade8d885, type: 2}
   matsLostL:
-  - {fileID: 2100000, guid: a942dddf16698ea40b92947b14add44e, type: 2}
-  - {fileID: 2100000, guid: 51b1ff61ebe7cd14e887ff5a679de37a, type: 2}
+  - {fileID: 2100000, guid: 2f995a7ebfb016343aa93e9c78ecd801, type: 2}
   state: 0
 --- !u!1001 &293254776071172631
 PrefabInstance:
@@ -206,7 +202,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 27b6afe48f8308d4887508c38789b0ba, type: 2}
+      objectReference: {fileID: 2100000, guid: bca4e53d4db64ea47912da0bed736795, type: 2}
     - target: {fileID: -7511558181221131132, guid: 89c8e1d17af38d74986f4129f7064583,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
@@ -267,7 +263,7 @@ MonoBehaviour:
   colliderRecalculation: 0
   meshCollider: {fileID: 0}
   data:
-    OriginalMesh: {fileID: -1042133115941106075, guid: 89c8e1d17af38d74986f4129f7064583,
+    OriginalMesh: {fileID: -7086892257924717404, guid: 7e09eadf46e1d6e438dea6042c367ff9,
       type: 3}
     Target:
       meshFilter: {fileID: 3761837482998159961}

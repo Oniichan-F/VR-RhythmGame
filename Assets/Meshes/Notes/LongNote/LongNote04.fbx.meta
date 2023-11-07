@@ -7,13 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Mat_LongNote
-    second: {fileID: 2100000, guid: 70c0375faa5f50348b33f24e5bf57f51, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Mat_LongNoteEdge
-    second: {fileID: 2100000, guid: 70c0375faa5f50348b33f24e5bf57f51, type: 2}
+      name: Mat_tmp0
+    second: {fileID: 2100000, guid: 8887151ae402e7845a664e6fb808a65b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

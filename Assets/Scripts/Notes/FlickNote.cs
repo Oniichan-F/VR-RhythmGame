@@ -7,7 +7,13 @@ using UnityEngine;
 public class FlickNote : Note
 {
     [SerializeField] private Mesh[] meshes;
+
+    [SerializeField] private List<Material> mats;
+    [SerializeField] private List<Material> matsR;
+    [SerializeField] private List<Material> matsL;
     [SerializeField] private List<Material> matsPair;
+    [SerializeField] private List<Material> matsPairR;
+    [SerializeField] private List<Material> matsPairL;
 
     public int size { private set; get; }
     public bool isPaired { private set; get; }
@@ -55,8 +61,17 @@ public class FlickNote : Note
 
     private void SetMaterial()
     {
-        if(isPaired) {
-            mesh.GetComponent<MeshRenderer>().SetMaterials(matsPair);
+        if(lr == "") {
+            if(!isPaired) { mesh.GetComponent<MeshRenderer>().SetMaterials(mats); }
+            else { mesh.GetComponent<MeshRenderer>().SetMaterials(matsPair); }
+        }
+        else if(lr == "R") {
+            if(!isPaired) { mesh.GetComponent<MeshRenderer>().SetMaterials(matsR); }
+            else { mesh.GetComponent<MeshRenderer>().SetMaterials(matsPairR); }
+        }
+        else if(lr == "L") {
+            if(!isPaired) { mesh.GetComponent<MeshRenderer>().SetMaterials(matsL); }
+            else { mesh.GetComponent<MeshRenderer>().SetMaterials(matsPairL); }
         }
     }
 

@@ -7,13 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Mat_NormalNote
-    second: {fileID: 2100000, guid: 3dcae24e8ac71b946b751e8942dada1f, type: 2}
+      name: Mat_tmp0
+    second: {fileID: 2100000, guid: b97db66cd33c42b468ce4a6c15133c38, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Mat_NormalNoteEdge
-    second: {fileID: 2100000, guid: 3c3b67ab1d19e1349a9396e09288b1b3, type: 2}
+      name: Mat_tmp1
+    second: {fileID: 2100000, guid: 880b5d66678e8b246aff1313071f9fec, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

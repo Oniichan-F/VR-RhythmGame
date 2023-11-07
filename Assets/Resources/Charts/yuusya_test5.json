@@ -48,7 +48,7 @@
 			"type": 3,
 			"lanes": [28,29,30,31,0,1,2,3],
 			"timing": 36,
-			"lr": "",
+			"lr": "R",
 			"options": [1],
 			"children": []
 		},
@@ -97,7 +97,7 @@
 			"type": 3,
 			"lanes": [12,13,14,15,16,17,18,19],
 			"timing": 68,
-			"lr": "",
+			"lr": "L",
 			"options": [1],
 			"children": []
 		},
@@ -154,7 +154,7 @@
 			"type": 3,
 			"lanes": [12,13,14,15,16,17,18,19],
 			"timing": 104,
-			"lr": "",
+			"lr": "R",
 			"options": [1],
 			"children": []
 		},
@@ -211,7 +211,7 @@
 			"type": 3,
 			"lanes": [28,29,30,31,0,1,2,3],
 			"timing": 136,
-			"lr": "",
+			"lr": "L",
 			"options": [1],
 			"children": []
 		}

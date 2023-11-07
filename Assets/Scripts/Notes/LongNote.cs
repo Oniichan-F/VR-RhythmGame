@@ -32,7 +32,7 @@ public class LongNote : Note
     private void Start()
     {
         SetMesh();
-        SetMaterial();
+        SetMaterials();
         twistDeformer = mesh.transform.Find("Twist").GetComponent<TwistDeformer>();
         Twist();
     }
@@ -83,7 +83,7 @@ public class LongNote : Note
         mesh.GetComponent<MeshFilter>().mesh = meshes[size-1];
     }
 
-    private void SetMaterial()
+    private void SetMaterials()
     {
         if(lr == "R") {
             mesh.GetComponent<MeshRenderer>().SetMaterials(matsR);

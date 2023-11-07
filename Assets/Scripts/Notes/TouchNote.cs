@@ -7,6 +7,8 @@ using UnityEngine;
 public class TouchNote : Note
 {
     [SerializeField] private Mesh[] meshes;
+
+    [SerializeField] private List<Material> mats;
     [SerializeField] private List<Material> matsPair;
 
     public int size { private set; get; }
@@ -15,7 +17,7 @@ public class TouchNote : Note
     private void Start()
     {
         SetMesh();
-        SetMaterial();
+        SetMaterials();
     }
 
     private void Update()
@@ -53,9 +55,12 @@ public class TouchNote : Note
         mesh.GetComponent<MeshFilter>().mesh = meshes[size-1];
     }
 
-    private void SetMaterial()
+    private void SetMaterials()
     {
-        if(isPaired) {
+        if(!isPaired) {
+            mesh.GetComponent<MeshRenderer>().SetMaterials(mats);
+        }
+        else {
             mesh.GetComponent<MeshRenderer>().SetMaterials(matsPair);
         }
     }
