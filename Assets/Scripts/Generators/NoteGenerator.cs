@@ -15,13 +15,14 @@ public class NoteGenerator : MonoBehaviour
     [SerializeField] GameObject flickNotePrefab;
     [SerializeField] GameObject longNotePrefab;
     [SerializeField] GameObject longChildNotePrefab;
-    [SerializeField] GameObject masterScaler;
 
     private ChartData chartData;
     private float BPM;
     private float LPB;
     private float chartOffset;
     private float noteSpeed;
+
+    private GameObject notesParent;
 
 
     private void OnEnable()
@@ -57,7 +58,7 @@ public class NoteGenerator : MonoBehaviour
         chartOffset = RhythmGameManager.Instance.chartOffset;
         noteSpeed   = RhythmGameManager.Instance.noteSpeed;
 
-        GameObject notesParent = masterScaler.transform.Find("Notes").gameObject;
+        notesParent = GameObject.Find("MasterScaler").transform.Find("Notes").gameObject;
 
         int id = 0;
         foreach(NoteData noteData in chartData.noteData) {

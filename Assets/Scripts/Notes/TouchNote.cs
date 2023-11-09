@@ -70,22 +70,34 @@ public class TouchNote : Note
         if(lr == "R" && lanes.Contains(oculusInputManager.rLane)) {
             Debug.Log(id + ": Just " + time);
             noteEffectManager.PlaySE(type);
+            noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.JUST, lanes);
             Destroy(this.gameObject);                
         }
         else if(lr == "L" && lanes.Contains(oculusInputManager.lLane)) {
             Debug.Log(id + ": Just " + time);
             noteEffectManager.PlaySE(type);
+            noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.JUST, lanes);
             Destroy(this.gameObject);                
         }
         else if((lr == "" && lanes.Contains(oculusInputManager.rLane)) ||
                 (lr == "" && lanes.Contains(oculusInputManager.lLane))) {
             Debug.Log(id + ": Just " + time);
             noteEffectManager.PlaySE(type);
+            noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.JUST, lanes);
             Destroy(this.gameObject);                  
         }
         else {
             Debug.Log(id + ": Lost " + time);
             Destroy(this.gameObject);              
+        }
+    }
+
+    protected override void AutoJudge()
+    {
+        if(time < 0f) {
+            noteEffectManager.PlaySE(type);
+            noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.JUST, lanes);
+            Destroy(this.gameObject);
         }
     }
 }

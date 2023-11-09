@@ -14,6 +14,7 @@ public class NoteEffectManager : MonoBehaviour
     [SerializeField] private AudioClip hitLong;
 
     [SerializeField] private GameObject normalJudgeEffectPrefab;
+    [SerializeField] private GameObject touchJudgeEffectPrefab;
 
     private AudioSource audioSource;
     private GameObject judgeEffectsParent;
@@ -57,6 +58,13 @@ public class NoteEffectManager : MonoBehaviour
             judgeEffect.GetComponent<NormalJudgeEffect>().Init(judgeID, lanes);
             Destroy(judgeEffect, 0.25f);
         }
-
+        else if(noteType == (int)NOTE.TYPE.TouchNote) {
+            GameObject judgeEffect = Instantiate(
+                touchJudgeEffectPrefab,
+                judgeEffectsParent.transform
+            );
+            judgeEffect.GetComponent<TouchJudgeEffect>().Init(judgeID, lanes);
+            Destroy(judgeEffect, 0.2f);            
+        }
     }
 }
