@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9604d06803e662249abae9aff38583af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isVisible: 0
+  isVisible: 1
   meshes:
   - {fileID: -9169596005565781596, guid: 5d2c0ab3d74b7f445bc18f0cc03afea1, type: 3}
   - {fileID: 7500313153007180427, guid: c04548a71678f6246a52daddf1c91073, type: 3}
