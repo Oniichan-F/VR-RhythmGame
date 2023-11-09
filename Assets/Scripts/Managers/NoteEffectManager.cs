@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using General.CONSTS;
 using Meta.WitAi.Events;
 using Unity.VisualScripting;
 using UnityEditor;
@@ -12,7 +13,7 @@ public class NoteEffectManager : MonoBehaviour
     [SerializeField] private AudioClip hitStrong;
     [SerializeField] private AudioClip hitLong;
 
-    [SerializeField] private GameObject judgeEffectPrefab;
+    [SerializeField] private GameObject normalJudgeEffectPrefab;
 
     private AudioSource audioSource;
     private GameObject judgeEffectsParent;
@@ -46,13 +47,16 @@ public class NoteEffectManager : MonoBehaviour
         }
     }
 
-    public void GenerateJudgeEffect(int judgeID, int[] lanes)
+    public void GenerateJudgeEffect(int noteType, int judgeID, int[] lanes)
     {
-        GameObject judgeEffect = Instantiate(
-            judgeEffectPrefab,
-            judgeEffectsParent.transform
-        );
-        judgeEffect.GetComponent<JudgeEffect>().Init(judgeID, lanes);
-        Destroy(judgeEffect, 0.15f);
+        if(noteType == (int)NOTE.TYPE.NormalNote) {
+            GameObject judgeEffect = Instantiate(
+                normalJudgeEffectPrefab,
+                judgeEffectsParent.transform
+            );
+            judgeEffect.GetComponent<NormalJudgeEffect>().Init(judgeID, lanes);
+            Destroy(judgeEffect, 0.25f);
+        }
+
     }
 }

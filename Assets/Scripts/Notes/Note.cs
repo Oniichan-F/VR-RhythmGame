@@ -58,11 +58,7 @@ public class Note : MonoBehaviour
 
     protected virtual void AutoJudge()
     {
-        if(time < 0f) {
-            noteEffectManager.PlaySE(type);
-            noteEffectManager.GenerateJudgeEffect(0, lanes);
-            Destroy(this.gameObject);
-        }
+        
     }
 
     protected virtual void CheckDestory()

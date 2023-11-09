@@ -522,7 +522,7 @@ MonoBehaviour:
   songID: 0
   songDisplayName: "\u52C7\u8005\u3066\u3059\u3068"
   songSourceName: yuusya
-  songChartName: yuusya_test2
+  songChartName: yuusya_easy
   songBPMGuideName: yuusya_easy_BPMGuide
   BPM: -1
   LPB: -1
@@ -2463,7 +2463,7 @@ MonoBehaviour:
   hitWeak: {fileID: 8300000, guid: bb22d831be793db4e9d20fdb85c2b3b9, type: 3}
   hitStrong: {fileID: 8300000, guid: e1fd644bc21888743bef4f7b881a4f1a, type: 3}
   hitLong: {fileID: 8300000, guid: 86c58ddd68472c7498bba7ee21f19f8c, type: 3}
-  judgeEffectPrefab: {fileID: 575958473987421951, guid: 9969e54f03e433446b6de1700c90d084,
+  normalJudgeEffectPrefab: {fileID: 575958473987421951, guid: 9969e54f03e433446b6de1700c90d084,
     type: 3}
 --- !u!82 &1315022881
 AudioSource:
@@ -4078,7 +4078,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageScaleOffset: 0
   stageHeightOffset: 0
-  playerNoteSpeed: 15
+  playerNoteSpeed: 30
   playerChartOffset: 0
 --- !u!1001 &1799506095
 PrefabInstance:

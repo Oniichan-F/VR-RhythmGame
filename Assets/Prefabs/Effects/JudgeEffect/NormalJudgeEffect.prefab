@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5333253120638887287}
   - component: {fileID: 3377064218679572393}
   m_Layer: 0
-  m_Name: JudgeEffect
+  m_Name: NormalJudgeEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 17e26b074ff719345a9fd7d9f1009706, type: 2}
   - {fileID: 2100000, guid: b0be495562a5d524d84ffd94bfe63b5d, type: 2}
   - {fileID: 2100000, guid: 3e815760fe64bee4f8cd34129b7afb95, type: 2}
-  speed: 80
+  speed: 150
 --- !u!1001 &1848360451576033437
 PrefabInstance:
   m_ObjectHideFlags: 0
