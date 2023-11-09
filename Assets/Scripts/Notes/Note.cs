@@ -60,6 +60,7 @@ public class Note : MonoBehaviour
     {
         if(time < 0f) {
             noteEffectManager.PlaySE(type);
+            noteEffectManager.GenerateJudgeEffect(0, lanes);
             Destroy(this.gameObject);
         }
     }

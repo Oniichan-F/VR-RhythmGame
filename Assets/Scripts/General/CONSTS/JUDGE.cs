@@ -12,6 +12,13 @@ namespace General
             public static readonly float JUST = 0.040f;
             public static readonly float GREAT = 0.070f;
             public static readonly float GOOD = 0.100f;
+
+            public enum JUDGE_ID : int
+            {
+                JUST = 0,
+                GREAT = 1,
+                GOOD = 2,
+            }
         }
     }
 }
