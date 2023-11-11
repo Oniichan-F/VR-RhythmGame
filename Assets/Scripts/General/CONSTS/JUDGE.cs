@@ -8,10 +8,10 @@ namespace General
     {
         public static class JUDGE
         {
-            public static readonly float THRESH = 0.150f;
-            public static readonly float JUST = 0.040f;
-            public static readonly float GREAT = 0.070f;
-            public static readonly float GOOD = 0.100f;
+            public static readonly float THRESH = 0.10f;
+            public static readonly float JUST = 0.06f;
+            public static readonly float GREAT = 0.08f;
+            public static readonly float GOOD = 0.10f;
 
             public enum JUDGE_ID : int
             {

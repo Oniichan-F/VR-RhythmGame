@@ -64,7 +64,7 @@ MonoBehaviour:
   - {fileID: -3301416109719227551, guid: 75b6a06a81f7e0945bad10baa08b55a6, type: 3}
   mats:
   - {fileID: 2100000, guid: b8b4a32eebfa9924880538958f697520, type: 2}
-  speed: 100
+  speed: 150
 --- !u!1001 &1918912808205725264
 PrefabInstance:
   m_ObjectHideFlags: 0

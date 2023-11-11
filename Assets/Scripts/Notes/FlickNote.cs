@@ -82,17 +82,20 @@ public class FlickNote : Note
             if(lr == "R" && oculusInputManager.rImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.rLane)) {
                 Debug.Log(id + ": Just " + time);
                 noteEffectManager.PlaySE(type);
+                noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.JUST, lanes);
                 Destroy(this.gameObject);                
             }
             else if(lr == "L" && oculusInputManager.lImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.lLane)) {
                 Debug.Log(id + ": Just " + time);
                 noteEffectManager.PlaySE(type);
+                noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.JUST, lanes);
                 Destroy(this.gameObject);                
             }
             else if((lr == "" && oculusInputManager.rImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.rLane)) ||
                     (lr == "" && oculusInputManager.lImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.lLane))) {
                 Debug.Log(id + ": Just " + time);
                 noteEffectManager.PlaySE(type);
+                noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.JUST, lanes);
                 Destroy(this.gameObject);                  
             }
         }
@@ -101,17 +104,20 @@ public class FlickNote : Note
             if(lr == "R" && oculusInputManager.rImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.rLane)) {
                 Debug.Log(id + ": Great " + time);
                 noteEffectManager.PlaySE(type);
+                noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.GREAT, lanes);
                 Destroy(this.gameObject);                
             }
             else if(lr == "L" && oculusInputManager.lImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.lLane)) {
                 Debug.Log(id + ": Great " + time);
                 noteEffectManager.PlaySE(type);
+                noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.GREAT, lanes);
                 Destroy(this.gameObject);                
             }
             else if((lr == "" && oculusInputManager.rImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.rLane)) ||
                     (lr == "" && oculusInputManager.lImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.lLane))) {
                 Debug.Log(id + ": Great " + time);
                 noteEffectManager.PlaySE(type);
+                noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.GREAT, lanes);
                 Destroy(this.gameObject);                  
             }
         }
@@ -120,17 +126,20 @@ public class FlickNote : Note
             if(lr == "R" && oculusInputManager.rImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.rLane)) {
                 Debug.Log(id + ": Good " + time);
                 noteEffectManager.PlaySE(type);
+                noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.GOOD, lanes);
                 Destroy(this.gameObject);                
             }
             else if(lr == "L" && oculusInputManager.lImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.lLane)) {
                 Debug.Log(id + ": Good " + time);
                 noteEffectManager.PlaySE(type);
+                noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.GOOD, lanes);
                 Destroy(this.gameObject);                
             }
             else if((lr == "" && oculusInputManager.rImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.rLane)) ||
                     (lr == "" && oculusInputManager.lImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.lLane))) {
                 Debug.Log(id + ": Good " + time);
                 noteEffectManager.PlaySE(type);
+                noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.GOOD, lanes);
                 Destroy(this.gameObject);                  
             }
         }
@@ -149,6 +158,15 @@ public class FlickNote : Note
                 Debug.Log(id + ": Miss " + time);
                 Destroy(this.gameObject);                  
             }
+        }
+    }
+
+    protected override void AutoJudge()
+    {
+        if(time < 0f) {
+            noteEffectManager.PlaySE(type);
+            noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.JUST, lanes);
+            Destroy(this.gameObject);
         }
     }
 }

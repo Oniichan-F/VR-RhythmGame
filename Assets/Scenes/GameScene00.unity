@@ -522,12 +522,12 @@ MonoBehaviour:
   songID: 0
   songDisplayName: "\u52C7\u8005\u3066\u3059\u3068"
   songSourceName: yuusya
-  songChartName: yuusya_easy
-  songBPMGuideName: yuusya_easy_BPMGuide
+  songChartName: yuusya_Lv2
+  songBPMGuideName: yuusya_Lv6_BPMGuide
   BPM: -1
   LPB: -1
   baseChartOffset: 0
-  isAutoMode: 0
+  isAutoMode: 1
   isPaused: 0
 --- !u!1 &245777549
 GameObject:
@@ -2465,6 +2465,8 @@ MonoBehaviour:
   normalJudgeEffectPrefab: {fileID: 575958473987421951, guid: 9969e54f03e433446b6de1700c90d084,
     type: 3}
   touchJudgeEffectPrefab: {fileID: 1129045462055432365, guid: d86c584598b28c44e8a57d3c4d477c39,
+    type: 3}
+  flickJudgeEffectPrefab: {fileID: 6925584687885998035, guid: 11fe6ab6513512f489e3d65c84b41adc,
     type: 3}
 --- !u!82 &1315022881
 AudioSource:
