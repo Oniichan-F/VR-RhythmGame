@@ -6,7 +6,7 @@ public class FlickJudgeEffect : JudgeEffect
 {
     private void Start()
     {
-        transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z*60f);
+        transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z*80f);
     }
 
     private void Update()

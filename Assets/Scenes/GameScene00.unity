@@ -523,7 +523,7 @@ MonoBehaviour:
   songDisplayName: "\u52C7\u8005\u3066\u3059\u3068"
   songSourceName: yuusya
   songChartName: yuusya_Lv2
-  songBPMGuideName: yuusya_Lv6_BPMGuide
+  songBPMGuideName: yuusya_Lv2_BPMGuide
   BPM: -1
   LPB: -1
   baseChartOffset: 0
