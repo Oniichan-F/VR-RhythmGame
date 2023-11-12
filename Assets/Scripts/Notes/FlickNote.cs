@@ -83,19 +83,28 @@ public class FlickNote : Note
                 Debug.Log(id + ": Just " + time);
                 noteEffectManager.PlaySE(type);
                 noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.JUST, lanes);
+                noteEffectManager.VibrateImpulse("R", 1f, 0.6f);
                 Destroy(this.gameObject);                
             }
             else if(lr == "L" && oculusInputManager.lImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.lLane)) {
                 Debug.Log(id + ": Just " + time);
                 noteEffectManager.PlaySE(type);
                 noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.JUST, lanes);
+                noteEffectManager.VibrateImpulse("L", 1f, 0.6f);
                 Destroy(this.gameObject);                
             }
-            else if((lr == "" && oculusInputManager.rImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.rLane)) ||
-                    (lr == "" && oculusInputManager.lImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.lLane))) {
+            else if(lr == "" && oculusInputManager.rImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.rLane)) {
                 Debug.Log(id + ": Just " + time);
                 noteEffectManager.PlaySE(type);
                 noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.JUST, lanes);
+                noteEffectManager.VibrateImpulse("R", 1f, 0.6f);
+                Destroy(this.gameObject);    
+            }
+            else if(lr == "" && oculusInputManager.lImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.lLane)) {
+                Debug.Log(id + ": Just " + time);
+                noteEffectManager.PlaySE(type);
+                noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.JUST, lanes);
+                noteEffectManager.VibrateImpulse("L", 1f, 0.6f);
                 Destroy(this.gameObject);                  
             }
         }
@@ -105,19 +114,28 @@ public class FlickNote : Note
                 Debug.Log(id + ": Great " + time);
                 noteEffectManager.PlaySE(type);
                 noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.GREAT, lanes);
+                noteEffectManager.VibrateImpulse("R", 1f, 0.6f);
                 Destroy(this.gameObject);                
             }
             else if(lr == "L" && oculusInputManager.lImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.lLane)) {
                 Debug.Log(id + ": Great " + time);
                 noteEffectManager.PlaySE(type);
                 noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.GREAT, lanes);
+                noteEffectManager.VibrateImpulse("L", 1f, 0.6f);
                 Destroy(this.gameObject);                
             }
-            else if((lr == "" && oculusInputManager.rImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.rLane)) ||
-                    (lr == "" && oculusInputManager.lImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.lLane))) {
+            else if(lr == "" && oculusInputManager.rImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.rLane)) {
                 Debug.Log(id + ": Great " + time);
                 noteEffectManager.PlaySE(type);
                 noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.GREAT, lanes);
+                noteEffectManager.VibrateImpulse("R", 1f, 0.6f);
+                Destroy(this.gameObject);    
+            }
+            else if(lr == "" && oculusInputManager.lImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.lLane)) {
+                Debug.Log(id + ": Great " + time);
+                noteEffectManager.PlaySE(type);
+                noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.GREAT, lanes);
+                noteEffectManager.VibrateImpulse("L", 1f, 0.6f);
                 Destroy(this.gameObject);                  
             }
         }
@@ -127,19 +145,28 @@ public class FlickNote : Note
                 Debug.Log(id + ": Good " + time);
                 noteEffectManager.PlaySE(type);
                 noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.GOOD, lanes);
+                noteEffectManager.VibrateImpulse("R", 1f, 0.6f);
                 Destroy(this.gameObject);                
             }
             else if(lr == "L" && oculusInputManager.lImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.lLane)) {
                 Debug.Log(id + ": Good " + time);
                 noteEffectManager.PlaySE(type);
                 noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.GOOD, lanes);
+                noteEffectManager.VibrateImpulse("L", 1f, 0.6f);
                 Destroy(this.gameObject);                
             }
-            else if((lr == "" && oculusInputManager.rImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.rLane)) ||
-                    (lr == "" && oculusInputManager.lImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.lLane))) {
+            else if(lr == "" && oculusInputManager.rImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.rLane)) {
                 Debug.Log(id + ": Good " + time);
                 noteEffectManager.PlaySE(type);
                 noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.GOOD, lanes);
+                noteEffectManager.VibrateImpulse("R", 1f, 0.6f);
+                Destroy(this.gameObject);    
+            }
+            else if(lr == "" && oculusInputManager.lImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.lLane)) {
+                Debug.Log(id + ": Good " + time);
+                noteEffectManager.PlaySE(type);
+                noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.GOOD, lanes);
+                noteEffectManager.VibrateImpulse("L", 1f, 0.6f);
                 Destroy(this.gameObject);                  
             }
         }

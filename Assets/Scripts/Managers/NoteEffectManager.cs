@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using General.CONSTS;
 using Meta.WitAi.Events;
 using Unity.VisualScripting;
@@ -75,5 +76,23 @@ public class NoteEffectManager : MonoBehaviour
             judgeEffect.GetComponent<FlickJudgeEffect>().Init(judgeID, lanes);
             Destroy(judgeEffect, 0.3f);
         }
+    }
+
+    public void VibrateImpulse(string lr, float amp, float freq)
+    {
+        StartCoroutine(Vibrate(lr, amp, freq));
+    }
+
+    private IEnumerator Vibrate(string lr, float amp, float freq)
+    {
+        OVRInput.Controller controller;
+        if(lr == "R") { controller = OVRInput.Controller.RTouch; }
+        else { controller = OVRInput.Controller.LTouch; }
+
+        OVRInput.SetControllerVibration(freq, amp, controller);
+
+        yield return new WaitForSeconds(freq);
+
+        OVRInput.SetControllerVibration(0f, 0f, controller);
     }
 }
