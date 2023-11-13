@@ -84,6 +84,7 @@ public class LongChildNote : Note
             Debug.Log(id + ": Miss ");
             parent.state = (int)LONGNOTE.STATE.Lost;
             parent.SetLostMaterials();
+            parent.StopVibration();
             Destroy(this.gameObject);
         }
     }

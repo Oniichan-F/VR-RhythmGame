@@ -135,6 +135,7 @@ public class LongNote : Note
         }
 
         if(endTime < -0.1f) {
+            StopVibration();
             Destroy(this.gameObject);
         }
     }
@@ -145,17 +146,27 @@ public class LongNote : Note
             if(lr == "R" && startLanes.Contains(oculusInputManager.rLane)) {
                 Debug.Log(id + ": Hold Enter");
                 noteEffectManager.PlaySE(type);
+                noteEffectManager.SetVibration("R", 0.6f, 1f);
                 state = (int)LONGNOTE.STATE.Active;               
             }
             else if(lr == "L" && startLanes.Contains(oculusInputManager.lLane)) {
                 Debug.Log(id + ": Hold Enter");
                 noteEffectManager.PlaySE(type);
+                noteEffectManager.SetVibration("L", 0.6f, 1f);
                 state = (int)LONGNOTE.STATE.Active;          
             }
-            else if((lr == "" && startLanes.Contains(oculusInputManager.rLane)) ||
-                    (lr == "" && startLanes.Contains(oculusInputManager.lLane))) {
+            else if(lr == "" && startLanes.Contains(oculusInputManager.rLane)) {
                 Debug.Log(id + ": Hold Enter");
                 noteEffectManager.PlaySE(type);
+                noteEffectManager.SetVibration("R", 0.6f, 1f);
+                lr = "R";
+                state = (int)LONGNOTE.STATE.Active;  
+            }
+            else if(lr == "" && startLanes.Contains(oculusInputManager.lLane)) {
+                Debug.Log(id + ": Hold Enter");
+                noteEffectManager.PlaySE(type);
+                noteEffectManager.SetVibration("L", 0.6f, 1f);
+                lr = "L";
                 state = (int)LONGNOTE.STATE.Active;                
             }
         }
@@ -179,5 +190,10 @@ public class LongNote : Note
         else if(lr == "L") {
             mesh.GetComponent<MeshRenderer>().SetMaterials(matsLostL);
         }
+    }
+
+    public void StopVibration()
+    {
+        noteEffectManager.SetVibration(lr, 0f, 0f);
     }
 }

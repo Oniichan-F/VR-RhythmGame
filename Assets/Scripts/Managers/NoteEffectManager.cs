@@ -83,6 +83,15 @@ public class NoteEffectManager : MonoBehaviour
         StartCoroutine(Vibrate(lr, amp, freq));
     }
 
+    public void SetVibration(string lr, float amp, float freq)
+    {
+        OVRInput.Controller controller;
+        if(lr == "R") { controller = OVRInput.Controller.RTouch; }
+        else { controller = OVRInput.Controller.LTouch; }
+
+        OVRInput.SetControllerVibration(freq, amp, controller);
+    }
+
     private IEnumerator Vibrate(string lr, float amp, float freq)
     {
         OVRInput.Controller controller;
