@@ -77,112 +77,81 @@ public class FlickNote : Note
 
     protected override void Judge()
     {
+        void effectProcess(int judgeID, string lr) {
+            noteEffectManager.PlaySE(type);
+            noteEffectManager.GenerateJudgeEffect(type, judgeID, lanes);
+            noteEffectManager.VibrateImpulse(lr, 1f, 0.5f);
+        }
+
         // Just
         if(Mathf.Abs(time) < JUDGE.JUST) {
             if(lr == "R" && oculusInputManager.rImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.rLane)) {
-                Debug.Log(id + ": Just " + time);
-                noteEffectManager.PlaySE(type);
-                noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.JUST, lanes);
-                noteEffectManager.VibrateImpulse("R", 1f, 0.6f);
+                effectProcess((int)JUDGE.JUDGE_ID.JUST, "R");
                 Destroy(this.gameObject);                
             }
             else if(lr == "L" && oculusInputManager.lImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.lLane)) {
-                Debug.Log(id + ": Just " + time);
-                noteEffectManager.PlaySE(type);
-                noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.JUST, lanes);
-                noteEffectManager.VibrateImpulse("L", 1f, 0.6f);
+                effectProcess((int)JUDGE.JUDGE_ID.JUST, "L");
                 Destroy(this.gameObject);                
             }
             else if(lr == "" && oculusInputManager.rImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.rLane)) {
-                Debug.Log(id + ": Just " + time);
-                noteEffectManager.PlaySE(type);
-                noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.JUST, lanes);
-                noteEffectManager.VibrateImpulse("R", 1f, 0.6f);
+                effectProcess((int)JUDGE.JUDGE_ID.JUST, "R");
                 Destroy(this.gameObject);    
             }
             else if(lr == "" && oculusInputManager.lImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.lLane)) {
-                Debug.Log(id + ": Just " + time);
-                noteEffectManager.PlaySE(type);
-                noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.JUST, lanes);
-                noteEffectManager.VibrateImpulse("L", 1f, 0.6f);
+                effectProcess((int)JUDGE.JUDGE_ID.JUST, "L");
                 Destroy(this.gameObject);                  
             }
         }
         // Great
         else if(Mathf.Abs(time) < JUDGE.GREAT) {
             if(lr == "R" && oculusInputManager.rImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.rLane)) {
-                Debug.Log(id + ": Great " + time);
-                noteEffectManager.PlaySE(type);
-                noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.GREAT, lanes);
-                noteEffectManager.VibrateImpulse("R", 1f, 0.6f);
+                effectProcess((int)JUDGE.JUDGE_ID.GREAT, "R");
                 Destroy(this.gameObject);                
             }
             else if(lr == "L" && oculusInputManager.lImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.lLane)) {
-                Debug.Log(id + ": Great " + time);
-                noteEffectManager.PlaySE(type);
-                noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.GREAT, lanes);
-                noteEffectManager.VibrateImpulse("L", 1f, 0.6f);
+                effectProcess((int)JUDGE.JUDGE_ID.GREAT, "L");
                 Destroy(this.gameObject);                
             }
             else if(lr == "" && oculusInputManager.rImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.rLane)) {
-                Debug.Log(id + ": Great " + time);
-                noteEffectManager.PlaySE(type);
-                noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.GREAT, lanes);
-                noteEffectManager.VibrateImpulse("R", 1f, 0.6f);
+                effectProcess((int)JUDGE.JUDGE_ID.GREAT, "R");
                 Destroy(this.gameObject);    
             }
             else if(lr == "" && oculusInputManager.lImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.lLane)) {
-                Debug.Log(id + ": Great " + time);
-                noteEffectManager.PlaySE(type);
-                noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.GREAT, lanes);
-                noteEffectManager.VibrateImpulse("L", 1f, 0.6f);
+                effectProcess((int)JUDGE.JUDGE_ID.GREAT, "L");
                 Destroy(this.gameObject);                  
             }
         }
         // Good
         else if(Mathf.Abs(time) < JUDGE.GOOD) {
             if(lr == "R" && oculusInputManager.rImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.rLane)) {
-                Debug.Log(id + ": Good " + time);
-                noteEffectManager.PlaySE(type);
-                noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.GOOD, lanes);
-                noteEffectManager.VibrateImpulse("R", 1f, 0.6f);
+                effectProcess((int)JUDGE.JUDGE_ID.GOOD, "R");
                 Destroy(this.gameObject);                
             }
             else if(lr == "L" && oculusInputManager.lImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.lLane)) {
-                Debug.Log(id + ": Good " + time);
-                noteEffectManager.PlaySE(type);
-                noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.GOOD, lanes);
-                noteEffectManager.VibrateImpulse("L", 1f, 0.6f);
+                effectProcess((int)JUDGE.JUDGE_ID.GOOD, "L");
                 Destroy(this.gameObject);                
             }
             else if(lr == "" && oculusInputManager.rImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.rLane)) {
-                Debug.Log(id + ": Good " + time);
-                noteEffectManager.PlaySE(type);
-                noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.GOOD, lanes);
-                noteEffectManager.VibrateImpulse("R", 1f, 0.6f);
+                effectProcess((int)JUDGE.JUDGE_ID.GOOD, "R");
                 Destroy(this.gameObject);    
             }
             else if(lr == "" && oculusInputManager.lImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.lLane)) {
-                Debug.Log(id + ": Good " + time);
-                noteEffectManager.PlaySE(type);
-                noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.GOOD, lanes);
-                noteEffectManager.VibrateImpulse("L", 1f, 0.6f);
+                effectProcess((int)JUDGE.JUDGE_ID.GOOD, "L");
                 Destroy(this.gameObject);                  
             }
         }
         // Miss
         else {
             if(lr == "R" && oculusInputManager.rImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.rLane)) {
-                Debug.Log(id + ": Miss " + time);
                 Destroy(this.gameObject);                
             }
             else if(lr == "L" && oculusInputManager.lImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.lLane)) {
-                Debug.Log(id + ": Miss " + time);
                 Destroy(this.gameObject);                
             }
-            else if((lr == "" && oculusInputManager.rImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.rLane)) ||
-                    (lr == "" && oculusInputManager.lImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.lLane))) {
-                Debug.Log(id + ": Miss " + time);
+            else if(lr == "" && oculusInputManager.rImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.rLane)) {
+                Destroy(this.gameObject); 
+            }
+            else if(lr == "" && oculusInputManager.lImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.lLane)) {
                 Destroy(this.gameObject);                  
             }
         }

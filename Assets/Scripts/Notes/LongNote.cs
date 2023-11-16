@@ -142,30 +142,27 @@ public class LongNote : Note
 
     protected override void Judge()
     {
+        void effectProcess(string lr) {
+            noteEffectManager.PlaySE(type);
+            noteEffectManager.SetVibration(lr, 0.5f, 1f);
+        }
+
         if(state == (int)LONGNOTE.STATE.inActive) {
             if(lr == "R" && startLanes.Contains(oculusInputManager.rLane)) {
-                Debug.Log(id + ": Hold Enter");
-                noteEffectManager.PlaySE(type);
-                noteEffectManager.SetVibration("R", 0.6f, 1f);
+                effectProcess("R");
                 state = (int)LONGNOTE.STATE.Active;               
             }
             else if(lr == "L" && startLanes.Contains(oculusInputManager.lLane)) {
-                Debug.Log(id + ": Hold Enter");
-                noteEffectManager.PlaySE(type);
-                noteEffectManager.SetVibration("L", 0.6f, 1f);
+                effectProcess("L");
                 state = (int)LONGNOTE.STATE.Active;          
             }
             else if(lr == "" && startLanes.Contains(oculusInputManager.rLane)) {
-                Debug.Log(id + ": Hold Enter");
-                noteEffectManager.PlaySE(type);
-                noteEffectManager.SetVibration("R", 0.6f, 1f);
+                effectProcess("R");
                 lr = "R";
                 state = (int)LONGNOTE.STATE.Active;  
             }
             else if(lr == "" && startLanes.Contains(oculusInputManager.lLane)) {
-                Debug.Log(id + ": Hold Enter");
-                noteEffectManager.PlaySE(type);
-                noteEffectManager.SetVibration("L", 0.6f, 1f);
+                effectProcess("L");
                 lr = "L";
                 state = (int)LONGNOTE.STATE.Active;                
             }

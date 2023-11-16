@@ -67,36 +67,29 @@ public class TouchNote : Note
 
     protected override void Judge()
     {
-        if(lr == "R" && lanes.Contains(oculusInputManager.rLane)) {
-            Debug.Log(id + ": Just " + time);
+        void effectProcess(string lr) {
             noteEffectManager.PlaySE(type);
-            noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.JUST, lanes);
-            noteEffectManager.VibrateImpulse("R", 0.6f, 0.1f);
+            noteEffectManager.GenerateJudgeEffect(type, 0, lanes);
+            noteEffectManager.VibrateImpulse(lr, 0.5f, 0.1f);
+        }
+
+        if(lr == "R" && lanes.Contains(oculusInputManager.rLane)) {
+            effectProcess("R");
             Destroy(this.gameObject);                
         }
         else if(lr == "L" && lanes.Contains(oculusInputManager.lLane)) {
-            Debug.Log(id + ": Just " + time);
-            noteEffectManager.PlaySE(type);
-            noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.JUST, lanes);
-            noteEffectManager.VibrateImpulse("L", 0.6f, 0.1f);
+            effectProcess("L");
             Destroy(this.gameObject);                
         }
         else if(lr == "" && lanes.Contains(oculusInputManager.rLane)) {
-            Debug.Log(id + ": Just " + time);
-            noteEffectManager.PlaySE(type);
-            noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.JUST, lanes);
-            noteEffectManager.VibrateImpulse("R", 0.6f, 0.1f);
+            effectProcess("R");
             Destroy(this.gameObject);
         }
         else if(lr == "" && lanes.Contains(oculusInputManager.lLane)) {
-            Debug.Log(id + ": Just " + time);
-            noteEffectManager.PlaySE(type);
-            noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.JUST, lanes);
-            noteEffectManager.VibrateImpulse("L", 0.6f, 0.1f);
+            effectProcess("L");
             Destroy(this.gameObject);                  
         }
         else {
-            Debug.Log(id + ": Lost " + time);
             Destroy(this.gameObject);              
         }
     }
