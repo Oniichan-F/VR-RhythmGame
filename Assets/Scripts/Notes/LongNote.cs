@@ -127,7 +127,7 @@ public class LongNote : Note
 
     protected override void CheckDestory()
     {
-        if(startTime < -JUDGE.THRESH) {
+        if(startTime < -0.5f) {
             if(state == (int)LONGNOTE.STATE.inActive) {
                 state = (int)LONGNOTE.STATE.Lost;
                 SetLostMaterials();

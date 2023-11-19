@@ -42,12 +42,13 @@ public class LongChildNote : Note
         UpdateTime();
     }
 
-    public void Init(int id, int[] lanes, float time, string lr, LongNote parent)
+    public void Init(int id, int[] lanes, float time, string lr, int[] options, LongNote parent)
     {
         base.Init(id, lanes, time, lr);
         
         this.type = (int)NOTE.TYPE.LongChild;
         this.size = lanes.Length / 2;
+        this.isVisible = options[0] == 0 ? true : false;
         this.parent = parent;
     }
 

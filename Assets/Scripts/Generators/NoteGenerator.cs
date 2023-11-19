@@ -158,6 +158,7 @@ public class NoteGenerator : MonoBehaviour
                     if(child.type == (int)NOTE.TYPE.LongChild) {
                         int[] _lanes = child.lanes;
                         float _time  = calcTime(child);
+                        int[] _options = child.options;
                         float _pos   = _time * noteSpeed;
                         float _rot   = LANE.ANGLES[_lanes[0]];
 
@@ -167,7 +168,7 @@ public class NoteGenerator : MonoBehaviour
                         );
 
                         LongChildNote longChildNote = longChildNoteObj.GetComponent<LongChildNote>();
-                        longChildNote.Init(id:id, lanes:_lanes, time:_time, lr:lr, parent:longNote);
+                        longChildNote.Init(id:id, lanes:_lanes, time:_time, lr:lr, options:_options, parent:longNote);
                         longChildNote.SetPosition(_pos);
                         longChildNote.SetRotation(_rot);
                     }
