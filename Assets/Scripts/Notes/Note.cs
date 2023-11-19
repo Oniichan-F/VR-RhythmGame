@@ -18,6 +18,7 @@ public class Note : MonoBehaviour
     protected GameObject mesh;
     protected NoteEffectManager noteEffectManager;
     protected OculusInputManager oculusInputManager;
+    protected ScoreManager scoreManager;
 
 
 
@@ -34,6 +35,7 @@ public class Note : MonoBehaviour
         mesh = transform.Find("Mesh").gameObject;
         noteEffectManager = GameObject.Find("NoteEffectManager").GetComponent<NoteEffectManager>();
         oculusInputManager = GameObject.Find("InputManager").GetComponent<OculusInputManager>();
+        scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
     }
 
     protected virtual void SetMesh()

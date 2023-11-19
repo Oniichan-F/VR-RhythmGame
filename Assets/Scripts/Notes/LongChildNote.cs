@@ -95,6 +95,7 @@ public class LongChildNote : Note
         if(parent.state == (int)LONGNOTE.STATE.Active) {
             if(time < 0f) {
                 noteEffectManager.PlaySE(type);
+                scoreManager.AddScore((int)JUDGE.JUDGE_ID.JUST);
                 Destroy(this.gameObject);
             }
         }

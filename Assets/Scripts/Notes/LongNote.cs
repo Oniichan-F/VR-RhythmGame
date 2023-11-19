@@ -46,7 +46,7 @@ public class LongNote : Note
         CheckDestory();
 
         if(!RhythmGameManager.Instance.isAutoMode) {
-            if(startTime < 0f) {
+            if(startTime < -0.1f) {
                 Judge();
             }
         }
@@ -174,6 +174,7 @@ public class LongNote : Note
         if(state == (int)LONGNOTE.STATE.inActive) {
             if(startTime < 0f) {
                 noteEffectManager.PlaySE(type);
+                scoreManager.AddScore((int)JUDGE.JUDGE_ID.JUST);
                 state = (int)LONGNOTE.STATE.Active;
             }
         }

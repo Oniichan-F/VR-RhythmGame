@@ -99,6 +99,7 @@ public class TouchNote : Note
         if(time < 0f) {
             noteEffectManager.PlaySE(type);
             noteEffectManager.GenerateJudgeEffect(type, (int)JUDGE.JUDGE_ID.JUST, lanes);
+            scoreManager.AddScore((int)JUDGE.JUDGE_ID.JUST);
             Destroy(this.gameObject);
         }
     }
