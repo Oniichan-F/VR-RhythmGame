@@ -7,11 +7,13 @@ public class ScorePanel : MonoBehaviour
 {
     TextMeshProUGUI tmproScore;
     TextMeshProUGUI tmproCombo;
+    Animation animComboPopup;
 
     private void Start()
     {
         tmproScore = transform.Find("Text_Score").GetComponent<TextMeshProUGUI>();
         tmproCombo = transform.Find("Text_Combo").GetComponent<TextMeshProUGUI>();
+        animComboPopup = transform.Find("Text_Combo").GetComponent<Animation>();
     }
 
     public void UpdateText(float score, int combo, int justCount)
@@ -24,5 +26,6 @@ public class ScorePanel : MonoBehaviour
         }
 
         tmproCombo.text = combo.ToString();
+        animComboPopup.Play();
     }
 }

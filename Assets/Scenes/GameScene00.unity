@@ -526,6 +526,7 @@ MonoBehaviour:
   songBPMGuideName: yuusya_Lv2_BPMGuide
   BPM: -1
   LPB: -1
+  numNotes: 0
   baseChartOffset: 0
   isAutoMode: 1
   isPaused: 0
@@ -2420,6 +2421,7 @@ GameObject:
   - component: {fileID: 1235052424}
   - component: {fileID: 1235052426}
   - component: {fileID: 1235052425}
+  - component: {fileID: 1235052427}
   m_Layer: 0
   m_Name: Text_Combo
   m_TagString: Untagged
@@ -2466,7 +2468,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0000
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2494,7 +2496,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 0.3
-  m_fontSizeBase: 0.3
+  m_fontSizeBase: 0
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2543,6 +2545,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1235052423}
   m_CullTransparentMesh: 1
+--- !u!111 &1235052427
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235052423}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 6a74faa0882c2e74f9c681eca3f5d20a, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 6a74faa0882c2e74f9c681eca3f5d20a, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1001 &1253939422
 PrefabInstance:
   m_ObjectHideFlags: 0
