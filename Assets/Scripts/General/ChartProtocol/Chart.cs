@@ -13,6 +13,7 @@ namespace General
             public float BPM;
             public int LPB;
             public float offset;
+            public int numNotes;
             public NoteData[] noteData;
         }
 

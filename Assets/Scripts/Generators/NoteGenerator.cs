@@ -37,6 +37,7 @@ public class NoteGenerator : MonoBehaviour
         chartData = JsonUtility.FromJson<ChartData>(jsonFileName);
         RhythmGameManager.Instance.BPM = chartData.BPM;
         RhythmGameManager.Instance.LPB = chartData.LPB;
+        RhythmGameManager.Instance.numNotes = chartData.numNotes;
         RhythmGameManager.Instance.baseChartOffset = chartData.offset;
         RhythmGameManager.Instance.SetOffsets();
     }

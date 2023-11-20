@@ -29,14 +29,17 @@ public class ScoreManager : MonoBehaviour
     public void AddScore(int judgeID)
     {
         if(judgeID == (int)JUDGE.JUDGE_ID.JUST) {
+            score += 1f / RhythmGameManager.Instance.numNotes;
             combo += 1;
             justCount += 1;
         }
         else if(judgeID == (int)JUDGE.JUDGE_ID.GREAT) {
+            score += 0.75f * (1f / RhythmGameManager.Instance.numNotes);
             combo += 1;
             greatCount += 1;
         }
         else if(judgeID == (int)JUDGE.JUDGE_ID.GOOD) {
+            score += 0.5f * (1f / RhythmGameManager.Instance.numNotes);
             combo += 1;
             goodCount += 1;
         }
@@ -45,6 +48,6 @@ public class ScoreManager : MonoBehaviour
             missCount += 1;
         }
 
-        scorePanel.UpdateText(score, combo);
+        scorePanel.UpdateText(score, combo, justCount);
     }
 }

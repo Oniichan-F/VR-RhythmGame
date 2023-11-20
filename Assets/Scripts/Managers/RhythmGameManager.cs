@@ -15,6 +15,7 @@ public class RhythmGameManager : MonoBehaviour
     public string songBPMGuideName;
     public float BPM;
     public int LPB;
+    public int numNotes;
     public float baseChartOffset;
 
     public float noteSpeed { private set; get; }
