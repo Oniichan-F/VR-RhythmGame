@@ -75,21 +75,26 @@ public class TouchNote : Note
 
         if(lr == "R" && lanes.Contains(oculusInputManager.rLane)) {
             effectProcess("R");
+            scoreManager.AddScore((int)JUDGE.JUDGE_ID.JUST);
             Destroy(this.gameObject);                
         }
         else if(lr == "L" && lanes.Contains(oculusInputManager.lLane)) {
             effectProcess("L");
+            scoreManager.AddScore((int)JUDGE.JUDGE_ID.JUST);
             Destroy(this.gameObject);                
         }
         else if(lr == "" && lanes.Contains(oculusInputManager.rLane)) {
             effectProcess("R");
+            scoreManager.AddScore((int)JUDGE.JUDGE_ID.JUST);
             Destroy(this.gameObject);
         }
         else if(lr == "" && lanes.Contains(oculusInputManager.lLane)) {
             effectProcess("L");
+            scoreManager.AddScore((int)JUDGE.JUDGE_ID.JUST);
             Destroy(this.gameObject);                  
         }
         else {
+            scoreManager.AddScore(-1);
             Destroy(this.gameObject);              
         }
     }

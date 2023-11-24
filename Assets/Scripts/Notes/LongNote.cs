@@ -131,6 +131,7 @@ public class LongNote : Note
             if(state == (int)LONGNOTE.STATE.inActive) {
                 state = (int)LONGNOTE.STATE.Lost;
                 SetLostMaterials();
+                scoreManager.AddScore(-1);
             }   
         }
 
@@ -150,19 +151,23 @@ public class LongNote : Note
         if(state == (int)LONGNOTE.STATE.inActive) {
             if(lr == "R" && startLanes.Contains(oculusInputManager.rLane)) {
                 effectProcess("R");
+                scoreManager.AddScore((int)JUDGE.JUDGE_ID.JUST);
                 state = (int)LONGNOTE.STATE.Active;               
             }
             else if(lr == "L" && startLanes.Contains(oculusInputManager.lLane)) {
                 effectProcess("L");
+                scoreManager.AddScore((int)JUDGE.JUDGE_ID.JUST);
                 state = (int)LONGNOTE.STATE.Active;          
             }
             else if(lr == "" && startLanes.Contains(oculusInputManager.rLane)) {
                 effectProcess("R");
+                scoreManager.AddScore((int)JUDGE.JUDGE_ID.JUST);
                 lr = "R";
                 state = (int)LONGNOTE.STATE.Active;  
             }
             else if(lr == "" && startLanes.Contains(oculusInputManager.lLane)) {
                 effectProcess("L");
+                scoreManager.AddScore((int)JUDGE.JUDGE_ID.JUST);
                 lr = "L";
                 state = (int)LONGNOTE.STATE.Active;                
             }

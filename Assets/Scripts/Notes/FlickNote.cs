@@ -87,18 +87,22 @@ public class FlickNote : Note
         if(Mathf.Abs(time) < JUDGE.JUST) {
             if(lr == "R" && oculusInputManager.rImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.rLane)) {
                 effectProcess((int)JUDGE.JUDGE_ID.JUST, "R");
+                scoreManager.AddScore((int)JUDGE.JUDGE_ID.JUST);
                 Destroy(this.gameObject);                
             }
             else if(lr == "L" && oculusInputManager.lImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.lLane)) {
                 effectProcess((int)JUDGE.JUDGE_ID.JUST, "L");
+                scoreManager.AddScore((int)JUDGE.JUDGE_ID.JUST);
                 Destroy(this.gameObject);                
             }
             else if(lr == "" && oculusInputManager.rImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.rLane)) {
                 effectProcess((int)JUDGE.JUDGE_ID.JUST, "R");
+                scoreManager.AddScore((int)JUDGE.JUDGE_ID.JUST);
                 Destroy(this.gameObject);    
             }
             else if(lr == "" && oculusInputManager.lImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.lLane)) {
                 effectProcess((int)JUDGE.JUDGE_ID.JUST, "L");
+                scoreManager.AddScore((int)JUDGE.JUDGE_ID.JUST);
                 Destroy(this.gameObject);                  
             }
         }
@@ -106,18 +110,22 @@ public class FlickNote : Note
         else if(Mathf.Abs(time) < JUDGE.GREAT) {
             if(lr == "R" && oculusInputManager.rImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.rLane)) {
                 effectProcess((int)JUDGE.JUDGE_ID.GREAT, "R");
+                scoreManager.AddScore((int)JUDGE.JUDGE_ID.GREAT);
                 Destroy(this.gameObject);                
             }
             else if(lr == "L" && oculusInputManager.lImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.lLane)) {
                 effectProcess((int)JUDGE.JUDGE_ID.GREAT, "L");
+                scoreManager.AddScore((int)JUDGE.JUDGE_ID.GREAT);
                 Destroy(this.gameObject);                
             }
             else if(lr == "" && oculusInputManager.rImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.rLane)) {
                 effectProcess((int)JUDGE.JUDGE_ID.GREAT, "R");
+                scoreManager.AddScore((int)JUDGE.JUDGE_ID.GREAT);
                 Destroy(this.gameObject);    
             }
             else if(lr == "" && oculusInputManager.lImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.lLane)) {
                 effectProcess((int)JUDGE.JUDGE_ID.GREAT, "L");
+                scoreManager.AddScore((int)JUDGE.JUDGE_ID.GREAT);
                 Destroy(this.gameObject);                  
             }
         }
@@ -125,33 +133,41 @@ public class FlickNote : Note
         else if(Mathf.Abs(time) < JUDGE.GOOD) {
             if(lr == "R" && oculusInputManager.rImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.rLane)) {
                 effectProcess((int)JUDGE.JUDGE_ID.GOOD, "R");
+                scoreManager.AddScore((int)JUDGE.JUDGE_ID.GOOD);
                 Destroy(this.gameObject);                
             }
             else if(lr == "L" && oculusInputManager.lImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.lLane)) {
                 effectProcess((int)JUDGE.JUDGE_ID.GOOD, "L");
+                scoreManager.AddScore((int)JUDGE.JUDGE_ID.GOOD);
                 Destroy(this.gameObject);                
             }
             else if(lr == "" && oculusInputManager.rImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.rLane)) {
                 effectProcess((int)JUDGE.JUDGE_ID.GOOD, "R");
+                scoreManager.AddScore((int)JUDGE.JUDGE_ID.GOOD);
                 Destroy(this.gameObject);    
             }
             else if(lr == "" && oculusInputManager.lImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.lLane)) {
                 effectProcess((int)JUDGE.JUDGE_ID.GOOD, "L");
+                scoreManager.AddScore((int)JUDGE.JUDGE_ID.GOOD);
                 Destroy(this.gameObject);                  
             }
         }
         // Miss
         else {
             if(lr == "R" && oculusInputManager.rImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.rLane)) {
+                scoreManager.AddScore(-1);
                 Destroy(this.gameObject);                
             }
             else if(lr == "L" && oculusInputManager.lImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.lLane)) {
+                scoreManager.AddScore(-1);
                 Destroy(this.gameObject);                
             }
             else if(lr == "" && oculusInputManager.rImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.rLane)) {
+                scoreManager.AddScore(-1);
                 Destroy(this.gameObject); 
             }
             else if(lr == "" && oculusInputManager.lImpact == (int)INPUT.IMPACT.Internal && lanes.Contains(oculusInputManager.lLane)) {
+                scoreManager.AddScore(-1);
                 Destroy(this.gameObject);                  
             }
         }

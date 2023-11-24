@@ -65,8 +65,9 @@ public class Note : MonoBehaviour
 
     protected virtual void CheckDestory()
     {
-        if(time < -1f) {
+        if(time < -0.1f) {
             Debug.Log(id + ": Lost " + time);
+            scoreManager.AddScore(-1);
             Destroy(this.gameObject);
         }
     }

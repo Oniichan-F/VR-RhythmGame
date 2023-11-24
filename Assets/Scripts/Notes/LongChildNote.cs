@@ -79,6 +79,7 @@ public class LongChildNote : Note
         if(lanes.Contains(oculusInputManager.rLane) || lanes.Contains(oculusInputManager.lLane)) {
             Debug.Log(id + ": Hold ");
             noteEffectManager.PlaySE(type);
+            scoreManager.AddScore((int)JUDGE.JUDGE_ID.JUST);
             Destroy(this.gameObject);
         }
         else {
@@ -86,6 +87,7 @@ public class LongChildNote : Note
             parent.state = (int)LONGNOTE.STATE.Lost;
             parent.SetLostMaterials();
             parent.StopVibration();
+            scoreManager.AddScore(-1);
             Destroy(this.gameObject);
         }
     }
