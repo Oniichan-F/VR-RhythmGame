@@ -49,6 +49,7 @@ public class LongChildNote : Note
         this.type = (int)NOTE.TYPE.LongChild;
         this.size = lanes.Length / 2;
         this.isVisible = options[0] == 0 ? true : false;
+        this.isVisible = true;
         this.parent = parent;
     }
 

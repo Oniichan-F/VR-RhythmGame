@@ -521,9 +521,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   songID: 0
   songDisplayName: "\u52C7\u8005\u3066\u3059\u3068"
-  songSourceName: yuusya
-  songChartName: yuusya_Lv2
-  songBPMGuideName: yuusya_Lv2_BPMGuide
+  songSourceName: INTERNET_OVERDOSE
+  songChartName: INTERNET_OVERDOSE
+  songBPMGuideName: INTERNET_OVERDOSE_bpm
   BPM: -1
   LPB: -1
   numNotes: 0
@@ -4449,7 +4449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageScaleOffset: 0
   stageHeightOffset: 0
-  playerNoteSpeed: 40
+  playerNoteSpeed: 20
   playerChartOffset: 0
 --- !u!1 &1798755358
 GameObject:

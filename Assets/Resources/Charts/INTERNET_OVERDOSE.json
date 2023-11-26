@@ -1,0 +1,221 @@
+{
+	"BPM": 163,
+	"LPB": 4,
+	"numNotes": 100,
+	"offset": 5.5,
+	"noteData": [
+		{
+            "type": 10,
+            "lanes": [14,15,16,17,18,19,20,21],
+            "timing": 64,
+            "lr": "L",
+            "options": [-1,0],
+            "children": [
+                {
+                    "type": 12,
+                    "lanes": [14,15,16,17,18,19,20,21],
+                    "timing": 68,
+                    "lr": "",
+                    "options": [1],
+                    "children":[]
+                },
+                {
+                    "type": 12,
+                    "lanes": [14,15,16,17,18,19,20,21],
+                    "timing": 72,
+                    "lr": "",
+                    "options": [1],
+                    "children":[]
+                },
+                {
+                    "type": 12,
+                    "lanes": [14,15,16,17,18,19,20,21],
+                    "timing": 76,
+                    "lr": "",
+                    "options": [1],
+                    "children":[]
+                },
+                {
+                    "type": 12,
+                    "lanes": [14,15,16,17,18,19,20,21],
+                    "timing": 80,
+                    "lr": "",
+                    "options": [1],
+                    "children":[]
+                },
+                {
+                    "type": 11,
+                    "lanes": [14,15,16,17,18,19,20,21],
+                    "timing": 80,
+                    "lr": "",
+                    "options": [],
+                    "children":[]
+                }
+            ]
+        },
+		{
+            "type": 10,
+            "lanes": [26,27,28,29,30,31,0,1],
+            "timing": 80,
+            "lr": "R",
+            "options": [1,0],
+            "children": [
+                {
+                    "type": 12,
+                    "lanes": [26,27,28,29,30,31,0,1],
+                    "timing": 84,
+                    "lr": "",
+                    "options": [1],
+                    "children":[]
+                },
+                {
+                    "type": 12,
+                    "lanes": [26,27,28,29,30,31,0,1],
+                    "timing": 88,
+                    "lr": "",
+                    "options": [1],
+                    "children":[]
+                },
+                {
+                    "type": 12,
+                    "lanes": [26,27,28,29,30,31,0,1],
+                    "timing": 92,
+                    "lr": "",
+                    "options": [1],
+                    "children":[]
+                },
+                {
+                    "type": 12,
+                    "lanes": [26,27,28,29,30,31,0,1],
+                    "timing": 96,
+                    "lr": "",
+                    "options": [1],
+                    "children":[]
+                },
+                {
+                    "type": 11,
+                    "lanes": [26,27,28,29,30,31,0,1],
+                    "timing": 96,
+                    "lr": "",
+                    "options": [],
+                    "children":[]
+                }
+            ]
+        },
+        {
+            "type": 10,
+            "lanes": [4,5,6,7,8,9,10,11],
+            "timing": 96,
+            "lr": "L",
+            "options": [-1,0],
+            "children": [
+                {
+                    "type": 12,
+                    "lanes": [4,5,6,7,8,9,10,11],
+                    "timing": 100,
+                    "lr": "",
+                    "options": [1],
+                    "children":[]
+                },
+                {
+                    "type": 12,
+                    "lanes": [4,5,6,7,8,9,10,11],
+                    "timing": 104,
+                    "lr": "",
+                    "options": [1],
+                    "children":[]
+                },
+                {
+                    "type": 12,
+                    "lanes": [4,5,6,7,8,9,10,11],
+                    "timing": 108,
+                    "lr": "",
+                    "options": [1],
+                    "children":[]
+                },
+                {
+                    "type": 12,
+                    "lanes": [4,5,6,7,8,9,10,11],
+                    "timing": 112,
+                    "lr": "",
+                    "options": [1],
+                    "children":[]
+                },
+                {
+                    "type": 11,
+                    "lanes": [4,5,6,7,8,9,10,11],
+                    "timing": 112,
+                    "lr": "",
+                    "options": [],
+                    "children":[]
+                }
+            ]
+        },
+        {
+			"type": 1,
+			"lanes": [28,29,30,31,0,1,2,3],
+			"timing": 112,
+			"lr": "",
+			"options": [1],
+			"children": []
+		},
+        {
+			"type": 1,
+			"lanes": [12,13,14,15,16,17,18,19],
+			"timing": 116,
+			"lr": "",
+			"options": [1],
+			"children": []
+		},
+        {
+            "type": 10,
+            "lanes": [24,25,26,27,28,29,30,31],
+            "timing": 120,
+            "lr": "R",
+            "options": [1,0],
+            "children": [
+                {
+                    "type": 12,
+                    "lanes": [0,1,2,3,4,5,6,7],
+                    "timing": 124,
+                    "lr": "",
+                    "options": [1],
+                    "children":[]
+                },
+                {
+                    "type": 11,
+                    "lanes": [0,1,2,3,4,5,6,7],
+                    "timing": 124,
+                    "lr": "",
+                    "options": [],
+                    "children":[]
+                }
+            ]
+        },
+        {
+            "type": 10,
+            "lanes": [16,17,18,19,20,21,22,23],
+            "timing": 120,
+            "lr": "L",
+            "options": [-1,0],
+            "children": [
+                {
+                    "type": 12,
+                    "lanes": [8,9,10,11,12,13,14,15],
+                    "timing": 124,
+                    "lr": "",
+                    "options": [1],
+                    "children":[]
+                },
+                {
+                    "type": 11,
+                    "lanes": [8,9,10,11,12,13,14,15],
+                    "timing": 124,
+                    "lr": "",
+                    "options": [],
+                    "children":[]
+                }
+            ]
+        }
+    ]
+}
