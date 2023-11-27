@@ -9,6 +9,7 @@ public class SongSelectButton : MonoBehaviour
 {
     [SerializeField] private string songName;
     private Button button;
+    private DevHubManager devHubManager;
     private PlayerPanel playerPanel;
 
     private void Start()
@@ -17,6 +18,7 @@ public class SongSelectButton : MonoBehaviour
             button.onClick.AddListener(OnClickSongSelectButton);
         }
 
+        devHubManager = GameObject.Find("DevHubManager").GetComponent<DevHubManager>();
         playerPanel = GameObject.Find("Player").transform.Find("PlayerPanel").GetComponent<PlayerPanel>();  
     }
 
@@ -24,6 +26,7 @@ public class SongSelectButton : MonoBehaviour
     {
         Debug.Log(songName);
 
+        devHubManager.songName = songName;
         SongInfo songInfo = new SongInfo("test", "test", 1.0f, "test");;
         if(songName == "INTERNET_OVERDOSE") {
             songInfo = new SongInfo("INTERNET_OVERDOSE", "Aiobahn feat.KOTOKO", 163.0f, "Oniichan");
