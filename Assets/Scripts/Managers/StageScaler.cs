@@ -2,18 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StageScaler : MonoBehaviour
 {
     [SerializeField] Transform masterScaler;
     [SerializeField] OculusInputManager oculusInputManager;
     [SerializeField] float scaleFactor = 1.0f;
+    [SerializeField] GameObject blind;
+    [SerializeField] Button finishButton;
+
+    private bool isFirst = true;
 
 
     private void Update()
     {
-        if(OVRInput.GetDown(OVRInput.Button.Four)) { // Y
+        if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) && OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger)) {
             SetScaler();
+
+            if(isFirst) {
+                Destroy(blind.gameObject);
+                finishButton.interactable = true;
+                isFirst = false;
+            }
         }
     }
 

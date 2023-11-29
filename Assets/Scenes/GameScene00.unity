@@ -2271,6 +2271,8 @@ MonoBehaviour:
   masterScaler: {fileID: 670505694}
   oculusInputManager: {fileID: 92442586}
   scaleFactor: 1.25
+  blind: {fileID: 0}
+  finishButton: {fileID: 0}
 --- !u!1001 &1056672915
 PrefabInstance:
   m_ObjectHideFlags: 0

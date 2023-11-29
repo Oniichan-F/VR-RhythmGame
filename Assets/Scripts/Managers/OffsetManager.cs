@@ -18,15 +18,24 @@ public class OffsetManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance && this != instance) {
-            Destroy(this.gameObject);
+        // if(instance && this != instance) {
+        //     Destroy(this.gameObject);
+        // }
+
+        // instance = this;
+
+        // stageScaleOffset  = 1f;
+        // stageHeightOffset = 1f;
+
+        // DontDestroyOnLoad(this);
+
+        if(instance == null) {
+            instance = this;
+
+            stageScaleOffset  = 1f;
+            stageHeightOffset = 1f;
+
+            DontDestroyOnLoad(this);           
         }
-
-        instance = this;
-
-        stageScaleOffset  = 1f;
-        stageHeightOffset = 1f;
-
-        DontDestroyOnLoad(this);
     }
 }
