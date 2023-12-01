@@ -9,10 +9,8 @@ public class TouchNote : Note
     [SerializeField] private Mesh[] meshes;
 
     [SerializeField] private List<Material> mats;
-    [SerializeField] private List<Material> matsPair;
 
     public int size { private set; get; }
-    public bool isPaired { private set; get; }
 
     private void Start()
     {
@@ -47,7 +45,6 @@ public class TouchNote : Note
 
         this.type = (int)NOTE.TYPE.TouchNote;
         this.size = lanes.Length / 2;
-        this.isPaired = options[0] == 0 ? true : false;
     }
 
     protected override void SetMesh()
@@ -57,12 +54,8 @@ public class TouchNote : Note
 
     private void SetMaterials()
     {
-        if(!isPaired) {
-            mesh.GetComponent<MeshRenderer>().SetMaterials(mats);
-        }
-        else {
-            mesh.GetComponent<MeshRenderer>().SetMaterials(matsPair);
-        }
+        mesh.GetComponent<MeshRenderer>().SetMaterials(mats);
+
     }
 
     protected override void Judge()

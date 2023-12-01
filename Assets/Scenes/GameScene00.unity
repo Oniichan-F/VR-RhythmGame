@@ -522,7 +522,7 @@ MonoBehaviour:
   songID: 0
   songDisplayName: "\u52C7\u8005\u3066\u3059\u3068"
   songSourceName: INTERNET_OVERDOSE
-  songChartName: INTERNET_OVERDOSE
+  songChartName: test00
   songBPMGuideName: INTERNET_OVERDOSE_bpm
   BPM: -1
   LPB: -1
@@ -4451,7 +4451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stageScaleOffset: 0
   stageHeightOffset: 0
-  playerNoteSpeed: 40
+  playerNoteSpeed: 30
   playerChartOffset: 0
 --- !u!1 &1798755358
 GameObject:

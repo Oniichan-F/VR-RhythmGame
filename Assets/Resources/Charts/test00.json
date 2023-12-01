@@ -4,217 +4,57 @@
 	"offset": 0,
 	"noteData": [
 
-		{
-			"type": 3,
-			"lanes": [5,6,7,8],
-			"timing": 4,
+        {
+			"type": 1,
+			"lanes": [16,17,18,19,20,21,22,23],
+			"timing": 16,
 			"lr": "",
-			"pair": true,
+			"options": [0],
+			"children": []
+		},
+		{
+			"type": 1,
+			"lanes": [24,25,26,27,28,29,30,31],
+			"timing": 16,
+			"lr": "",
 			"options": [0],
 			"children": []
 		},
 
 
 
-		{
-			"type": 1,
-			"lanes": [30,31,0,1],
-			"timing": 6,
-			"lr": "",
-			"pair": true,
-			"children": []
-		},
-		{
-			"type": 1,
-			"lanes": [14,15,16,17],
-			"timing": 6,
-			"lr": "",
-			"pair": true,
-			"children": []
-		},
-
-
-
-		{
+		
+        {
 			"type": 2,
-			"lanes": [0,1,2,3],
-			"timing": 8,
-			"lr": "",
-			"pair": false,
-			"children": []
-		},
-		{
-			"type": 2,
-			"lanes": [1,2,3,4],
-			"timing": 8.5,
-			"lr": "",
-			"pair": false,
-			"children": []
-		},
-		{
-			"type": 2,
-			"lanes": [2,3,4,5],
-			"timing": 9,
-			"lr": "",
-			"pair": false,
-			"children": []
-		},
-		{
-			"type": 2,
-			"lanes": [3,4,5,6],
-			"timing": 9.5,
-			"lr": "",
-			"pair": false,
-			"children": []
-		},
-		{
-			"type": 2,
-			"lanes": [4,5,6,7],
-			"timing": 10,
-			"lr": "",
-			"pair": false,
-			"children": []
-		},
-		{
-			"type": 2,
-			"lanes": [5,6,7,8],
-			"timing": 10.5,
-			"lr": "",
-			"pair": false,
-			"children": []
-		},
-		{
-			"type": 2,
-			"lanes": [6,7,8,9],
-			"timing": 11,
-			"lr": "",
-			"pair": false,
-			"children": []
-		},
-		{
-			"type": 2,
-			"lanes": [7,8,9,10],
-			"timing": 11.5,
-			"lr": "",
-			"pair": false,
-			"children": []
-		},
-		{
-			"type": 2,
-			"lanes": [8,9,10,11],
-			"timing": 12,
-			"lr": "",
-			"pair": false,
-			"children": []
-		},
-		{
-			"type": 2,
-			"lanes": [9,10,11,12],
-			"timing": 12.5,
-			"lr": "",
-			"pair": false,
-			"children": []
-		},
-		{
-			"type": 2,
-			"lanes": [10,11,12,13],
-			"timing": 13,
-			"lr": "",
-			"pair": false,
-			"children": []
-		},
-		{
-			"type": 2,
-			"lanes": [11,12,13,14],
-			"timing": 13.5,
-			"lr": "",
-			"pair": false,
-			"children": []
-		},
-		{
-			"type": 2,
-			"lanes": [12,13,14,15],
-			"timing": 14,
-			"lr": "",
-			"pair": false,
-			"children": []
-		},
-		{
-			"type": 2,
-			"lanes": [13,14,15,16],
-			"timing": 14.5,
-			"lr": "",
-			"pair": false,
-			"children": []
-		},
-		{
-			"type": 2,
-			"lanes": [14,15,16,17],
-			"timing": 15,
-			"lr": "",
-			"pair": false,
-			"children": []
-		},
-		{
-			"type": 2,
-			"lanes": [15,16,17,18],
-			"timing": 15.5,
-			"lr": "",
-			"pair": false,
-			"children": []
-		},
-		{
-			"type": 2,
-			"lanes": [16,17,18,19],
-			"timing": 16,
-			"lr": "",
-			"pair": false,
-			"children": []
-		},
-
-
-
-		{
-			"type": 10,
-			"lanes": [30,31,0,1],
+			"lanes": [14,15,16,17,18,19,20,21],
 			"timing": 20,
-			"lr": "R",
-			"pair": false,
-			"options": [0,1,0],
-			"children": [
-				{
-					"type": 12,
-					"lanes": [2,3,4,5],
-					"timing": 21,
-					"lr": "",
-					"pair": false,
-					"children": []
-				},
-				{
-					"type": 12,
-					"lanes": [6,7,8,9],
-					"timing": 22,
-					"lr": "",
-					"pair": false,
-					"children": []
-				},
-				{
-					"type": 12,
-					"lanes": [10,11,12,13],
-					"timing": 23,
-					"lr": "",
-					"pair": false,
-					"children": []
-				},
-				{
-					"type": 11,
-					"lanes": [14,15,16,17],
-					"timing": 24,
-					"lr": "R",
-					"pair": false,
-					"children": []
-				}
-			]
+			"lr": "",
+			"options": [0],
+			"children": []
+		},
+        {
+			"type": 2,
+			"lanes": [30,31,0,1,2,3,4,5],
+			"timing": 21,
+			"lr": "",
+			"options": [0],
+			"children": []
+		},
+        {
+			"type": 2,
+			"lanes": [16,17,18,19,20,21,22,23],
+			"timing": 22,
+			"lr": "",
+			"options": [0],
+			"children": []
+		},
+        {
+			"type": 2,
+			"lanes": [0,1,2,3,4,5,6,7],
+			"timing": 23,
+			"lr": "",
+			"options": [0],
+			"children": []
 		}
     ]
 }
