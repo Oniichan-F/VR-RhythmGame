@@ -116,6 +116,23 @@ MonoBehaviour:
   - {fileID: -2833075341315810062, guid: 3b839e96e401cf34db228f524d78e970, type: 3}
   - {fileID: -5441992042053663588, guid: 216def684e9050044a859a47456e2d5f, type: 3}
   - {fileID: 1279939569414319393, guid: e2712ab7b2bd0554ab16d08b5b52a47f, type: 3}
+  headMeshes:
+  - {fileID: -9169596005565781596, guid: 5d2c0ab3d74b7f445bc18f0cc03afea1, type: 3}
+  - {fileID: 7500313153007180427, guid: c04548a71678f6246a52daddf1c91073, type: 3}
+  - {fileID: 3984878417152393770, guid: 4ab4ecad43e3335449ce00b1d75156dc, type: 3}
+  - {fileID: -885801227856368513, guid: fcc67c15fecca874d980343066268b7b, type: 3}
+  - {fileID: 5209642759097908210, guid: 50af37a0bd0909041956ad7f3bb9bf04, type: 3}
+  - {fileID: -3462398715056668630, guid: c3d76d1b1d1ba374284238a09348fba7, type: 3}
+  - {fileID: -5976370724323479891, guid: 347193ded617cb8468c44b665034220a, type: 3}
+  - {fileID: 2006233029714381299, guid: 34824e424343d2044ad41015a88217ef, type: 3}
+  - {fileID: -1208685766331246245, guid: 1f6bcf771590bf143ba4b7775b98c5f0, type: 3}
+  - {fileID: -8959872937199393425, guid: 2b9c0fbbe77b2494d8f38fa77e5c15be, type: 3}
+  - {fileID: -1749739640228594270, guid: fb3beb3f8b9a8204697a5eeb1eebc704, type: 3}
+  - {fileID: 8410773432615706381, guid: 8a3818f3b67b50041a86414d4bdee07e, type: 3}
+  - {fileID: -2473172204948139981, guid: 7980655f860af9f45a1b866bab08c963, type: 3}
+  - {fileID: -2647702615034751600, guid: f37151fafbfd84a42bb9c3ca7ac1a70e, type: 3}
+  - {fileID: 2222571329229241169, guid: 6fbeafa55b9e389408e57195148417a5, type: 3}
+  - {fileID: -3053400274493424303, guid: ef148f6bf62d69545a4eff87904d880c, type: 3}
   matsR:
   - {fileID: 2100000, guid: 16c5a935ecef9424cbe8e5fa0d65953e, type: 2}
   matsL:
@@ -124,6 +141,12 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 6e8178a141f872d43a0a3ffdade8d885, type: 2}
   matsLostL:
   - {fileID: 2100000, guid: 2f995a7ebfb016343aa93e9c78ecd801, type: 2}
+  matsHeadR:
+  - {fileID: 2100000, guid: ea2be5f4cfb65a249b59563c471d0881, type: 2}
+  - {fileID: 2100000, guid: ea2be5f4cfb65a249b59563c471d0881, type: 2}
+  matsHeadL:
+  - {fileID: 2100000, guid: 8bb6f86b16b1f6d479221e96d1c8d8fe, type: 2}
+  - {fileID: 2100000, guid: 8bb6f86b16b1f6d479221e96d1c8d8fe, type: 2}
   state: 0
 --- !u!1001 &293254776071172631
 PrefabInstance:
@@ -151,7 +174,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 89c8e1d17af38d74986f4129f7064583,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 89c8e1d17af38d74986f4129f7064583,
         type: 3}

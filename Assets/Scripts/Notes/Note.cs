@@ -32,7 +32,10 @@ public class Note : MonoBehaviour
         
         this.speed = RhythmGameManager.Instance.noteSpeed;
 
-        mesh = transform.Find("Mesh").gameObject;
+        if(transform.Find("Mesh") != null) {
+            mesh = transform.Find("Mesh").gameObject;
+        }
+        
         noteEffectManager = GameObject.Find("NoteEffectManager").GetComponent<NoteEffectManager>();
         oculusInputManager = GameObject.Find("InputManager").GetComponent<OculusInputManager>();
         scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();

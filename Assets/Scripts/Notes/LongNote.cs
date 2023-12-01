@@ -10,10 +10,13 @@ using UnityEngine;
 public class LongNote : Note
 {
     [SerializeField] private Mesh[] meshes;
+    [SerializeField] private Mesh[] headMeshes;
     [SerializeField] private List<Material> matsR;
     [SerializeField] private List<Material> matsL;
     [SerializeField] private List<Material> matsLostR;
     [SerializeField] private List<Material> matsLostL;
+    [SerializeField] private List<Material> matsHeadR;
+    [SerializeField] private List<Material> matsHeadL;
 
     public int[] startLanes { private set; get; }
     public int[] endLanes { private set; get; }

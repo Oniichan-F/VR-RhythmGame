@@ -522,7 +522,7 @@ MonoBehaviour:
   songID: 0
   songDisplayName: "\u52C7\u8005\u3066\u3059\u3068"
   songSourceName: INTERNET_OVERDOSE
-  songChartName: test00
+  songChartName: INTERNET_OVERDOSE
   songBPMGuideName: INTERNET_OVERDOSE_bpm
   BPM: -1
   LPB: -1
@@ -1237,7 +1237,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 663873262}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.3}
+  m_LocalPosition: {x: 0, y: 0, z: 0.25}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4040,7 +4040,7 @@ Transform:
   m_GameObject: {fileID: 1731783504}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0.45}
+  m_LocalPosition: {x: 0, y: 0, z: 0.3}
   m_LocalScale: {x: 0.021, y: 0.001, z: 0.021}
   m_ConstrainProportionsScale: 0
   m_Children: []
