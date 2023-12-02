@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using General.ChartProtocol;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class BPMGuideGenerator : MonoBehaviour
@@ -43,17 +44,18 @@ public class BPMGuideGenerator : MonoBehaviour
         GameObject BPMGuideParent = MasterScaler.transform.Find("BPMGuides").gameObject;
 
         foreach(BPMGuideData data in fileData.BPMGuideData) {
+            float speed = noteSpeed * data.speed;
             float timing = data.timing;
             float time = calcTime(timing);
-            float pos = time * noteSpeed;
+            float pos = time * speed;
             int shape = data.shape;
-            int color = data.color;
+            float[] color = data.color;
 
             GameObject BPMGuideObj = Instantiate(
                 BPMGuidePrefab,
                 BPMGuideParent.transform
             );
-            BPMGuideObj.GetComponent<BPMGuide>().Init(shape:shape, color:color, time:time, pos:pos);
+            BPMGuideObj.GetComponent<BPMGuide>().Init(speed:speed, shape:shape, color:color, time:time, pos:pos);
         }
     }
 }

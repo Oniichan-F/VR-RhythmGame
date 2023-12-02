@@ -6,20 +6,22 @@ using UnityEngine;
 public class BPMGuide : MonoBehaviour
 {
     [SerializeField] Mesh[] shapes;
-    [SerializeField] Material[] colors;
 
     public float speed { private set; get; }
     public float time { private set; get; }
     private int shape;
-    private int color;
+    private float[] color;
 
     private void Start()
     {
-        speed = RhythmGameManager.Instance.noteSpeed;    
+        SetShape();
+        SetColor();
     }
 
     private void Update()
     {
+        CheckDestory();
+
         if(RhythmGameManager.Instance.isPaused) {
             return;
         }
@@ -28,8 +30,9 @@ public class BPMGuide : MonoBehaviour
         time -= Time.deltaTime;
     }
 
-    public void Init(int shape, int color, float time, float pos)
+    public void Init(float speed, int shape, float[] color, float time, float pos)
     {
+        this.speed = speed;
         this.shape = shape;
         this.color = color;
         this.time  = time;
@@ -51,6 +54,6 @@ public class BPMGuide : MonoBehaviour
 
     private void SetColor()
     {
-        GetComponent<MeshRenderer>().material = colors[color];
+        GetComponent<MeshRenderer>().material.color = new Color(color[0], color[1], color[2], color[3]);
     }
 }

@@ -112,5 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shapes:
   - {fileID: 8440642238115605652, guid: ebb6caed9e6b75c46aa9f2b3ecf20443, type: 3}
-  colors:
-  - {fileID: 2100000, guid: b73effe0783f69946b6266182545a898, type: 2}
+  - {fileID: -2040573713482096732, guid: 57bd3231259cc8c45943c608a7a4a35f, type: 3}
+  - {fileID: -7120194258259438921, guid: 2c5296b18da66204db0610b96fd27499, type: 3}
+  - {fileID: -1870987337695434528, guid: 9123b036f1ae02e40841a73800e3191e, type: 3}
+  - {fileID: 8000159277971523494, guid: f7ae4b968582292429101ce87e8877bc, type: 3}

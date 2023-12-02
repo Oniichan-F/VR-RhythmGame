@@ -39,8 +39,9 @@ namespace General
         [Serializable] public class BPMGuideData
         {
             public float timing;
+            public float speed;
             public int shape;
-            public int color;
+            public float[] color;
         }
     }
 }
