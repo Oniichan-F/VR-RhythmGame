@@ -12,6 +12,9 @@ public class ScoreManager : MonoBehaviour
     public int goodCount { private set; get; }
     public int missCount { private set; get; }
 
+    public int earlyCount { private set; get; }
+    public int lateCount { private set; get; }
+
     private ScorePanel scorePanel;
 
     private void Start()
@@ -49,5 +52,16 @@ public class ScoreManager : MonoBehaviour
         }
 
         scorePanel.UpdateText(score, combo, justCount);
+    }
+
+    public void AddEarlyLate(float time) {
+        if(time > 0f) {
+            earlyCount += 1;
+        }
+        else {
+            lateCount += 1;
+        }
+
+        scorePanel.UpdateEarlyLate(time);
     }
 }

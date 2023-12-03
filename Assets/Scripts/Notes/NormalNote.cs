@@ -113,21 +113,25 @@ public class NormalNote : Note
             if(lr == "R" && oculusInputManager.rImpact == (int)INPUT.IMPACT.External && lanes.Contains(oculusInputManager.rLane)) {
                 effectProcess((int)JUDGE.JUDGE_ID.GREAT, "R");
                 scoreManager.AddScore((int)JUDGE.JUDGE_ID.GREAT);
+                scoreManager.AddEarlyLate(time);
                 Destroy(this.gameObject);                
             }
             else if(lr == "L" && oculusInputManager.lImpact == (int)INPUT.IMPACT.External && lanes.Contains(oculusInputManager.lLane)) {
                 effectProcess((int)JUDGE.JUDGE_ID.GREAT, "L");
                 scoreManager.AddScore((int)JUDGE.JUDGE_ID.GREAT);
+                scoreManager.AddEarlyLate(time);
                 Destroy(this.gameObject);                
             }
             else if(lr == "" && oculusInputManager.rImpact == (int)INPUT.IMPACT.External && lanes.Contains(oculusInputManager.rLane)) {
                 effectProcess((int)JUDGE.JUDGE_ID.GREAT, "R");
                 scoreManager.AddScore((int)JUDGE.JUDGE_ID.GREAT);
+                scoreManager.AddEarlyLate(time);
                 Destroy(this.gameObject);   
             }
             else if(lr == "" && oculusInputManager.lImpact == (int)INPUT.IMPACT.External && lanes.Contains(oculusInputManager.lLane)) {
                 effectProcess((int)JUDGE.JUDGE_ID.GREAT, "L");
                 scoreManager.AddScore((int)JUDGE.JUDGE_ID.GREAT);
+                scoreManager.AddEarlyLate(time);
                 Destroy(this.gameObject);
             }
         }
@@ -136,21 +140,25 @@ public class NormalNote : Note
             if(lr == "R" && oculusInputManager.rImpact == (int)INPUT.IMPACT.External && lanes.Contains(oculusInputManager.rLane)) {
                 effectProcess((int)JUDGE.JUDGE_ID.GOOD, "R");
                 scoreManager.AddScore((int)JUDGE.JUDGE_ID.GOOD);
+                scoreManager.AddEarlyLate(time);
                 Destroy(this.gameObject);                
             }
             else if(lr == "L" && oculusInputManager.lImpact == (int)INPUT.IMPACT.External && lanes.Contains(oculusInputManager.lLane)) {
                 effectProcess((int)JUDGE.JUDGE_ID.GOOD, "L");
                 scoreManager.AddScore((int)JUDGE.JUDGE_ID.GOOD);
+                scoreManager.AddEarlyLate(time);
                 Destroy(this.gameObject);                
             }
             else if(lr == "" && oculusInputManager.rImpact == (int)INPUT.IMPACT.External && lanes.Contains(oculusInputManager.rLane)) {
                 effectProcess((int)JUDGE.JUDGE_ID.GOOD, "R");
                 scoreManager.AddScore((int)JUDGE.JUDGE_ID.GOOD);
+                scoreManager.AddEarlyLate(time);
                 Destroy(this.gameObject);   
             }
             else if(lr == "" && oculusInputManager.lImpact == (int)INPUT.IMPACT.External && lanes.Contains(oculusInputManager.lLane)) {
                 effectProcess((int)JUDGE.JUDGE_ID.GOOD, "L");
                 scoreManager.AddScore((int)JUDGE.JUDGE_ID.GOOD);
+                scoreManager.AddEarlyLate(time);
                 Destroy(this.gameObject);
             }
         }
@@ -158,18 +166,22 @@ public class NormalNote : Note
         else {
             if(lr == "R" && oculusInputManager.rImpact == (int)INPUT.IMPACT.External && lanes.Contains(oculusInputManager.rLane)) {
                 scoreManager.AddScore(-1);
+                scoreManager.AddEarlyLate(time);
                 Destroy(this.gameObject);                
             }
             else if(lr == "L" && oculusInputManager.lImpact == (int)INPUT.IMPACT.External && lanes.Contains(oculusInputManager.lLane)) {
                 scoreManager.AddScore(-1);
+                scoreManager.AddEarlyLate(time);
                 Destroy(this.gameObject);                
             }
             else if(lr == "" && oculusInputManager.rImpact == (int)INPUT.IMPACT.External && lanes.Contains(oculusInputManager.rLane)) {
                 scoreManager.AddScore(-1);
+                scoreManager.AddEarlyLate(time);
                 Destroy(this.gameObject);
             }
             else if(lr == "" && oculusInputManager.lImpact == (int)INPUT.IMPACT.External && lanes.Contains(oculusInputManager.lLane)) {
                 scoreManager.AddScore(-1);
+                scoreManager.AddEarlyLate(time);
                 Destroy(this.gameObject);                  
             }
         }
