@@ -10,13 +10,12 @@ using UnityEngine;
 public class LongNote : Note
 {
     [SerializeField] private Mesh[] meshes;
-    [SerializeField] private Mesh[] headMeshes;
+    [SerializeField] private List<Material> mats;
     [SerializeField] private List<Material> matsR;
     [SerializeField] private List<Material> matsL;
+    [SerializeField] private List<Material> matsLost;
     [SerializeField] private List<Material> matsLostR;
     [SerializeField] private List<Material> matsLostL;
-    [SerializeField] private List<Material> matsHeadR;
-    [SerializeField] private List<Material> matsHeadL;
 
     public int[] startLanes { private set; get; }
     public int[] endLanes { private set; get; }
@@ -26,6 +25,7 @@ public class LongNote : Note
     public float length { private set; get; }
 
     public int state;
+    private string defaultLR;
 
     private TwistDeformer twistDeformer;
     private int rotDirection; // 1=CCW, -1=CW
@@ -77,6 +77,7 @@ public class LongNote : Note
         this.numRotation  = options[1];
 
         this.state = (int)LONGNOTE.STATE.inActive;
+        this.defaultLR = lr;
 
         transform.localScale = new Vector3(1f, 1f, length*speed*1.25f*(60f/RhythmGameManager.Instance.BPM));
     }
@@ -93,6 +94,10 @@ public class LongNote : Note
         }
         else if(lr == "L") {
             mesh.GetComponent<MeshRenderer>().SetMaterials(matsL);
+        }
+        else
+        {
+            mesh.GetComponent<MeshRenderer>().SetMaterials(mats);
         }
     }
 
@@ -190,11 +195,14 @@ public class LongNote : Note
 
     public void SetLostMaterials()
     {
-        if(lr == "R") {
+        if(defaultLR == "R") {
             mesh.GetComponent<MeshRenderer>().SetMaterials(matsLostR);
         }
-        else if(lr == "L") {
+        else if(defaultLR == "L") {
             mesh.GetComponent<MeshRenderer>().SetMaterials(matsLostL);
+        }
+        else {
+            mesh.GetComponent<MeshRenderer>().SetMaterials(matsLost);
         }
     }
 
