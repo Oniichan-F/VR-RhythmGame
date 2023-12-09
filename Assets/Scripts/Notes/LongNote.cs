@@ -4,7 +4,6 @@ using System.Linq;
 using Deform;
 using General.CONSTS;
 using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class LongNote : Note
