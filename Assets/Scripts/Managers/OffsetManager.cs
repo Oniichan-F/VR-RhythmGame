@@ -35,6 +35,9 @@ public class OffsetManager : MonoBehaviour
             stageScaleOffset  = 1f;
             stageHeightOffset = 1f;
 
+            playerNoteSpeed   = 3f;
+            playerChartOffset = 0f;
+
             DontDestroyOnLoad(this);           
         }
     }

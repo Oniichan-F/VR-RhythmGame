@@ -7,7 +7,9 @@ using UnityEngine.UI;
 
 public class SongSelectButton : MonoBehaviour
 {
-    [SerializeField] private string songName;
+    [SerializeField] private int songID;
+    [SerializeField] private int chartID;
+
     private Button button;
     private DevHubManager devHubManager;
     private PlayerPanel playerPanel;
@@ -24,20 +26,9 @@ public class SongSelectButton : MonoBehaviour
 
     public void OnClickSongSelectButton()
     {
-        Debug.Log(songName);
+        devHubManager.songInfo = new SongInfo(songID, chartID);
+        Debug.Log(devHubManager.songInfo.songID + " : " + devHubManager.songInfo.songDisplayName);
 
-        devHubManager.songName = songName;
-        SongInfo songInfo = new SongInfo("test", "test", 1.0f, "test");;
-        if(songName == "INTERNET_OVERDOSE") {
-            songInfo = new SongInfo("INTERNET_OVERDOSE", "Aiobahn feat.KOTOKO", 163.0f, "Oniichan");
-        }
-        else if(songName == "INTERNET_YAMERO") {
-            songInfo = new SongInfo("INTERNET_YAMERO", "Aiobahn feat.KOTOKO", 185.0f, "Oniichan");
-        }
-        else if(songName == "Loli_GOD_Requiem") {
-            songInfo = new SongInfo("Loli_GOD_Requiem", "IOSYS feat.UiShigure", 1.0f, "Oniichan");
-        }
-
-        playerPanel.UpdatePlayerPanel(songInfo);
+        playerPanel.UpdatePlayerPanel(devHubManager.songInfo);
     }
 }

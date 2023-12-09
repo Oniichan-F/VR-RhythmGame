@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using General;
 using UnityEngine;
 
 public class RhythmGameManager : MonoBehaviour
@@ -8,13 +9,13 @@ public class RhythmGameManager : MonoBehaviour
     public static RhythmGameManager Instance => instance;
 
     // Song Info
-    public int songID;
+    public SongInfo songInfo;
     public string songDisplayName;
     public string songSourceName;
     public string songChartName;
-    public string songBPMGuideName;
     public float BPM;
     public int LPB;
+
     public int numNotes;
     public float baseChartOffset;
 
@@ -28,21 +29,39 @@ public class RhythmGameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance && this != instance) {
-            Destroy(this.gameObject);
+        // if(instance && this != instance) {
+        //     Destroy(this.gameObject);
+        // }
+
+        // isAutoMode = false;
+        // isPaused   = true;
+
+        // instance = this;
+
+        // DontDestroyOnLoad(this);
+
+        if(instance == null) {
+            instance = this;
+
+            isAutoMode = false;
+            isPaused   = true;
+
+            DontDestroyOnLoad(this); 
         }
-
-        isAutoMode = false;
-        isPaused   = true;
-
-        instance = this;
-
-        DontDestroyOnLoad(this);
     }
 
     public void SetOffsets()
     {
-        noteSpeed   = OffsetManager.Instance.playerNoteSpeed;
+        noteSpeed   = 10f * OffsetManager.Instance.playerNoteSpeed;
         chartOffset = baseChartOffset + OffsetManager.Instance.playerChartOffset;
+    }
+
+    public void SetSongInfo()
+    {
+        songDisplayName = songInfo.songDisplayName;
+        songSourceName  = songInfo.songSourceName;
+        songChartName   = songInfo.songChartName;
+        BPM = songInfo.BPM;
+        LPB = songInfo.LPB;
     }
 }

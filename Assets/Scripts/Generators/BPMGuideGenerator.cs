@@ -28,7 +28,7 @@ public class BPMGuideGenerator : MonoBehaviour
 
     private void LoadData()
     {
-        string jsonFileName = Resources.Load<TextAsset>("Charts/" + RhythmGameManager.Instance.songBPMGuideName).ToString();
+        string jsonFileName = Resources.Load<TextAsset>("Charts/" + RhythmGameManager.Instance.songSourceName + "_bpm").ToString();
         fileData = JsonUtility.FromJson<BPMGuideFileData>(jsonFileName);
     }
 

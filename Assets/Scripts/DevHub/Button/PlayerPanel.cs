@@ -19,7 +19,7 @@ public class PlayerPanel : MonoBehaviour
 
     public void UpdatePlayerPanel(SongInfo songInfo) {
         composer.text = songInfo.composer;
-        bpm.text = songInfo.bpm.ToString();
+        bpm.text = songInfo.BPM.ToString();
         chartDesigner.text = songInfo.chartDesigner;
     }
 }

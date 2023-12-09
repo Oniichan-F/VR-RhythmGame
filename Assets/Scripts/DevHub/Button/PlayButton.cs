@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayButton : MonoBehaviour
@@ -20,6 +21,15 @@ public class PlayButton : MonoBehaviour
 
     public void OnClickPlayButton()
     {
-        Debug.Log(devHubManager.songName);
+        RhythmGameManager.Instance.songInfo = devHubManager.songInfo;
+        RhythmGameManager.Instance.SetSongInfo();
+        Debug.Log("Play : " + RhythmGameManager.Instance.songSourceName);
+
+        if(RhythmGameManager.Instance.songSourceName != "null") {
+            SceneManager.LoadScene("GameSceneTemplate00");
+        }
+        else {
+            Debug.Log("not selected");
+        }
     }
 }

@@ -3249,7 +3249,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 751b1d2504efb9c459d9a5ab0a237372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  songName: 
 --- !u!4 &963613938
 Transform:
   m_ObjectHideFlags: 0
@@ -4721,11 +4720,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b35effb138b814e4c81386a89a99d7b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  songID: 0
   songDisplayName: 
   songSourceName: 
   songChartName: 
-  songBPMGuideName: 
   BPM: 0
   LPB: 0
   numNotes: 0
@@ -6303,6 +6300,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254709975126483589, guid: ed548a9bfde11294d8e71e402199b6a8,
+        type: 3}
+      propertyPath: songID
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
