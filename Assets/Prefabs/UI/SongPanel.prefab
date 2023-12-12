@@ -211,7 +211,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeb02e894344b9745b6233219aa39024, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  songName: INTERNET_OVERDOSE
+  songID: 0
+  chartID: 0
 --- !u!65 &4114221426154143322
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -298,10 +299,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: INTERNET OVERDOSE
+  m_text: NULL
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1b5b73be6b793424d95b148823f56997, type: 2}
+  m_sharedMaterial: {fileID: -4914085096947529640, guid: 1b5b73be6b793424d95b148823f56997,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

@@ -36,11 +36,11 @@ public class ScorePanel : MonoBehaviour
     {
         if(time > 0f) {
             tmproEarlyLate.text = "Early";
-            tmproEarlyLate.color = Color.red;
+            tmproEarlyLate.color = Color.blue;
         }
         else {
             tmproEarlyLate.text = "Late";
-            tmproEarlyLate.color = Color.blue;
+            tmproEarlyLate.color = Color.red;
         }
 
         StartCoroutine(ResetEarlyLate(0.5f, () =>

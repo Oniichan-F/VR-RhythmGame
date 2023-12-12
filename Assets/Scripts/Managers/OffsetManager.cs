@@ -15,6 +15,7 @@ public class OffsetManager : MonoBehaviour
     // RhythmGame Offset
     public float playerNoteSpeed;
     public float playerChartOffset;
+    public float playerGenerationDepth;
 
     private void Awake()
     {
@@ -35,8 +36,9 @@ public class OffsetManager : MonoBehaviour
             stageScaleOffset  = 1f;
             stageHeightOffset = 1f;
 
-            playerNoteSpeed   = 3f;
-            playerChartOffset = 0f;
+            playerNoteSpeed       = 3f;
+            playerChartOffset     = 0f;
+            playerGenerationDepth = 30f;
 
             DontDestroyOnLoad(this);           
         }
