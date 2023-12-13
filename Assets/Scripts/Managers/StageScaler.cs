@@ -6,25 +6,45 @@ using UnityEngine.UI;
 
 public class StageScaler : MonoBehaviour
 {
-    [SerializeField] Transform masterScaler;
-    [SerializeField] OculusInputManager oculusInputManager;
     [SerializeField] float scaleFactor = 1.0f;
-    [SerializeField] GameObject blind;
+    [SerializeField] OculusInputManager oculusInputManager;
     [SerializeField] Button finishButton;
+    [SerializeField] Image gauge;
+
+    private Transform masterScaler;
+    private GameObject blind;
 
     private bool isFirst = true;
+    private float triggerCount = 0f;
 
+
+    private void Start()
+    {
+        masterScaler = GameObject.Find("MasterScaler").transform;
+        blind = GameObject.Find("Blind");
+    }
 
     private void Update()
     {
-        if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) && OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger)) {
-            SetScaler();
+        if(OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger) && OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger)) {
+            triggerCount += Time.deltaTime;
+            gauge.fillAmount = triggerCount / 3f;
 
-            if(isFirst) {
-                Destroy(blind.gameObject);
-                finishButton.interactable = true;
-                isFirst = false;
+            if(triggerCount > 3f) {
+                SetScaler();
+
+                if(isFirst) {
+                    Destroy(blind.gameObject);
+                    finishButton.interactable = true;
+                    isFirst = false;
+                }
+
+                triggerCount = -100f;       
             }
+        }
+        else {
+            triggerCount = 0f;
+            gauge.fillAmount = 0f;
         }
     }
 

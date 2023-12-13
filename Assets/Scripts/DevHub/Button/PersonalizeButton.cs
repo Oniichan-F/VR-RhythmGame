@@ -17,6 +17,6 @@ public class AdjustButton : MonoBehaviour
 
     public void OnClickAdjustButton()
     {
-        SceneManager.LoadScene("AdjustScene");
+        SceneManager.LoadScene("PersonalizeScene");
     }
 }
