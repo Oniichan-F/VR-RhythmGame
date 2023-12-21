@@ -18,12 +18,14 @@ public class RhythmGameManager : MonoBehaviour
 
     public int numNotes;
     public float baseChartOffset;
+    public int endTiming;
 
     public float noteSpeed { private set; get; }
     public float chartOffset { private set; get; }
 
     // Game State
     public bool isAutoMode;
+    public bool isStart;
     public bool isPaused;
 
 
@@ -44,6 +46,7 @@ public class RhythmGameManager : MonoBehaviour
             instance = this;
 
             isAutoMode = false;
+            isStart    = false;
             isPaused   = true;
 
             DontDestroyOnLoad(this); 

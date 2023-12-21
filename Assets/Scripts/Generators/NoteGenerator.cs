@@ -39,6 +39,7 @@ public class NoteGenerator : MonoBehaviour
         RhythmGameManager.Instance.LPB = chartData.LPB;
         RhythmGameManager.Instance.numNotes = chartData.numNotes;
         RhythmGameManager.Instance.baseChartOffset = chartData.offset;
+        RhythmGameManager.Instance.endTiming = chartData.end;
         RhythmGameManager.Instance.SetOffsets();
     }
 

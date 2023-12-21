@@ -14,6 +14,7 @@ namespace General
             public int LPB;
             public float offset;
             public int numNotes;
+            public int end;
             public NoteData[] noteData;
         }
 
