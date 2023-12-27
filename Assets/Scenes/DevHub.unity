@@ -6751,7 +6751,9 @@ MonoBehaviour:
   LPB: 0
   numNotes: 0
   baseChartOffset: 0
+  endTiming: 0
   isAutoMode: 0
+  isStart: 0
   isPaused: 0
 --- !u!4 &1504799803
 Transform:
@@ -8009,6 +8011,7 @@ GameObject:
   - component: {fileID: 1935358909}
   - component: {fileID: 1935358908}
   - component: {fileID: 1935358907}
+  - component: {fileID: 1935358910}
   m_Layer: 0
   m_Name: ButtonTutorial
   m_TagString: Untagged
@@ -8079,7 +8082,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1935358908}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1935358910}
+        m_TargetAssemblyTypeName: TutorialPlay, Assembly-CSharp
+        m_MethodName: OnClickTutorialPlayButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1935358908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8118,6 +8133,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935358905}
   m_CullTransparentMesh: 1
+--- !u!114 &1935358910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1935358905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0a60b0a7866da54dbe66c0e8fbb9787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1971311929
 GameObject:
   m_ObjectHideFlags: 0

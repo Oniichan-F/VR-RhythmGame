@@ -6,7 +6,7 @@ public class StandbyAnchor : MonoBehaviour
 {
     private PlayManager playManager;
     private StandbyAnchorChild childR, childL;
-    private Transform mesh;
+    private Transform meshR, meshL;
     private float timer;
 
     private void Start()
@@ -14,23 +14,34 @@ public class StandbyAnchor : MonoBehaviour
         playManager = GameObject.Find("PlayManager").GetComponent<PlayManager>();
         childR = transform.GetChild(0).GetComponent<StandbyAnchorChild>();
         childL = transform.GetChild(1).GetComponent<StandbyAnchorChild>();
-        mesh = transform.GetChild(2).transform;
+        meshR = childR.transform.Find("Mesh").transform;
+        meshL = childL.transform.Find("Mesh").transform;
         timer = 0f;
     }
 
     private void Update()
     {
+        if(childR.isStay) {
+            meshR.Rotate(0, 0, 1, Space.World);
+        }
+        else {
+            meshR.rotation = Quaternion.Euler(0f, 90f, 90f);
+        }
+        if(childL.isStay) {
+            meshL.Rotate(0, 0, 1, Space.World);
+        }
+        else {
+            meshL.rotation = Quaternion.Euler(0f, 90f, 90f);
+        }
+
         if(childR.isStay && childL.isStay) {
             if(timer > 3f) {
                 playManager.Play();
                 Destroy(this.gameObject);
             }
-
-            mesh.Rotate(1, 0, 0, Space.World);
             timer += Time.deltaTime;
         }
         else {
-            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
             timer = 0f;
         }
     }

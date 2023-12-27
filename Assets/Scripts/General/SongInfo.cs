@@ -29,9 +29,9 @@ namespace General
                     songDisplayName = "Tutorial";
                     songSourceName  = "Tutorial";
                     songChartName   = songSourceName + "_" + chartID;
-                    composer        = "hoge";
+                    composer        = "TheFatRat";
                     chartDesigner   = "oniichan";
-                    BPM = 60;
+                    BPM = 105;
                     LPB = 4;
                     break;
 

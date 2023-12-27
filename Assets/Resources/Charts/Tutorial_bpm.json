@@ -1,0 +1,106 @@
+{
+    "BPM": 105,
+    "LPB": 4,
+    "offset": 88.5,
+    "BPMGuideData": [
+        {
+            "timing": 208,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+        {
+            "timing": 224,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+        {
+            "timing": 240,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+        {
+            "timing": 256,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+        {
+            "timing": 272,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+        {
+            "timing": 288,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+        {
+            "timing": 304,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+        {
+            "timing": 320,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+
+
+
+        {
+            "timing": 464,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+        {
+            "timing": 480,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+        {
+            "timing": 496,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+        {
+            "timing": 512,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+        {
+            "timing": 528,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+        {
+            "timing": 544,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+        {
+            "timing": 560,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+        {
+            "timing": 576,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        }
+    ]
+}

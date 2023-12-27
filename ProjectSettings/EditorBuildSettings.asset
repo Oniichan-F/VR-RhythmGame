@@ -14,12 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PersonalizeScene.unity
     guid: 71c2c1aa5c875bd41a46fb229b57266f
-  - enabled: 0
-    path: Assets/Scenes/GameScene00.unity
-    guid: af65644199431fb429c45ca211985c4b
   - enabled: 1
     path: Assets/Scenes/GameSceneTemplate00.unity
     guid: 1eab152fe44863f4f8838fad1b1eb029
+  - enabled: 1
+    path: Assets/Scenes/TutorialScene.unity
+    guid: 8c04927be97984a4a9be650ab32fb4ec
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: be50f34f2434638489a12e5c9123c58d,
       type: 2}

@@ -519,16 +519,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b35effb138b814e4c81386a89a99d7b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  songID: 0
   songDisplayName: "\u52C7\u8005\u3066\u3059\u3068"
-  songSourceName: INTERNET_OVERDOSE
-  songChartName: INTERNET_OVERDOSE
-  songBPMGuideName: INTERNET_OVERDOSE_bpm
+  songSourceName: Unity
+  songChartName: Unity
   BPM: -1
   LPB: -1
-  numNotes: 0
-  baseChartOffset: 0
-  isAutoMode: 1
+  numNotes: -1
+  baseChartOffset: -1
+  endTiming: -1
+  isAutoMode: 0
+  isStart: 0
   isPaused: 0
 --- !u!1 &245777549
 GameObject:
@@ -2180,11 +2180,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2133b6713c6c4fb4c96750607f8d44c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  masterScaler: {fileID: 670505694}
-  oculusInputManager: {fileID: 92442586}
   scaleFactor: 1.25
-  blind: {fileID: 0}
+  oculusInputManager: {fileID: 92442586}
   finishButton: {fileID: 0}
+  gauge: {fileID: 0}
 --- !u!1001 &1056672915
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4403,6 +4402,7 @@ MonoBehaviour:
   stageHeightOffset: 0
   playerNoteSpeed: 35
   playerChartOffset: 0
+  playerGenerationDepth: 0
 --- !u!1 &1798755358
 GameObject:
   m_ObjectHideFlags: 0
