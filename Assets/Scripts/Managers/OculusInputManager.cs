@@ -12,9 +12,9 @@ public class OculusInputManager : MonoBehaviour
 
 
     // パネルの基礎反応感度
-    [SerializeField] float baseThresh = 0.6f;
+    [SerializeField] float baseThresh = 0.5f;
     // 反対側パネルの反応感度緩和補正
-    [SerializeField] float oppositeCorrection = 0.5f;
+    [SerializeField] float oppositeCorrection = 0.35f;
 
 
     public Vector3 globalRPos { private set; get; }
