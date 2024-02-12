@@ -28,6 +28,10 @@ public class RhythmGameManager : MonoBehaviour
     public bool isStart;
     public bool isPaused;
 
+    // Score
+    public float score;
+    public int justCount;
+
 
     private void Awake()
     {

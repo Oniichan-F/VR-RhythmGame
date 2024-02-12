@@ -7723,6 +7723,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6254709975126483589, guid: ed548a9bfde11294d8e71e402199b6a8,
         type: 3}
+      propertyPath: songID
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254709975126483589, guid: ed548a9bfde11294d8e71e402199b6a8,
+        type: 3}
       propertyPath: songName
       value: Loli_GOD_Requiem
       objectReference: {fileID: 0}

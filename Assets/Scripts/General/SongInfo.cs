@@ -43,7 +43,17 @@ namespace General
                     chartDesigner   = "Oniichan";
                     BPM = 163;
                     LPB = 4;
-                    break;                    
+                    break;
+
+                case 10:
+                    songDisplayName = "粛聖!! ロリ神レクイエム☆";
+                    songSourceName  = "Loli";
+                    songChartName   = songSourceName + "_" + chartID;
+                    composer        = "しぐれうい(9さい)";
+                    chartDesigner   = "Oniichan";
+                    BPM = 165;
+                    LPB = 4;
+                    break;                                       
 
                 default:
                     songDisplayName = "null";

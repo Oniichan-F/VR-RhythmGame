@@ -1,0 +1,86 @@
+{
+    "BPM": 165,
+    "LPB": 4,
+    "offset": 14,
+    "BPMGuideData": [
+        {
+            "timing": 32,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+        {
+            "timing": 48,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+        {
+            "timing": 64,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+        {
+            "timing": 80,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 96,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 112,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 128,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 144,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 160,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 176,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 192,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 208,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 224,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 240,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 256,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        }
+    ]
+}

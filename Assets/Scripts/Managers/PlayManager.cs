@@ -7,13 +7,14 @@ public class PlayManager : MonoBehaviour
 {
     private GameSceneMainUI gameSceneMainUI;
     private MusicManager musicManager;
+    private ScoreManager scoreManager;
     private float endTimer;
 
     private void Start()
     {
         gameSceneMainUI = GameObject.Find("MainUI").GetComponent<GameSceneMainUI>();
         musicManager = GameObject.Find("MusicManager").GetComponent<MusicManager>();
-
+        scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
         endTimer = 60f * RhythmGameManager.Instance.endTiming / (RhythmGameManager.Instance.BPM * RhythmGameManager.Instance.LPB);
     }
 
@@ -31,7 +32,9 @@ public class PlayManager : MonoBehaviour
                 if(endTimer < 0f) {
                     RhythmGameManager.Instance.isStart = false;
                     RhythmGameManager.Instance.isPaused = true;
-                    SceneManager.LoadScene("DevHub");
+                    RhythmGameManager.Instance.score = scoreManager.score;
+                    RhythmGameManager.Instance.justCount = scoreManager.justCount;
+                    SceneManager.LoadScene("ResultScene");
                 }
             }
         }

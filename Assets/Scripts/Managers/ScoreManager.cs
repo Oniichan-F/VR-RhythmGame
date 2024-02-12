@@ -16,6 +16,7 @@ public class ScoreManager : MonoBehaviour
     public int lateCount { private set; get; }
 
     private ScorePanel scorePanel;
+    
 
     private void Start()
     {
