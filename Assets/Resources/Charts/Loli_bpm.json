@@ -41,27 +41,125 @@
             "speed": 1,
             "shape": 0,
             "color": [1,1,1,0.25]
-        },        {
+        },        
+        
+        {
             "timing": 144,
             "speed": 1,
             "shape": 0,
             "color": [1,1,1,0.25]
-        },        {
+        },
+        {
+            "timing": 148,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+        {
+            "timing": 152,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+        {
+            "timing": 156,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+        {
             "timing": 160,
             "speed": 1,
             "shape": 0,
             "color": [1,1,1,0.25]
-        },        {
+        },
+        {
+            "timing": 164,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+        {
+            "timing": 168,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+        {
+            "timing": 172,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+        {
             "timing": 176,
             "speed": 1,
             "shape": 0,
             "color": [1,1,1,0.25]
-        },        {
-            "timing": 192,
+        },
+        {
+            "timing": 178,
             "speed": 1,
             "shape": 0,
             "color": [1,1,1,0.25]
-        },        {
+        },
+        {
+            "timing": 180,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+        {
+            "timing": 182,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+        {
+            "timing": 184,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+        {
+            "timing": 185,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+        {
+            "timing": 186,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+        {
+            "timing": 187,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+        {
+            "timing": 188,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+        {
+            "timing": 189,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+        {
+            "timing": 190,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+
+
+        {
             "timing": 208,
             "speed": 1,
             "shape": 0,
@@ -78,6 +176,305 @@
             "color": [1,1,1,0.25]
         },        {
             "timing": 256,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 272,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 288,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 304,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 320,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 336,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 352,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 368,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 384,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 400,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 416,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 432,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 448,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 464,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 480,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 496,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 512,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 528,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 544,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 560,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 576,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 592,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 608,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 624,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 640,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 656,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 672,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 688,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 704,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 720,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 736,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+               
+        {
+            "timing": 740,
+            "speed": 1,
+            "shape": 1,
+            "color": [1,0.5,1,1]
+        },
+        {
+            "timing": 740.5,
+            "speed": 1,
+            "shape": 1,
+            "color": [1,0.5,1,0.8]
+        },
+        {
+            "timing": 741,
+            "speed": 1,
+            "shape": 1,
+            "color": [1,0.5,1,0.6]
+        },
+        {
+            "timing": 741.5,
+            "speed": 1,
+            "shape": 1,
+            "color": [1,0.5,1,0.4]
+        },        
+
+        {
+            "timing": 752,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 768,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },
+
+        {
+            "timing": 772,
+            "speed": 1,
+            "shape": 1,
+            "color": [1,0.5,1,1]
+        },
+        {
+            "timing": 772.5,
+            "speed": 1,
+            "shape": 1,
+            "color": [1,0.5,1,0.8]
+        },
+        {
+            "timing": 773,
+            "speed": 1,
+            "shape": 1,
+            "color": [1,0.5,1,0.6]
+        },
+        {
+            "timing": 773.5,
+            "speed": 1,
+            "shape": 1,
+            "color": [1,0.5,1,0.4]
+        }, 
+
+        {
+            "timing": 784,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 800,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 816,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 832,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 848,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 864,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 880,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 896,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 712,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 928,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 944,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 960,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 976,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 992,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 1008,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 1024,
+            "speed": 1,
+            "shape": 0,
+            "color": [1,1,1,0.25]
+        },        {
+            "timing": 1040,
             "speed": 1,
             "shape": 0,
             "color": [1,1,1,0.25]
